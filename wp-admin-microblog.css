@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* Message menu */
+.wpam-row-actions {visibility: hidden;padding: 2px 0 0;color:#000000;}
+.wpam-row-actions a:hover {color:#FF6600;}
+table.wpam-dashboard tr:hover .wpam-row-actions, div.wpam-blog-message:hover .wpam-row-actions {visibility: visible;}
+.wpam-row-actions-visible {padding: 2px 0 0;cursor: pointer;}
+/* Media buttons */
+.wpam_media_buttons a {padding:3px;}
+/* Messages */
+.wpam_sticky {background-color: #FFE7A1;}
+/* Tags */
+.wpam-tag {padding: 1px;}
+/* Others */
+#wpam_new_messages_info {text-align: center; font-weight: bold; border-left:5px solid orangered; border-right:5px solid orangered;}
+#wpam_new_messages_info a {color:orangered;}
+#wpam_new_messages_info a:hover {color:orange;}
+table.wpam-replies {border-collapse: collapse; background-color: #EFEFEF; margin-top: 5px; width: 100%}
+table.wpam-replies tr {border:1px solid #DFDFDF;}
+table.wpam-replies td {width: 100%;}
+
+ul.wpam-user-list{list-style: none;}
+ul.wpam-user-list li {float:left; padding: 3px;}
+ul.wpam-user-list li.wpam-user-list-select{border-bottom:2px solid orange;}

@@ -1,0 +1,534 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Admin Microblog v2.3.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-06-07 15:23:49+0000\n"
+"Last-Translator: Michael Winkler <michi.mtrv@googlemail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-Country: GERMANY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: wp-admin-microblog.php:73
+#@ wp_admin_blog
+msgid "Blog"
+msgstr "Blog"
+
+#: core/settings.php:120
+#@ wp_admin_blog
+msgid "WP Admin Microblog Settings"
+msgstr "WP Admin Microblog Einstellungen"
+
+#: core/settings.php:166
+#@ wp_admin_blog
+msgid "Access for"
+msgstr "Zugriff für"
+
+#: core/settings.php:258
+#@ wp_admin_blog
+msgid "Save Changes"
+msgstr "Änderungen speichern"
+
+#: core/screen.php:90
+#@ wp_admin_blog
+msgid "If you will send your message as an E-Mail to any user, so write @username (example: @admin)"
+msgstr "Wenn eine Nachricht auch als E-Mail zu einem Nutzer gesendet werden soll, dann schreibe @username (Beispiel: @admin)"
+
+#: core/screen.php:363
+#: core/screen.php:364
+#@ wp_admin_blog
+msgid "Delete the search from filter"
+msgstr "Lösche die Suche aus dem Suchfilter"
+
+#: core/screen.php:364
+#: core/screen.php:368
+#@ wp_admin_blog
+msgid "Search"
+msgstr "Suche"
+
+#: core/screen.php:374
+#@ wp_admin_blog
+msgid "Search word"
+msgstr "Suchbegriff"
+
+#: core/screen.php:375
+#@ wp_admin_blog
+msgid "Go"
+msgstr "Suche"
+
+#: core/screen.php:210
+#@ wp_admin_blog
+msgid "Delete the tag from filter"
+msgstr "Lösche den Tag aus dem Suchfilter"
+
+#: core/screen.php:398
+#@ wp_admin_blog
+msgid "User"
+msgstr "Nutzer"
+
+#: core/screen.php:236
+#@ wp_admin_blog
+msgid "Delete user as filter"
+msgstr "Lösche den Nutzer aus dem Suchfilter"
+
+#: core/screen.php:414
+#@ wp_admin_blog
+msgid "Your Message"
+msgstr "Neue Nachricht"
+
+#: core/screen.php:422
+#: core/widget.php:77
+#@ wp_admin_blog
+msgid "Send"
+msgstr "Senden"
+
+#: core/screen.php:457
+#@ wp_admin_blog
+msgid "Search Results"
+msgstr "Suchergebnisse"
+
+#: core/screen.php:457
+#@ wp_admin_blog
+msgid "Show all"
+msgstr "Zeige alles"
+
+#: core/screen.php:460
+#@ wp_admin_blog
+msgid "Messages"
+msgstr "Nachrichten"
+
+#: core/screen.php:527
+#@ wp_admin_blog
+msgid "Sorry, no entries mached your criteria"
+msgstr "Leider gibt es keine Einträge, die den gewählten Kriterien entsprechen"
+
+#: wp-admin-microblog.php:121
+#@ wp_admin_blog
+msgid "previous page"
+msgstr "Vorherige Seite"
+
+#: wp-admin-microblog.php:130
+#@ wp_admin_blog
+msgid "next page"
+msgstr "Nächste Seite"
+
+#: core/screen.php:141
+#@ wp_admin_blog
+msgid "en"
+msgstr "de"
+
+#: core/screen.php:133
+#: core/widget.php:141
+#@ wp_admin_blog
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: core/screen.php:133
+#: core/widget.php:141
+#@ wp_admin_blog
+msgid "Click to delete this message"
+msgstr "Klicken um diese Nachricht zu löschen"
+
+#: core/screen.php:133
+#: core/widget.php:141
+#@ wp_admin_blog
+msgid "Delete"
+msgstr "Löschen"
+
+#: core/screen.php:135
+#: core/widget.php:143
+#@ wp_admin_blog
+msgid "Reply"
+msgstr "Antworten"
+
+#: core/messages.php:341
+#: core/screen.php:213
+#@ wp_admin_blog
+msgid "Show related messages"
+msgstr "Zeige verwandte Nachrichten"
+
+#: core/screen.php:92
+#: core/screen.php:384
+#@ default
+#@ wp_admin_blog
+msgid "Tags"
+msgstr "Tags"
+
+#: core/screen.php:153
+#: core/widget.php:148
+#@ wp_admin_blog
+msgid "by"
+msgstr "von"
+
+#: core/screen.php:186
+#@ wp_admin_blog
+msgid "No tags available"
+msgstr "Keine Tags verfügbar"
+
+#: core/screen.php:90
+#@ wp_admin_blog
+msgid "E-mail notification"
+msgstr "E-Mail Benachrichtigung"
+
+#: core/screen.php:91
+#@ wp_admin_blog
+msgid "Text formatting"
+msgstr "Textformatierung"
+
+#: core/screen.php:48
+#@ wp_admin_blog
+msgid "Number of tags"
+msgstr "Anzahl Tags"
+
+#: core/screen.php:49
+#@ wp_admin_blog
+msgid "Number of messages per page"
+msgstr "Anzahl Nachrichten pro Seite"
+
+#: core/settings.php:140
+#: core/settings.php:144
+#: core/settings.php:204
+#: core/settings.php:208
+#: core/settings.php:244
+#: core/settings.php:248
+#@ wp_admin_blog
+msgid "yes"
+msgstr "Ja"
+
+#: core/settings.php:141
+#: core/settings.php:145
+#: core/settings.php:205
+#: core/settings.php:209
+#: core/settings.php:245
+#: core/settings.php:249
+#@ wp_admin_blog
+msgid "no"
+msgstr "Nein"
+
+#: core/screen.php:133
+#: core/widget.php:141
+#@ wp_admin_blog
+msgid "Edit this message"
+msgstr "Diese Nachricht bearbeiten"
+
+#: core/screen.php:135
+#: core/widget.php:143
+#@ wp_admin_blog
+msgid "Write a reply"
+msgstr "Eine Antwort schreiben"
+
+#: core/messages.php:64
+#@ wp_admin_blog
+msgid "Author:"
+msgstr "Autor:"
+
+#: core/messages.php:65
+#@ wp_admin_blog
+msgid "Login under the following address to create a reply:"
+msgstr "Melde dich unter folgender Adresse an, um eine Antwort zu erstellen:"
+
+#: core/screen.php:435
+#: core/widget.php:72
+#@ wp_admin_blog
+msgid "as WordPress blog post"
+msgstr "als WordPress Blogartikel"
+
+#: core/screen.php:436
+#: core/widget.php:72
+#@ wp_admin_blog
+msgid "Title"
+msgstr "Titel"
+
+#: core/messages.php:232
+#@ wp_admin_blog
+msgid "Short message"
+msgstr "Kurznachricht"
+
+#: core/screen.php:148
+#@ wp_admin_blog
+msgid "Today"
+msgstr "Heute"
+
+#: core/screen.php:138
+#: core/widget.php:144
+#@ wp_admin_blog
+msgid "ago"
+msgstr "zuvor"
+
+#: wp-admin-microblog.php:188
+#@ wp_admin_blog
+msgid "New Message"
+msgstr "Neue Nachricht"
+
+#: core/settings.php:136
+#@ wp_admin_blog
+msgid "Media upload for the dashboard widget"
+msgstr "Medien-Upload für das Dashboard Widget"
+
+#: core/settings.php:149
+#@ wp_admin_blog
+msgid "Activate this option to use the media upload for the WP Admin Microblog dashboard widget. If you use it, please notify, that the media upload will not work correctly for QuickPress."
+msgstr "Wenn du diese Funktion aktivierst, kannst du den Medien-Upload auch im Dashboard Widget des Plugins nutzen. Beachte dabei, dass dann der Median-Upload in QuickPress nicht mehr korrekt funktioniert."
+
+#: core/settings.php:182
+#@ wp_admin_blog
+msgid "\"Message as a blog post\"-function for"
+msgstr "\"Nachricht als Blogartikel\"-Funktion für"
+
+#: wp-admin-microblog.php:121
+#@ wp_admin_blog
+msgid "first page"
+msgstr "Erste Seite"
+
+#: wp-admin-microblog.php:126
+#: wp-admin-microblog.php:146
+#: wp-admin-microblog.php:149
+#@ wp_admin_blog
+msgid "of"
+msgstr "von"
+
+#: wp-admin-microblog.php:130
+#@ wp_admin_blog
+msgid "last page"
+msgstr "Letzte Seite"
+
+#: core/screen.php:91
+#@ wp_admin_blog
+msgid "You can use simple bbcodes: [b]bold[/b], [i]italic[/i], [u]underline[/u], [s]strikethrough[/s], [red]red[/red], [blue]blue[/blue], [green]green[/green], [orange]orange[/orange]. Combinations like [red][s]text[/s][/red] are possible. The using of HTML tags is not possible."
+msgstr "Du kannst die folgenden bbcodes zur Textgestaltung nutzen: [b]fett[/b], [i]kursiv[/i], [u]unterstrichen[/u], [s]durchgestrichen[/s], [red]rot[/red], [blue]blau[/blue], [green]grün[/green], [orange]orange[/orange]. Kombinationen wie [red][s]text[/s][/red] sind auch möglich. Die Nutzung von HTML-Tags ist allerdings nicht möglich."
+
+#: core/settings.php:126
+#@ wp_admin_blog
+msgid "Name of the Microblog"
+msgstr "Name des Microblogs"
+
+#: core/settings.php:128
+#: core/settings.php:133
+#@ wp_admin_blog
+msgid "Default: Microblog"
+msgstr "Standard: Microblog"
+
+#: core/settings.php:131
+#@ wp_admin_blog
+msgid "Name of the dashboard widget"
+msgstr "Name des Dashboard Widgets"
+
+#: core/screen.php:424
+#: core/widget.php:66
+#@ wp_admin_blog
+msgid "Options"
+msgstr "Optionen"
+
+#: core/screen.php:124
+#: core/screen.php:428
+#: core/widget.php:69
+#: core/widget.php:124
+#@ wp_admin_blog
+msgid "Sticky this message"
+msgstr "Nachricht anheften"
+
+#: core/settings.php:94
+#@ wp_admin_blog
+msgid "Settings are changed. Please note that access changes are visible, until you have reloaded this page a secont time."
+msgstr "Änderungen gespeichert. Beachte, dass Änderungen an den Zugriffseinstellugnen erst sichtbar sind, wenn du diese Seite ein zweites mal neu geladen hast."
+
+#: core/settings.php:179
+#@ wp_admin_blog
+msgid "Select each user role which has access to WP Admin Microblog."
+msgstr "Wähle die Nutzerrollen welche Zugriff auf den Blog haben sollen."
+
+#: core/settings.php:179
+#: core/settings.php:194
+#: core/settings.php:236
+#@ wp_admin_blog
+msgid "Use &lt;Ctrl&gt; key to select more than one."
+msgstr "Drücke die &lt;Strg&gt;-Taste um mehr als eine auszuwählen."
+
+#: core/settings.php:194
+#@ wp_admin_blog
+msgid "Select each user role which can use the \"Message as a blog post\"-function."
+msgstr "Wähle die Nutzerrollen, welche die Funktion \"Nachricht als WordPress-Artikel\" nutzen können."
+
+#: core/settings.php:224
+#@ wp_admin_blog
+msgid "\"Sticky messages\"-function for"
+msgstr "\"Angeheftete Nachrichten erstellen\"- möglich für"
+
+#: core/settings.php:236
+#@ wp_admin_blog
+msgid "Select each user role which can add sticky messages."
+msgstr "Wähle die Nutzerrollen, welche angeheftete Nachrichten erstellen dürfen."
+
+#: core/settings.php:239
+#@ wp_admin_blog
+msgid "Sticky messages for the dashboard widget"
+msgstr "Angeheftete Nachrichten im Dashboard Widget anzeigen"
+
+#: core/settings.php:254
+#@ wp_admin_blog
+msgid "Select `yes` to display sticky messages in the dashboard widget."
+msgstr "Wähle `ja` um angeheftete Nachrichten auch im Dashboard Widget anzuzeigen."
+
+#: core/screen.php:124
+#: core/widget.php:124
+#@ wp_admin_blog
+msgid "Sticky"
+msgstr "Anheften"
+
+#: core/screen.php:127
+#: core/widget.php:127
+#@ wp_admin_blog
+msgid "Unsticky this message"
+msgstr "Diese Nachricht abheften"
+
+#: core/screen.php:127
+#: core/widget.php:127
+#@ wp_admin_blog
+msgid "Unsticky"
+msgstr "Abheften"
+
+#: wp-admin-microblog.php:76
+#@ wp_admin_blog
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: core/widget.php:137
+#@ wp_admin_blog
+msgid "One Reply"
+msgid_plural " Replies"
+msgstr[0] "Eine Antwort"
+msgstr[1] " Antworten"
+
+#: core/screen.php:89
+#@ wp_admin_blog
+msgid "Microblog"
+msgstr "Microblog"
+
+#: core/screen.php:594
+#@ wp_admin_blog
+msgid "Show all replies"
+msgstr "Alle Antworten anzeigen"
+
+#: core/screen.php:594
+#: core/widget.php:137
+#@ wp_admin_blog
+msgid "Replies"
+msgstr "Antworten"
+
+#: wp-admin-microblog.php:146
+#: wp-admin-microblog.php:149
+#@ wp_admin_blog
+msgid "Entries"
+msgstr "Einträge"
+
+#: core/messages.php:68
+#@ wp_admin_blog
+msgid "New message in wp admin micoblog"
+msgstr "Neue Nachricht in WP Admin Microblog"
+
+#: core/screen.php:92
+#@ wp_admin_blog
+msgid "You can add tags directly to your message, if you use hashtags. Examples: #monday #2012"
+msgstr "Du kannst Schlagwörter automatisch zu deiner Nachricht hinzufügen indem du sogenannte Hashtags nutzt. Beispiele: #Montag #2012"
+
+#: core/settings.php:123
+#@ wp_admin_blog
+msgid "General"
+msgstr "Allgemein"
+
+#: core/settings.php:163
+#@ wp_admin_blog
+msgid "Access"
+msgstr "Zugriff"
+
+#: core/settings.php:197
+#@ wp_admin_blog
+msgid "Notifications"
+msgstr "Benachrichtigungen"
+
+#: core/settings.php:200
+#@ wp_admin_blog
+msgid "Auto replies"
+msgstr "Automatische Antworten"
+
+#: core/settings.php:213
+#@ wp_admin_blog
+msgid "Activate this option and the plugin insert in every reply the string for an e-mail notification to the message author."
+msgstr "Aktiviere diese Option und das Plugin fügt in jede Antwort einen String für die E-Mail Benachrichtigung des Autors der Nachricht ein."
+
+#: core/settings.php:216
+#@ wp_admin_blog
+msgid "Auto notifications"
+msgstr "Automatische Benachrichtigungen"
+
+#: core/settings.php:218
+#@ wp_admin_blog
+msgid "Insert your email address, if you want to receive notifications for every new message in the microblog. Insert one email address per line."
+msgstr "Füge deine E-Mail Adresse hinzu, wenn du bei jeder neuen Nachricht im Microblog eine Benachrichtigung erhalten will. (Eine E-Mail Adresse pro Zeile)"
+
+#: core/settings.php:221
+#@ wp_admin_blog
+msgid "Sticky messages"
+msgstr "Angeheftete Nachrichten"
+
+#: ajax.php:15
+#@ wp_admin_blog
+msgid "New messages available"
+msgstr "Neue Nachrichten verfügbar"
+
+#: core/screen.php:43
+#@ default
+msgid "Apply"
+msgstr ""
+
+#: core/screen.php:45
+#@ default
+msgid "Show on screen"
+msgstr ""
+
+#: core/screen.php:50
+#@ wp_admin_blog
+msgid "Sort order for messages"
+msgstr "Sortierung für Nachrichten"
+
+#: core/screen.php:52
+#@ wp_admin_blog
+msgid "Show the latest messages first"
+msgstr "Zeige die aktuellsten Nachrichten zuerst"
+
+#: core/screen.php:53
+#@ wp_admin_blog
+msgid "Show messages with latest comments first"
+msgstr "Zeige Nachrichten mit den aktuellsten Kommentare zuerst"
+
+#: core/screen.php:628
+#@ wp_admin_blog
+msgid "Click for refresh"
+msgstr "Lade die Seite neu"
+
+#: core/settings.php:154
+#@ wp_admin_blog
+msgid "Use this option to modify the interval in which the plugin checks for new messages. A smaller value needs more server performance. The default value is 60000 ms."
+msgstr "Verwende diese Option, um das Intervall in dem das Plugin nach neuen Nachrichten sucht, zu ändern. Beachte, dass ein kleinerer Wert mehr Serverleistung in Anspruch nimmt. Der Standardwert beträgt 60000 ms."
+
+#: core/settings.php:152
+#@ wp_admin_blog
+msgid "Auto check interval"
+msgstr "Intervall zur automatischen Nachrichtenüberprüfung"
+
+#: core/settings.php:159
+#@ wp_admin_blog
+msgid "Enable auto check"
+msgstr "Automatische Nachrichtenüberprüfung aktivieren"
+
