@@ -49,7 +49,7 @@ function wpam_widget_function() {
     }
     if (isset($_GET['wp_admin_blog_add'])) {
        $add = intval($_GET['wp_admin_blog_add']);
-       wpam_mesage::update_sticky($add, 1);
+       wpam_message::update_sticky($add, 1);
     }
 
     echo '<form method="post" name="wp_admin_blog_dashboard_widget" id="wp_admin_blog_dashboard_widget" action="index.php">';
@@ -147,7 +147,7 @@ function wpam_widget_function() {
         echo '<td style="border-bottom:1px solid rgb(223,223,223); padding: 0 5px 0 0;">';
         echo '<div id="wp_admin_blog_message_' . $post->post_ID . '"><p style="color:#AAAAAA;">' . $message_date . ' | ' . __('by','wp_admin_blog') . ' ' . $user_info->display_name . '' . $edit_button2 . '</p>';
         echo '<p>' . $message_text . '</p>';
-        echo '<div class="wpam-row-actions" style="font-size:11px; padding: 0 0 10px 0; margin:0;">' . $edit_button . '</div></div>';
+        echo '<div class="wpam-row-actions" style="padding: 0 0 10px 0; margin:0;">' . $edit_button . '</div></div>';
         echo '<input name="wp_admin_blog_message_text" id="wp_admin_blog_message_text_' . $post->post_ID . '" type="hidden" value="' . stripslashes($post->text) . '" />';
         echo '</td>';
         echo '</tr>';

@@ -20,15 +20,18 @@ function wpam_show_screen_options( $status, $args ) {
     $tags_per_page = WPAM_DEFAULT_TAGS;
     $messages_per_page = WPAM_DEFAULT_NUMBER_MESSAGES;
     $sort_order = WPAM_DEFAULT_SORT_ORDER;
+    $date_format = WPAM_DEFAULT_DATE_FORMAT;
     $user = get_current_user_id();
     $user_options = get_user_meta($user, 'wpam_screen_settings', true);
     if ( !empty($user_options) ) {
         $data = wpam_core::extract_column_data($user_options);
-        $tags_per_page = $data ['tags_per_page'];
-        $messages_per_page = $data ['messages_per_page'];
-        $sort_order = $data ['sort_order'];
+        $tags_per_page = $data['tags_per_page'];
+        $messages_per_page = $data['messages_per_page'];
+        $sort_order = $data['sort_order'];
+        $date_format = $data['date_format'];
     }
     
+    // Set sort_order radio buttons
     if ( $sort_order === 'date' ) {
         $sel_1 = 'checked="checked"';
         $sel_2 = '';
@@ -36,6 +39,16 @@ function wpam_show_screen_options( $status, $args ) {
     else {
         $sel_1 = '';
         $sel_2 = 'checked="checked"';
+    }
+    
+    // Set date_format radio buttons
+    if ( $date_format === 'time_difference' ) {
+        $sel_3 = 'checked="checked"';
+        $sel_4 = '';
+    }
+    else {
+        $sel_3 = '';
+        $sel_4 = 'checked="checked"';
     }
     
     $return = $status;
@@ -51,6 +64,11 @@ function wpam_show_screen_options( $status, $args ) {
           <p>
             <input type="radio" name="wpam_sort_order" id="wpam_sort_order_1" value="date" ' . $sel_1 . '/><label for="wpam_sort_order_1">' . __('Show the latest messages first','wp_admin_blog') . '</label>
             <input type="radio" name="wpam_sort_order" id="wpam_sort_order_2" value="date_last_comment" ' . $sel_2 . '/><label for="wpam_sort_order_2">' . __('Show messages with latest comments first','wp_admin_blog') . '</label> 
+          </p>
+        <h5>' . __('Date format for messages','wp_admin_blog') . '</h5>
+           <p>
+            <input type="radio" name="wpam_date_format" id="wpam_date_format_1" value="time_difference" ' . $sel_3 . '/><label for="wpam_date_format_1">' . __('Show time difference','wp_admin_blog') . '</label>
+            <input type="radio" name="wpam_date_format" id="wpam_date_format_2" value="date" ' . $sel_4 . '/><label for="wpam_date_format_2">' . __('Show date of publishing','wp_admin_blog') . '</label> 
           </p>
         ' . $button;
     }
@@ -72,7 +90,8 @@ function wpam_set_screen_options($status, $option, $value) {
         $tags_per_page = intval($_POST['wpam_tags_per_page']);
         $messages_per_page = intval($_POST['messages_per_page']);
         $sort_order = htmlspecialchars($_POST['wpam_sort_order']);
-        $value= 'tags_per_page = {' . $tags_per_page . '}, messages_per_page = {' . $messages_per_page . '}, sort_order = {' . $sort_order . '}';
+        $date_format = htmlspecialchars($_POST['wpam_date_format']);
+        $value= 'tags_per_page = {' . $tags_per_page . '}, messages_per_page = {' . $messages_per_page . '}, sort_order = {' . $sort_order . '}, date_format = {' . $date_format . '}';
     }
     return $value;
 }
@@ -97,19 +116,51 @@ function wpam_add_help_tab () {
  * @since 2.3
  */
 class wpam_screen {
+    
     /**
-     * get single message
-     * @param string $post
-     * @param array $tags
-     * @param array $user_info
-     * @param array $options
-     * @param int $level
+     * Prepares the displayed date for a message
+     * @param $post_time        The post time (mysql)
+     * @param $options          The options array
+     * @since 2.4
+     */
+    public static function prepare_date ($post_time, $options) {
+        $time = wpam_core::datesplit($post_time);
+        $timestamp = mktime($time[0][3], $time[0][4], $time[0][5], $time[0][1], $time[0][2], $time[0][0] );
+        
+        // get human time difference
+        $time_difference = human_time_diff( $timestamp, current_time('timestamp') ) . ' ' . __( 'ago', 'wp_admin_blog' );
+        
+        // get time
+        $message_time = date($options['wp_time_format'], $timestamp);
+        
+        // get date
+        $message_date = date($options['wp_date_format'], $timestamp);
+
+        // handle date formats
+        if ( date($options['wp_date_format']) == $message_date ) {
+            $message_date = __('Today','wp_admin_blog');
+        }
+        
+        // end result
+        if ($options['date_format'] === 'date') {
+            return '<span title="' . $time_difference . '">' . $message_date . ' | ' . $message_time . '</span>';
+        }
+        
+        return '<span title="' . $message_date . ' | ' . $message_time . '">' . $time_difference . '</span>';
+    }
+    
+    /**
+     * prepares a single message
+     * @param string $post          The text
+     * @param array $tags           The tag array
+     * @param array $user_info      The user_info array
+     * @param array $options        The options array
+     * @param int $level            The tree level (defalt is 1, for comments use 2)
      * @return string
      * @since 2.3
      */
-    public static function get_message ($post, $tags, $user_info, $options, $level = 1) {
+    public static function prepare_message ($post, $tags, $user_info, $options, $level = 1) {
         $edit_button = '';
-        $time = wpam_core::datesplit($post->date);
         $message_text = wpam_message::prepare( $post->text, $tags );
 
         // Handles post parent
@@ -134,23 +185,9 @@ class wpam_screen {
         }
         $edit_button = $edit_button . '<a onclick="javascript:wpam_replyMessage(' . $post->post_ID . ',' . $post->post_parent . ',' . "'" . $options['auto_reply'] . "'" . ',' . "'" . $user_info->user_login . "'" . ')" style="cursor:pointer; color:#009900;" title="' . __('Write a reply','wp_admin_blog') . '">' . __('Reply','wp_admin_blog') . '</a>';
 
-        // get human time difference
-        $message_time = human_time_diff( mktime($time[0][3], $time[0][4], $time[0][5], $time[0][1], $time[0][2], $time[0][0] ), current_time('timestamp') ) . ' ' . __( 'ago', 'wp_admin_blog' );
-
-        // handle date formats
-        if ( __('en','wp_admin_blog') == 'de') {
-            $message_date = $time[0][2]. '.' . $time[0][1] . '.' . $time[0][0];
-        }
-        else {
-            $message_date = $time[0][0]. '-' . $time[0][1] . '-' . $time[0][2];
-        }
-        if ( date('d.m.Y') == $message_date || date('Y-m-d') == $message_date ) {
-            $message_date = __('Today','wp_admin_blog');
-        }     
-
         // print messages
         $r =  '<div id="wp_admin_blog_message_' . $post->post_ID . '" class="wpam-blog-message">
-                <p style="color:#AAAAAA;"><span title="' . $message_date . '">' . $message_time . '</span> | ' . __('by','wp_admin_blog') . ' ' . $user_info->display_name . '</p>
+                <p style="color:#AAAAAA;">' . self::prepare_date($post->date, $options) . ' | ' . __('by','wp_admin_blog') . ' ' . $user_info->display_name . '</p>
                 <p>' . $message_text . '</p>
                 <div class="wpam-row-actions">' . $edit_button . '</div>
             </div>
@@ -288,6 +325,7 @@ function wpam_page() {
     $tags_per_page = WPAM_DEFAULT_TAGS;
     $number_messages = WPAM_DEFAULT_NUMBER_MESSAGES;
     $sort_order = WPAM_DEFAULT_SORT_ORDER;
+    $date_format = WPAM_DEFAULT_DATE_FORMAT;
 
     $system = wpam_get_options('','system');
     foreach ($system as $system) {
@@ -304,6 +342,7 @@ function wpam_page() {
         $tags_per_page = $data ['tags_per_page'];
         $number_messages = $data ['messages_per_page'];
         $sort_order = $data ['sort_order'];
+        $date_format = $data['date_format'];
     }
    
     // Handles limits 
@@ -448,7 +487,7 @@ function wpam_page() {
     </form>
     <p style="margin:7px; font-size:2px;">&nbsp;</p>
     <form name="all_messages" method="post">
-    <table class="widefat">
+    <table class="widefat wpam-messages">
     <thead>
         <tr id="wpam_table_messages_headline">
             <th colspan="2">
@@ -543,24 +582,27 @@ function wpam_page() {
             }
             
             foreach ($post as $post) {
-               $user_info = get_userdata($post->user);
+                $user_info = get_userdata($post->user);
+
+                // sticky post options
+                // change background color for sticky posts
+                $class = 'wpam_normal';
+                if ( $post->is_sticky == 1  ) {
+                     $class = 'wpam_sticky';
+                }
                
-               // sticky post options
-               // change background color for sticky posts
-               $class = 'wpam_normal';
-               if ( $post->is_sticky == 1  ) {
-                    $class = 'wpam_sticky';
-               }
-               
-               // print messages
-               $options['auto_reply'] = $auto_reply;
-               $options['user'] = $user;
-               echo '<tr class="' . $class . '">';
-               echo '<td style="padding:10px 0 10px 10px; width:40px;"><span title="' . $user_info->display_name . ' (' . $user_info->user_login . ')">' . get_avatar($user_info->ID, 40) . '</span></td>';
-               echo '<td style="padding:10px;">';
-               echo wpam_screen::get_message($post, $tags, $user_info, $options);
-               // print replies
-               if ($search == '' && $tag == '') {
+                // print messages
+                $options['auto_reply'] = $auto_reply;
+                $options['user'] = $user;
+                $options['date_format'] = $date_format;
+                $options['wp_date_format'] = get_option('date_format');
+                $options['wp_time_format'] = get_option('time_format');
+                echo '<tr class="' . $class . '">';
+                echo '<td style="padding:10px 0 10px 10px; width:40px;"><span title="' . $user_info->display_name . ' (' . $user_info->user_login . ')">' . get_avatar($user_info->ID, 40) . '</span></td>';
+                echo '<td style="padding:10px;">';
+                echo wpam_screen::prepare_message($post, $tags, $user_info, $options);
+                // print replies
+                if ($search == '' && $tag == '') {
                     $r = '';
                     $str = "'";
                     (int) $count = 0;
@@ -584,7 +626,7 @@ function wpam_page() {
                               }
                               $r = $r . '<tr id="wpam-reply-' . $post->post_ID . '-' . $count . '" ' . $style . '>';
                               $r = $r . '<td style="padding:10px 0 10px 10px; width:40px;"><span title="' . $user_info->display_name . ' (' . $user_info->user_login . ')">' . get_avatar($user_info->ID, 40) . '</span></td>';
-                              $r = $r . '<td>' . wpam_screen::get_message($reply, $tags, $user_info, $options, 2) . '</td>';
+                              $r = $r . '<td>' . wpam_screen::prepare_message($reply, $tags, $user_info, $options, 2) . '</td>';
                               $r = $r . '</tr>';
                          }
                     }
@@ -637,4 +679,3 @@ function wpam_page() {
     </div>
     <?php
 }
-?>

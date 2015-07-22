@@ -280,6 +280,8 @@ class wpam_message {
             $text = preg_replace("/\[i\](.*)\[\/i\]/Usi", "<em>\\1</em>", $text); 
             $text = preg_replace("/\[u\](.*)\[\/u\]/Usi", "<u>\\1</u>", $text);
             $text = preg_replace("/\[s\](.*)\[\/s\]/Usi", "<s>\\1</s>", $text);
+            $text = preg_replace("/\[sup\](.*)\[\/sup\]/Usi", "<sup>\\1</sup>", $text);
+            $text = preg_replace("/\[sub\](.*)\[\/sub\]/Usi", "<sub>\\1</sub>", $text);
             $text = preg_replace("/\[red\](.*)\[\/red\]/Usi", '<span style="color:red;">\\1</span>', $text);
             $text = preg_replace("/\[blue\](.*)\[\/blue\]/Usi", '<span style="color:blue;">\\1</span>', $text);
             $text = preg_replace("/\[green\](.*)\[\/green\]/Usi", '<span style="color:green;">\\1</span>', $text);
@@ -290,6 +292,8 @@ class wpam_message {
             $text = preg_replace("/\[i\](.*)\[\/i\]/Usi", "\\1", $text); 
             $text = preg_replace("/\[u\](.*)\[\/u\]/Usi", "\\1", $text);
             $text = preg_replace("/\[s\](.*)\[\/s\]/Usi", "\\1", $text);
+            $text = preg_replace("/\[sup\](.*)\[\/sup\]/Usi", "\\1", $text);
+            $text = preg_replace("/\[sub\](.*)\[\/sub\]/Usi", "\\1", $text);
             $text = preg_replace("/\[red\](.*)\[\/red\]/Usi", "\\1", $text);
             $text = preg_replace("/\[blue\](.*)\[\/blue\]/Usi", "\\1", $text);
             $text = preg_replace("/\[green\](.*)\[\/green\]/Usi", "\\1", $text);
@@ -348,5 +352,3 @@ class wpam_message {
         return $text;
     }
 }
-
-?>

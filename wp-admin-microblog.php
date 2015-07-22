@@ -3,17 +3,17 @@
 Plugin Name: WP Admin Microblog
 Plugin URI: http://mtrv.wordpress.com/microblog/
 Description: Adds a microblog in your WordPress backend.
-Version: 2.3.3
+Version: 2.3.5
 Author: Michael Winkler
 Author URI: http://mtrv.wordpress.com/
 Min WP Version: 3.3
-Max WP Version: 4.0
+Max WP Version: 4.3
 */
 
 /*
    LICENCE
  
-    Copyright 2010-2014  Michael Winkler
+    Copyright 2010-2015  Michael Winkler
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -44,13 +44,35 @@ $admin_blog_tags = $wpdb->prefix . 'admin_blog_tags';
 $admin_blog_relations = $wpdb->prefix . 'admin_blog_relations';
 $admin_blog_meta = $wpdb->prefix . 'admin_blog_meta';
 
-// Define overwriteable system defaults
+/*
+ *  Define overwritable system defaults
+ */
+
+// Number of tags
 if ( !defined('WPAM_DEFAULT_TAGS') ) {
     define('WPAM_DEFAULT_TAGS', 50); }
+    
+// Number of messages
 if ( !defined('WPAM_DEFAULT_NUMBER_MESSAGES') ) {
     define('WPAM_DEFAULT_NUMBER_MESSAGES', 10); }
+    
+/* 
+ * Default sort order for messages
+ * Possible Values:
+ * - date
+ * - date_last_comment
+ */
 if ( !defined('WPAM_DEFAULT_SORT_ORDER') ) {
     define('WPAM_DEFAULT_SORT_ORDER', 'date'); }
+    
+/*
+ * Date format for messages
+ * Possible Values
+ * - time_difference
+ * - date
+ */
+if ( !defined('WPAM_DEFAULT_DATE_FORMAT') ) {
+    define('WPAM_DEFAULT_DATE_FORMAT', 'time_difference'); }    
 
 // load microblog name
 $wpam_blog_name = get_option('wp_admin_blog_name');
@@ -82,7 +104,7 @@ function wpam_menu() {
  * @since 2.3
 */
 function wpam_get_version() {
-    return '2.3.3';
+    return '2.3.5';
 }
 
 /** 
@@ -194,12 +216,10 @@ function wpam_add_widgets() {
  * Add scripts ans stylesheets
 */ 
 function wpam_header() {
+    $page = '';
     // Define $page
     if ( isset($_GET['page']) ) {
         $page = $_GET['page'];
-    }
-    else {
-        $page = '';
     }
     // load scripts only, when it's wp_admin_blog page
     if ( strpos($page, 'wp-admin-microblog') !== FALSE || strpos($_SERVER['PHP_SELF'], 'wp-admin/index.php') !== FALSE ) {
@@ -368,4 +388,3 @@ add_action('init', 'wpam_language_support');
 add_action('admin_init','wpam_header');
 add_action('admin_menu','wpam_menu');
 add_action('wp_dashboard_setup','wpam_add_widgets');
-?>
