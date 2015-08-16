@@ -1,0 +1,217 @@
+@charset "utf-8";
+/* Main screen */
+.wpam-row:before {
+    display: table;
+    content: " ";
+}
+
+.wpam-container-filter, .wpam-container-main {
+    position: relative;
+    float: left;
+    min-height: 1px;
+    padding-bottom: 20px;
+}
+
+.like_entry {
+    border-bottom: 1px solid #e1e1e1;
+    margin-bottom: 5px;
+}
+
+input.wpam-search {
+    margin: 1px !important;
+    padding: 3px 5px !important;
+}
+
+/* Message menu */
+.wpam-message-info-row {
+    color: #aaa;
+    font-size: 13px;
+}
+
+.wpam-message-info-details {
+    float: left;
+}
+
+.wpam-message-info-likes {
+    float: right;
+}
+
+.wpam-message-info-likes a {
+    color: #aaa;
+    font-size: 12px;
+}
+
+.wpam-message-info-likes a:before {
+    font-size: 16px;
+}
+
+.wpam-message-info-clear {
+    clear: both;
+}
+
+.wpam-message-content {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.wpam-row-actions {
+    visibility: hidden; 
+    padding: 5px 0 5px 0;
+    color:#ddd;
+    font-size: 13px;
+}
+
+.wpam-row-actions a:hover {
+    color:#FF6600;
+}
+
+.mobile .wpam-row-actions {
+    visibility: visible;
+}
+
+table.wpam-dashboard tr:hover .wpam-row-actions, div.wpam-blog-message:hover .wpam-row-actions {
+    visibility: visible;
+}
+
+.wpam-row-actions-visible {
+    padding: 5px 0 5px 0;
+    cursor: pointer;
+}
+
+/* Dashicons */
+.wpam_message_like:before, .wpam-reply-button:before, .wpam-sticky-button:before, .wpam_message_edit:before, .wpam-delete-button:before {
+    font-size: 15px;
+}
+
+/* Media buttons */
+.wpam_media_buttons a {
+    padding:3px;
+}
+
+/* Messages */
+table.wpam-messages, table.wpam-dashboard {
+    border-collapse: collapse;
+}
+
+table.wpam-messages tr.wpam-sticky {
+    border-top: 1px solid #e1e1e1;
+    border-left: 4px solid orange;
+}
+
+table.wpam-dashboard tr.wpam-sticky {
+    border-left: 4px solid orange;
+}
+
+table.wpam-messages tr.wpam-normal {
+    border-top: 1px solid #e1e1e1;
+}
+
+/* User Images */
+.wpam_user_image img {
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+}
+
+.wpam_user_name {
+    padding: 15px;
+}
+
+/* Tags */
+.wpam-tag {
+    padding: 1px;
+}
+
+/* Images */
+.wpam-image {
+    height: 150px;
+    width: auto;
+}
+
+/* Code */
+.wpam-code {
+    border: 1px solid silver;
+    background-color: #ddd;
+    padding: 10px;
+    color: #555;
+}
+
+/* Others */
+#wpam-new-messages-info {
+    text-align: center; 
+    font-weight: bold; 
+    border-left:5px solid orangered; 
+    border-right:5px solid orangered;
+}
+#wpam-new-messages-info a {
+    color:orangered;
+}
+#wpam-new-messages-info a:hover {
+    color:orange;
+}
+
+table.wpam-replies {
+    border-collapse: collapse; 
+    background-color: #EFEFEF; 
+    margin-top: 5px; 
+    width: 100%;
+}
+table.wpam-replies tr {
+    border:1px solid #DFDFDF;
+}
+table.wpam-replies td {
+    width: 100%;
+}
+
+ul.wpam-user-list{
+    list-style: none;
+}
+ul.wpam-user-list li {
+    float:left; 
+    padding: 3px;
+}
+ul.wpam-user-list li.wpam-user-list-select{
+    border-bottom:2px solid orange;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    .wpam-container-filter {
+        width: 39%;
+        padding-left: 10px;
+    }
+
+    .wpam-container-main {
+        width: 58%;
+        padding-bottom: 0;
+        padding-right: 10px;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+    .wpam-container-filter {
+        width: 39%;
+        padding-left: 10px;
+    }
+
+    .wpam-container-main {
+        width: 58%;
+        padding-bottom: 0;
+        padding-right: 10px;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+    .wpam-container-filter {
+        width: 39%;
+        padding-left: 10px;
+    }
+
+    .wpam-container-main {
+        width: 58%;
+        padding-bottom: 0;
+        padding-right: 10px;
+    }
+}

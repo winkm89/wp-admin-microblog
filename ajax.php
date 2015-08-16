@@ -6,12 +6,22 @@
  */
 require_once( '../../../wp-load.php' );
 
+// New message check
 if ( is_user_logged_in() && isset( $_GET['p_id'] ) ) {
-    $p_id = htmlspecialchars($_GET['p_id']);
-    global $admin_blog_posts;
-    global $wpdb;
-    $test = intval( $wpdb->get_var("SELECT COUNT(*) FROM $admin_blog_posts WHERE `post_ID` > '$p_id'") );
-    if ( $test !== 0 ) {
-        echo __('New messages available','wp_admin_blog');
-    }
+    wpam_ajax::new_message_check($_GET['p_id']);
+}
+
+// Edit message
+if ( is_user_logged_in() && isset( $_GET['edit_id'] ) ) {
+    wpam_ajax::get_message_text_for_edit($_GET['edit_id']);
+}
+
+// Add like
+if ( is_user_logged_in() && isset( $_GET['add_like_id'] ) ) {
+    wpam_ajax::add_like($_GET['add_like_id']);
+}
+
+// Show likes
+if ( is_user_logged_in() && isset( $_GET['like_id'] ) ) {
+    wpam_ajax::show_likes($_GET['like_id']);
 }

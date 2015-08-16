@@ -3,10 +3,10 @@
 Plugin Name: WP Admin Microblog
 Plugin URI: http://mtrv.wordpress.com/microblog/
 Description: Adds a microblog in your WordPress backend.
-Version: 2.3.5
+Version: 3.0
 Author: Michael Winkler
 Author URI: http://mtrv.wordpress.com/
-Min WP Version: 3.3
+Min WP Version: 3.8
 Max WP Version: 4.3
 */
 
@@ -39,10 +39,21 @@ Max WP Version: 4.3
 
 // Define databases
 global $wpdb;
-$admin_blog_posts = $wpdb->prefix . 'admin_blog_posts';
-$admin_blog_tags = $wpdb->prefix . 'admin_blog_tags';
-$admin_blog_relations = $wpdb->prefix . 'admin_blog_relations';
-$admin_blog_meta = $wpdb->prefix . 'admin_blog_meta';
+
+if ( !defined('WPAM_ADMIN_BLOG_POSTS') ) {
+    define('WPAM_ADMIN_BLOG_POSTS', $wpdb->prefix . 'admin_blog_posts'); }
+    
+if ( !defined('WPAM_ADMIN_BLOG_TAGS') ) {
+    define('WPAM_ADMIN_BLOG_TAGS', $wpdb->prefix . 'admin_blog_tags'); }
+    
+if ( !defined('WPAM_ADMIN_BLOG_RELATIONS') ) {
+    define('WPAM_ADMIN_BLOG_RELATIONS', $wpdb->prefix . 'admin_blog_relations'); }
+    
+    if ( !defined('WPAM_ADMIN_BLOG_LIKES') ) {
+    define('WPAM_ADMIN_BLOG_LIKES', $wpdb->prefix . 'admin_blog_likes'); }
+    
+if ( !defined('WPAM_ADMIN_BLOG_META') ) {
+    define('WPAM_ADMIN_BLOG_META', $wpdb->prefix . 'admin_blog_meta'); }
 
 /*
  *  Define overwritable system defaults
@@ -81,6 +92,10 @@ if ( $wpam_blog_name == false ) {
 }
 
 // includes
+require_once('core/class-ajax.php');
+require_once('core/class-tables.php');
+require_once('core/class-templates.php');
+require_once('core/database.php');
 require_once('core/general.php');
 require_once('core/screen.php');
 require_once('core/settings.php');
@@ -104,7 +119,7 @@ function wpam_menu() {
  * @since 2.3
 */
 function wpam_get_version() {
-    return '2.3.5';
+    return '3.0';
 }
 
 /** 
@@ -181,12 +196,11 @@ function wpam_page_menu ($number_entries, $entries_per_page, $current_page, $ent
  */
 function wpam_get_options($name = '', $category = '') {
     global $wpdb;
-    global $admin_blog_meta;
     if ( $category != '' ) {
-        $row = $wpdb->get_results("SELECT * FROM `$admin_blog_meta` WHERE `category` = '$category'", ARRAY_A);
+        $row = $wpdb->get_results("SELECT * FROM " . WPAM_ADMIN_BLOG_META . " WHERE `category` = '$category'", ARRAY_A);
     }
     if ( $name != '' ) {
-        $row = $wpdb->get_var("SELECT `value` FROM `$admin_blog_meta` WHERE `variable` = '$name'");
+        $row = $wpdb->get_var("SELECT `value` FROM " . WPAM_ADMIN_BLOG_META . " WHERE `variable` = '$name'");
     }
     
     if ( $row == '' ) {
@@ -213,7 +227,7 @@ function wpam_add_widgets() {
 }
 
 /*
- * Add scripts ans stylesheets
+ * Add scripts and stylesheets
 */ 
 function wpam_header() {
     $page = '';
@@ -224,11 +238,13 @@ function wpam_header() {
     // load scripts only, when it's wp_admin_blog page
     if ( strpos($page, 'wp-admin-microblog') !== FALSE || strpos($_SERVER['PHP_SELF'], 'wp-admin/index.php') !== FALSE ) {
         wp_register_script('wp_admin_blog', plugins_url() . '/wp-admin-microblog/js/wp-admin-microblog.js');
-        wp_register_style('wp_admin_blog_css', plugins_url() . '/wp-admin-microblog/wp-admin-microblog.css');
+        wp_register_style('wp_admin_blog_css', plugins_url() . '/wp-admin-microblog/css/wp-admin-microblog.css');
         wp_enqueue_style('wp_admin_blog_css');
+        wp_enqueue_style('teachpress-jquery-ui-dialog.css', includes_url() . '/css/jquery-ui-dialog.min.css');
         wp_enqueue_script('wp_admin_blog');
         wp_enqueue_script('media-upload');
         add_thickbox();
+        wp_enqueue_script(array('jquery-ui-core', 'jquery-ui-datepicker', 'jquery-ui-resizable', 'jquery-ui-autocomplete', 'jquery-ui-sortable', 'jquery-ui-dialog'));
     }
     // load the hack for the normal WP Admin Microblog page
     if ( strpos($page, 'wp-admin-microblog') !== FALSE ) {
@@ -273,108 +289,14 @@ function wpam_activation ( $network_wide ) {
  * @since 1.0
  */
 function wpam_install () {
-    global $wpdb;
-    $version = wpam_get_version();
-
-    // Add capabilities
-    global $wp_roles;
-    $role = $wp_roles->get_role('administrator');
-    if ( !$role->has_cap('use_wp_admin_microblog') ) {
-       $wp_roles->add_cap('administrator', 'use_wp_admin_microblog');
-    }
-    if ( !$role->has_cap('use_wp_admin_microblog_bp') ) {
-       $wp_roles->add_cap('administrator', 'use_wp_admin_microblog_bp');
-    }
-    if ( !$role->has_cap('use_wp_admin_microblog_sticky') ) {
-       $wp_roles->add_cap('administrator', 'use_wp_admin_microblog_sticky');
-    }
-
-    // charset & collate like WordPress
-    $charset_collate = '';
-    if ( ! empty($wpdb->charset) ) {
-       $charset_collate = "DEFAULT CHARACTER SET $wpdb->charset";
-    }
-    if ( ! empty($wpdb->collate) ) {
-       $charset_collate .= " COLLATE $wpdb->collate";
-    }
-    $charset_collate .= " ENGINE = INNODB";
-    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-    
-    // Post table
-    $table_name = $wpdb->prefix . 'admin_blog_posts';
-    if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
-        $sql = "CREATE TABLE " . $wpdb->prefix . "admin_blog_posts (
-                    `post_ID` INT UNSIGNED AUTO_INCREMENT ,
-                    `post_parent` INT ,
-                    `text` LONGTEXT ,
-                    `date` DATETIME ,
-                    `sort_date` DATETIME,
-                    `last_edit` DATETIME,
-                    `user` INT ,
-                    `is_sticky` INT ,
-                    PRIMARY KEY (post_ID)
-              ) $charset_collate;";
-      
-        dbDelta($sql);
-    }
-    
-    // Tag table
-    $table_name = $wpdb->prefix . 'admin_blog_tags';
-    if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
-        $sql = "CREATE TABLE " . $wpdb->prefix . "admin_blog_tags (
-                    `tag_ID` INT UNSIGNED AUTO_INCREMENT ,
-                    `name` VARCHAR (200) ,
-                    PRIMARY KEY (tag_ID)
-                ) $charset_collate;";			
-        dbDelta($sql);
-    }
-    
-    // Relation
-    $table_name = $wpdb->prefix . 'admin_blog_relations';
-    if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
-        $sql = "CREATE TABLE " . $wpdb->prefix . "admin_blog_relations (
-                    `rel_ID` INT UNSIGNED AUTO_INCREMENT ,
-                    `post_ID` INT ,
-                    `tag_ID` INT ,
-                    PRIMARY KEY (rel_ID)
-                ) $charset_collate;";		
-        dbDelta($sql);
-    }
-    
-    // Meta
-    $table_name = $wpdb->prefix . 'admin_blog_meta';
-    if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
-        $sql = "CREATE TABLE " . $wpdb->prefix . "admin_blog_meta (
-                    `meta_ID` INT UNSIGNED AUTO_INCREMENT ,
-                    `variable` VARCHAR (200) ,
-                    `value` LONGTEXT ,
-                    `category` VARCHAR (200) ,
-                    PRIMARY KEY (meta_ID)
-                ) $charset_collate;";		
-        dbDelta($sql);
-        $wpdb->query("INSERT INTO " . $wpdb->prefix . "admin_blog_meta (`variable`,`value`,`category`) VALUES ('blog_name','Microblog','system')");
-        $wpdb->query("INSERT INTO " . $wpdb->prefix . "admin_blog_meta (`variable`,`value`,`category`) VALUES ('blog_name_widget','Microblog','system')");
-        $wpdb->query("INSERT INTO " . $wpdb->prefix . "admin_blog_meta (`variable`,`value`,`category`) VALUES ('auto_reply','false','system')");
-        $wpdb->query("INSERT INTO " . $wpdb->prefix . "admin_blog_meta (`variable`,`value`,`category`) VALUES ('auto_reload_interval','60000','system')");
-        $wpdb->query("INSERT INTO " . $wpdb->prefix . "admin_blog_meta (`variable`,`value`,`category`) VALUES ('auto_reload_enabled','true','system')");
-        $wpdb->query("INSERT INTO " . $wpdb->prefix . "admin_blog_meta (`variable`,`value`,`category`) VALUES ('media_upload','false','system')");
-        $wpdb->query("INSERT INTO " . $wpdb->prefix . "admin_blog_meta (`variable`,`value`,`category`) VALUES ('sticky_for_dash','','system')");
-        $wpdb->query("INSERT INTO " . $wpdb->prefix . "admin_blog_meta (`variable`,`value`,`category`) VALUES ('auto_notifications','','system')");
-    }
-    if ( !get_option('wp_admin_blog_version') ) {
-       add_option('wp_admin_blog_version', $version, '', 'no');
-    }
+    wpam_tables::create();
 }
 
 /**
  * Uninstalling
  */
 function wpam_uninstall() {
-    global $wpdb;
-    $wpdb->query("SET FOREIGN_KEY_CHECKS=0");
-    $wpdb->query("DROP TABLE " . $wpdb->prefix . "admin_blog_posts, " . $wpdb->prefix . "admin_blog_tags, " . $wpdb->prefix . "admin_blog_relations, " . $wpdb->prefix . "admin_blog_meta");
-    $wpdb->query("SET FOREIGN_KEY_CHECKS=1");
-    delete_option('wp_admin_blog_version');
+    wpam_tables::remove();
 }
 
 // load language support

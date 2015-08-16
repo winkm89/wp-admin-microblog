@@ -9,7 +9,6 @@
 function wpam_update_options ($option, $roles, $blog_post, $sticky) {
    global $wp_roles;
    global $wpdb;
-   global $admin_blog_meta;
    
    // Roles
    if ( empty($roles) || ! is_array($roles) ) { 
@@ -51,21 +50,21 @@ function wpam_update_options ($option, $roles, $blog_post, $sticky) {
    }
    
    // Update system values
-   $update = "UPDATE " . $admin_blog_meta . " SET `value` = '" . $option['name_blog'] . "' WHERE `variable` = 'blog_name'";
+   $update = "UPDATE " . WPAM_ADMIN_BLOG_META . " SET `value` = '" . $option['name_blog'] . "' WHERE `variable` = 'blog_name'";
    $wpdb->query( $update );
-   $update = "UPDATE " . $admin_blog_meta . " SET `value` = '" . $option['name_widget'] . "' WHERE `variable` = 'blog_name_widget'";
+   $update = "UPDATE " . WPAM_ADMIN_BLOG_META . " SET `value` = '" . $option['name_widget'] . "' WHERE `variable` = 'blog_name_widget'";
    $wpdb->query( $update );
-   $update = "UPDATE " . $admin_blog_meta . " SET `value` = '" . $option['auto_reply'] . "' WHERE `variable` = 'auto_reply'";
+   $update = "UPDATE " . WPAM_ADMIN_BLOG_META . " SET `value` = '" . $option['auto_reply'] . "' WHERE `variable` = 'auto_reply'";
    $wpdb->query( $update );
-   $update = "UPDATE " . $admin_blog_meta . " SET `value` = '" . $option['auto_reload_interval'] . "' WHERE `variable` = 'auto_reload_interval'";
+   $update = "UPDATE " . WPAM_ADMIN_BLOG_META . " SET `value` = '" . $option['auto_reload_interval'] . "' WHERE `variable` = 'auto_reload_interval'";
    $wpdb->query( $update );
-   $update = "UPDATE " . $admin_blog_meta . " SET `value` = '" . $option['auto_reload_enabled'] . "' WHERE `variable` = 'auto_reload_enabled'";
+   $update = "UPDATE " . WPAM_ADMIN_BLOG_META . " SET `value` = '" . $option['auto_reload_enabled'] . "' WHERE `variable` = 'auto_reload_enabled'";
    $wpdb->query( $update );
-   $update = "UPDATE " . $admin_blog_meta . " SET `value` = '" . $option['media_upload'] . "' WHERE `variable` = 'media_upload'";
+   $update = "UPDATE " . WPAM_ADMIN_BLOG_META . " SET `value` = '" . $option['media_upload'] . "' WHERE `variable` = 'media_upload'";
    $wpdb->query( $update );
-   $update = "UPDATE " . $admin_blog_meta . " SET `value` = '" . $option['sticky_for_dash'] . "' WHERE `variable` = 'sticky_for_dash'";
+   $update = "UPDATE " . WPAM_ADMIN_BLOG_META . " SET `value` = '" . $option['sticky_for_dash'] . "' WHERE `variable` = 'sticky_for_dash'";
    $wpdb->query( $update );
-   $update = "UPDATE " . $admin_blog_meta . " SET `value` = '" . $option['auto_notifications'] . "' WHERE `variable` = 'auto_notifications'";
+   $update = "UPDATE " . WPAM_ADMIN_BLOG_META . " SET `value` = '" . $option['auto_notifications'] . "' WHERE `variable` = 'auto_notifications'";
    $wpdb->query( $update );
 } 
 
