@@ -10,13 +10,16 @@ For more information see https://mtrv.wordpress.com/microblog/
 = Supported Languages =
 * English 
 * German
+* Spanish
+* Swedish
+* Turkish
 
 = Disclaimer =  
 Use at your own risk. No warranty expressed or implied is provided. 
 
 == Credits ==
 
-Copyright 2010-2015 by Michael Winkler
+Copyright 2010-2016 by Michael Winkler
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
