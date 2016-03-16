@@ -55,20 +55,20 @@ function wpam_show_screen_options( $status, $args ) {
     if ( $args->base == $wpam_admin_page ) {    
         $button = get_submit_button( __( 'Apply' ), 'button', 'screen-options-apply', false );
         $return .= '
-        <h5>' . __('Show on screen') . '</h5>
+        <h3>' . __('Screen Options') . '</h3>
         <input type="hidden" name="wp_screen_options[option]" value="wpam_screen_settings" />
         <input type="hidden" name="wp_screen_options[value]" value="default" />
-        <p><input type="number" name="wpam_tags_per_page" id="wpam_tags_per_page" value="' . $tags_per_page . '" min="1" max="999" maxlength="3"/> <label for="wpam_tags_per_page">' . __('Number of tags','wp_admin_blog') . '</label></p>
-        <p><input type="number" name="messages_per_page" id="messages_per_page" value="' . $messages_per_page . '" min="1" max="999" maxlength="3"/> <label for="messages_per_page">' . __('Number of messages per page','wp_admin_blog') . '</label></p>
+        <p><input type="number" name="wpam_tags_per_page" id="wpam_tags_per_page" value="' . $tags_per_page . '" min="1" max="999" maxlength="3"/> <label for="wpam_tags_per_page">' . __('Number of tags', 'wp_admin_blog') . '</label></p>
+        <p><input type="number" name="messages_per_page" id="messages_per_page" value="' . $messages_per_page . '" min="1" max="999" maxlength="3"/> <label for="messages_per_page">' . __('Number of messages per page', 'wp_admin_blog') . '</label></p>
         <h5>' . __('Sort order for messages','wp_admin_blog') . '</h5>    
           <p>
-            <input type="radio" name="wpam_sort_order" id="wpam_sort_order_1" value="date" ' . $sel_1 . '/><label for="wpam_sort_order_1">' . __('Show the latest messages first','wp_admin_blog') . '</label>
-            <input type="radio" name="wpam_sort_order" id="wpam_sort_order_2" value="date_last_comment" ' . $sel_2 . '/><label for="wpam_sort_order_2">' . __('Show messages with latest comments first','wp_admin_blog') . '</label> 
+            <input type="radio" name="wpam_sort_order" id="wpam_sort_order_1" value="date" ' . $sel_1 . '/><label for="wpam_sort_order_1">' . __('Show the latest messages first', 'wp_admin_blog') . '</label>
+            <input type="radio" name="wpam_sort_order" id="wpam_sort_order_2" value="date_last_comment" ' . $sel_2 . '/><label for="wpam_sort_order_2">' . __('Show messages with latest comments first', 'wp_admin_blog') . '</label> 
           </p>
-        <h5>' . __('Date format for messages','wp_admin_blog') . '</h5>
+        <h5>' . __('Date format for messages', 'wp_admin_blog') . '</h5>
            <p>
             <input type="radio" name="wpam_date_format" id="wpam_date_format_1" value="time_difference" ' . $sel_3 . '/><label for="wpam_date_format_1">' . __('Show time difference','wp_admin_blog') . '</label>
-            <input type="radio" name="wpam_date_format" id="wpam_date_format_2" value="date" ' . $sel_4 . '/><label for="wpam_date_format_2">' . __('Show date of publishing','wp_admin_blog') . '</label> 
+            <input type="radio" name="wpam_date_format" id="wpam_date_format_2" value="date" ' . $sel_4 . '/><label for="wpam_date_format_2">' . __('Show date of publishing', 'wp_admin_blog') . '</label> 
           </p>
         ' . $button;
     }

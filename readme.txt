@@ -2,8 +2,8 @@
 Contributors: Michael Winkler
 Tags: microblog, microblogging, admin, communication, collaboration, scratchpad
 Requires at least: 3.8
-Tested up to: 4.3.1
-Stable tag: 3.0.1
+Tested up to: 4.4.2
+Stable tag: 3.0.2
 
 Make the communication and collaboration in your team easier or use it as a scratchpad.
 
@@ -14,6 +14,7 @@ WP Admin Microblog adds a separate microblog in your WordPress backend. The plug
 = Supported Languages =
 * English 
 * German
+* Spanish
 * Swedish
 * Turkish
 
@@ -26,7 +27,7 @@ Use at your own risk. No warranty expressed or implied is provided.
 
 == Credits ==
 
-Copyright 2010-2015 by Michael Winkler
+Copyright 2010-2016 by Michael Winkler
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -86,6 +87,9 @@ You can use the following BBCodes for text formatting:
 Combinations like [red][s]text[/s][/red] are possible.
 
 == Changelog ==
+
+= 3.0.2 - (16.03.2016) =
+* New: Spanish translation added (Thanks to Alfonso Montejo)
 
 = 3.0.1 - (28.09.2015) =
 * New: Swedish translation added (Thanks to mepmepmep)
