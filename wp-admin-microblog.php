@@ -8,6 +8,10 @@ Author: Michael Winkler
 Author URI: http://mtrv.wordpress.com/
 Min WP Version: 3.8
 Max WP Version: 4.4.2
+Text Domain: wp_admin_blog
+Domain Path: /languages
+GitHub Plugin URI: https://github.com/winkm89/wp-admin-microblog
+GitHub Branch: master
 */
 
 /*
