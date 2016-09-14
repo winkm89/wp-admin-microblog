@@ -4,9 +4,8 @@
  * Dashboard Widget
  */
 function wpam_widget_function() {
-    global $current_user;
     global $wpdb;
-    get_currentuserinfo();
+    $current_user = wp_get_current_user();
     $user = $current_user->ID;
     $text = isset( $_POST['wp_admin_blog_edit_text'] ) ? htmlspecialchars($_POST['wp_admin_blog_edit_text']) : '';
     $sticky_for_dash = wpam_get_options('sticky_for_dash');

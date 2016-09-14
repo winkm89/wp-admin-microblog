@@ -404,8 +404,7 @@ class wpam_screen {
  * @global class $wpdb
  */
 function wpam_page() {
-    global $current_user;
-    get_currentuserinfo();
+    $current_user = wp_get_current_user();
     $user = $current_user->ID;
 
     // run the updater

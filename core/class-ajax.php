@@ -35,8 +35,7 @@ class wpam_ajax {
      * @since 3.0
      */
     public static function add_like ($message_id) {
-        global $current_user;
-        get_currentuserinfo();
+        $current_user = wp_get_current_user();
         
         $check= wpam_likes::check_like($message_id, $current_user->ID);
         if ( $check === false ) {
