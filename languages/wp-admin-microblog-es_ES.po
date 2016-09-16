@@ -1,0 +1,599 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Admin Microblog v3.0.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-03-14 20:10+0100\n"
+"PO-Revision-Date: 2016-09-16 19:20:05+0000\n"
+"Last-Translator: Michael Winkler <michi.mtrv@googlemail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: languages\n"
+"X-Textdomain-Support: yes"
+
+#: core/class-ajax.php:17
+#@ wp-admin-microblog
+msgid "New messages available"
+msgstr "Hay mensajes nuevos"
+
+#: core/class-templates.php:27
+#@ wp-admin-microblog
+msgid "by"
+msgstr "por"
+
+#: core/class-templates.php:52
+#@ wp-admin-microblog
+msgid "Show Likes"
+msgstr "Mostrar \"me gusta\""
+
+#: core/class-templates.php:65
+#@ wp-admin-microblog
+msgid "One Reply"
+msgid_plural " Replies"
+msgstr[0] "Una respuesta"
+msgstr[1] " respuestas"
+
+#: core/class-templates.php:65
+#: core/screen.php:390
+#@ wp-admin-microblog
+msgid "Replies"
+msgstr "Respuestas"
+
+#: core/class-templates.php:103
+#: core/screen.php:247
+#: core/widget.php:70
+#@ wp-admin-microblog
+msgid "Sticky this message"
+msgstr "Anclar este mensaje"
+
+#: core/class-templates.php:103
+#@ wp-admin-microblog
+msgid "Sticky"
+msgstr "Anclar"
+
+#: core/class-templates.php:106
+#@ wp-admin-microblog
+msgid "Unsticky this message"
+msgstr "Desanclar este mensaje"
+
+#: core/class-templates.php:106
+#@ wp-admin-microblog
+msgid "Unsticky"
+msgstr "Desanclar"
+
+#: core/class-templates.php:114
+#@ wp-admin-microblog
+msgid "Edit this message"
+msgstr "Editar este mensaje"
+
+#: core/class-templates.php:114
+#@ wp-admin-microblog
+msgid "Edit"
+msgstr "Editar"
+
+#: core/class-templates.php:120
+#@ wp-admin-microblog
+msgid "Click to delete this message"
+msgstr "Pulse para borrar este mensaje"
+
+#: core/class-templates.php:120
+#@ wp-admin-microblog
+msgid "Delete"
+msgstr "Borrar"
+
+#: core/class-templates.php:124
+#@ wp-admin-microblog
+msgid "Write a reply"
+msgstr "Escribir una respuesta"
+
+#: core/class-templates.php:124
+#@ wp-admin-microblog
+msgid "Reply"
+msgstr "Responder"
+
+#: core/class-templates.php:128
+#: core/screen.php:215
+#@ wp-admin-microblog
+msgid "Like"
+msgstr "Me gusta"
+
+#: core/class-templates.php:128
+#: core/screen.php:216
+#@ wp-admin-microblog
+msgid "Unlike"
+msgstr "Ya no me gusta"
+
+#: core/class-templates.php:146
+#@ wp-admin-microblog
+msgid "ago"
+msgstr "atrás"
+
+#: core/class-templates.php:156
+#@ wp-admin-microblog
+msgid "Today"
+msgstr "Hoy"
+
+#: core/messages.php:176
+#@ wp-admin-microblog
+msgid "Author:"
+msgstr "Autor:"
+
+#: core/messages.php:177
+#@ wp-admin-microblog
+msgid "Login under the following address to create a reply:"
+msgstr "Inicie sesión en esta dirección para redactar una respuesta:"
+
+#: core/messages.php:180
+#@ wp-admin-microblog
+msgid "New message in wp admin micoblog"
+msgstr "Nuevo mensaje en WP Admin Microblog"
+
+#: core/messages.php:283
+#@ wp-admin-microblog
+msgid "Short message"
+msgstr "Mensaje corto"
+
+#: core/messages.php:401
+#: core/screen.php:169
+#@ wp-admin-microblog
+msgid "Show related messages"
+msgstr "Mostrar mensajes relacionados"
+
+#: core/screen.php:56
+#@ wp-admin-microblog
+msgid "Apply"
+msgstr "Aplicar"
+
+#: core/screen.php:61
+#@ wp-admin-microblog
+msgid "Number of tags"
+msgstr "Número de etiquetas"
+
+#: core/screen.php:62
+#@ wp-admin-microblog
+msgid "Number of messages per page"
+msgstr "Número de mensajes por página"
+
+#: core/screen.php:63
+#@ wp-admin-microblog
+msgid "Sort order for messages"
+msgstr "Establecer orden de los mensajes"
+
+#: core/screen.php:65
+#@ wp-admin-microblog
+msgid "Show the latest messages first"
+msgstr "Mostrar primero los mensajes nuevos"
+
+#: core/screen.php:66
+#@ wp-admin-microblog
+msgid "Show messages with latest comments first"
+msgstr "Mostrar primero los mensajes con comentarios recientes"
+
+#: core/screen.php:68
+#@ wp-admin-microblog
+msgid "Date format for messages"
+msgstr "Formato de fecha para los mensajes"
+
+#: core/screen.php:70
+#@ wp-admin-microblog
+msgid "Show time difference"
+msgstr "Mostrar el tiempo transcurrido desde su publicación"
+
+#: core/screen.php:71
+#@ wp-admin-microblog
+msgid "Show date of publishing"
+msgstr "Mostrar fecha de publicación"
+
+#: core/screen.php:108
+#@ wp-admin-microblog
+msgid "Microblog"
+msgstr "Microblog"
+
+#: core/screen.php:109
+#@ wp-admin-microblog
+msgid "E-mail notification"
+msgstr "Notificación por correo electrónico"
+
+#: core/screen.php:109
+#@ wp-admin-microblog
+msgid "If you will send your message as an E-Mail to any user, so write @username (example: @admin)"
+msgstr "Si desea que su mensaje se notifique por correo electrónico a un usuario, escriba @usuario (ejemplo: @administrador)"
+
+#: core/screen.php:110
+#@ wp-admin-microblog
+msgid "Text formatting"
+msgstr "Formato de texto"
+
+#: core/screen.php:110
+#@ wp-admin-microblog
+msgid "You can use simple bbcodes: [b]bold[/b], [i]italic[/i], [u]underline[/u], [s]strikethrough[/s], [red]red[/red], [blue]blue[/blue], [green]green[/green], [orange]orange[/orange], [code]code[/code]. Combinations like [red][s]text[/s][/red] are possible. The using of HTML tags is not possible."
+msgstr "Puede usar marcas bbcode: [b]negrita[/b], [i]cursiva[/i], [u]subrayado[/u], [s]tachado[/s], [red]rojo[/red], [blue]azul[/blue], [green]verde[/green], [orange]naranja[/orange], [code]código fuente[/code]. También son posibles las combinaciones de varias marcas, como [red][s]texto[/s][/red]. No obstante, las etiquetas HTML no están permitidas"
+
+#: core/screen.php:111
+#: core/screen.php:594
+#@ wp-admin-microblog
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: core/screen.php:111
+#@ wp-admin-microblog
+msgid "You can add tags directly to your message, if you use hashtags. Examples: #monday #2012"
+msgstr "Puede añadir etiquetas directamente a sus mensajes, si hace uso de almohadillas o hashtags. Ejemplos: #lunes #2012"
+
+#: core/screen.php:142
+#@ wp-admin-microblog
+msgid "No tags available"
+msgstr "No hay etiquetas"
+
+#: core/screen.php:166
+#@ wp-admin-microblog
+msgid "Delete the tag from filter"
+msgstr "Eliminar etiqueta del filtro"
+
+#: core/screen.php:191
+#@ wp-admin-microblog
+msgid "Delete user as filter"
+msgstr "Eliminar usuario del filtro"
+
+#: core/screen.php:213
+#@ wp-admin-microblog
+msgid "Click for refresh"
+msgstr "Pulse para actualizar"
+
+#: core/screen.php:214
+#@ wp-admin-microblog
+msgid "The following users like this message"
+msgstr "A los siguientes usuarios les gusta este mensaje"
+
+#: core/screen.php:217
+#@ wp-admin-microblog
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: core/screen.php:218
+#@ wp-admin-microblog
+msgid "Submit"
+msgstr "Enviar"
+
+#: core/screen.php:233
+#@ wp-admin-microblog
+msgid "Your Message"
+msgstr "Su mensaje"
+
+#: core/screen.php:241
+#: core/widget.php:79
+#@ wp-admin-microblog
+msgid "Send"
+msgstr "Enviado"
+
+#: core/screen.php:243
+#: core/widget.php:67
+#@ wp-admin-microblog
+msgid "Options"
+msgstr "Opciones"
+
+#: core/screen.php:254
+#: core/widget.php:73
+#@ wp-admin-microblog
+msgid "as WordPress blog post"
+msgstr "Publicar este mensaje directamente como una entrada en el blog de WordPress"
+
+#: core/screen.php:255
+#: core/widget.php:73
+#@ wp-admin-microblog
+msgid "Title"
+msgstr "Título"
+
+#: core/screen.php:278
+#@ wp-admin-microblog
+msgid "Search Results"
+msgstr "Resultados de búsqueda"
+
+#: core/screen.php:278
+#@ wp-admin-microblog
+msgid "Show all"
+msgstr "Mostrar todo"
+
+#: core/screen.php:281
+#@ wp-admin-microblog
+msgid "Messages"
+msgstr "Mensajes"
+
+#: core/screen.php:296
+#@ wp-admin-microblog
+msgid "Sorry, no entries mached your criteria"
+msgstr "No hay resultados que cumplan estos criterios"
+
+#: core/screen.php:390
+#@ wp-admin-microblog
+msgid "Show all replies"
+msgstr "Mostrar todas las respuestas"
+
+#: core/screen.php:573
+#: core/screen.php:574
+#@ wp-admin-microblog
+msgid "Delete the search from filter"
+msgstr "Eliminar búsqueda del filtro"
+
+#: core/screen.php:574
+#: core/screen.php:578
+#@ wp-admin-microblog
+msgid "Search"
+msgstr "Buscar"
+
+#: core/screen.php:584
+#@ wp-admin-microblog
+msgid "Search word"
+msgstr "Buscar palabra"
+
+#: core/screen.php:585
+#@ wp-admin-microblog
+msgid "Go"
+msgstr "Iniciar búsqueda"
+
+#: core/screen.php:608
+#@ wp-admin-microblog
+msgid "User"
+msgstr "Usuario"
+
+#: core/settings.php:93
+#@ wp-admin-microblog
+msgid "Settings are changed. Please note that access changes are visible, until you have reloaded this page a secont time."
+msgstr "Las opciones han cambiado. Si ha modificado los accesos, no serán visibles hasta que acceda de nuevo a esta página de opciones"
+
+#: core/settings.php:119
+#@ wp-admin-microblog
+msgid "WP Admin Microblog Settings"
+msgstr "Opciones de WP Admin Microblog"
+
+#: core/settings.php:122
+#@ wp-admin-microblog
+msgid "General"
+msgstr "Generales"
+
+#: core/settings.php:125
+#@ wp-admin-microblog
+msgid "Name of the Microblog"
+msgstr "Nombre del Microblog"
+
+#: core/settings.php:127
+#: core/settings.php:132
+#@ wp-admin-microblog
+msgid "Default: Microblog"
+msgstr "Por defecto: Microblog"
+
+#: core/settings.php:130
+#@ wp-admin-microblog
+msgid "Name of the dashboard widget"
+msgstr "Título del widget en el escritorio de WordPress"
+
+#: core/settings.php:135
+#@ wp-admin-microblog
+msgid "Media upload for the dashboard widget"
+msgstr "Subir archivos desde el widget en el escritorio"
+
+#: core/settings.php:139
+#: core/settings.php:143
+#: core/settings.php:203
+#: core/settings.php:207
+#: core/settings.php:243
+#: core/settings.php:247
+#@ wp-admin-microblog
+msgid "yes"
+msgstr "sí"
+
+#: core/settings.php:140
+#: core/settings.php:144
+#: core/settings.php:204
+#: core/settings.php:208
+#: core/settings.php:244
+#: core/settings.php:248
+#@ wp-admin-microblog
+msgid "no"
+msgstr "no"
+
+#: core/settings.php:148
+#@ wp-admin-microblog
+msgid "Activate this option to use the media upload for the WP Admin Microblog dashboard widget. If you use it, please notify, that the media upload will not work correctly for QuickPress."
+msgstr "Active esta opción para habilitar la subida de archivos desde el widget de escritorio de WP Admin Microblog. En ese caso, recuerde que la carga de archivos no funcionará de forma correcta en QuickPress"
+
+#: core/settings.php:151
+#@ wp-admin-microblog
+msgid "Auto check interval"
+msgstr "Intervalo de comprobación automática"
+
+#: core/settings.php:153
+#@ wp-admin-microblog
+msgid "Use this option to modify the interval in which the plugin checks for new messages. A smaller value needs more server performance. The default value is 60000 ms."
+msgstr "Active esta opción para modificar el intervalo de tiempo que usará el plugin para comprobar si hay nuevos mensajes. Un valor demasiado bajo podría afectar al rendimiento del servidor. El valor por defecto es 60000 ms (cada minuto)"
+
+#: core/settings.php:158
+#@ wp-admin-microblog
+msgid "Enable auto check"
+msgstr "Activar comprobación automática"
+
+#: core/settings.php:162
+#@ wp-admin-microblog
+msgid "Access"
+msgstr "Accesos"
+
+#: core/settings.php:165
+#@ wp-admin-microblog
+msgid "Access for"
+msgstr "Acceso a"
+
+#: core/settings.php:178
+#@ wp-admin-microblog
+msgid "Select each user role which has access to WP Admin Microblog."
+msgstr "Seleccione qué perfiles de usuario tendrán acceso a WP Admin Microblog."
+
+#: core/settings.php:178
+#: core/settings.php:193
+#: core/settings.php:235
+#@ wp-admin-microblog
+msgid "Use &lt;Ctrl&gt; key to select more than one."
+msgstr "Deje pulsada la tecla &lt;Ctrl&gt; para seleccionar más de uno"
+
+#: core/settings.php:181
+#@ wp-admin-microblog
+msgid "\"Message as a blog post\"-function for"
+msgstr "Función \"Mensaje como publicación en el blog\""
+
+#: core/settings.php:193
+#@ wp-admin-microblog
+msgid "Select each user role which can use the \"Message as a blog post\"-function."
+msgstr "Seleccione qué perfiles de usuario podrán hacer uso de la función \"Mensaje como publicación en el blog\"."
+
+#: core/settings.php:196
+#@ wp-admin-microblog
+msgid "Notifications"
+msgstr "Notificaciones"
+
+#: core/settings.php:199
+#@ wp-admin-microblog
+msgid "Auto replies"
+msgstr "Notificación automática de respuestas"
+
+#: core/settings.php:212
+#@ wp-admin-microblog
+msgid "Activate this option and the plugin insert in every reply the string for an e-mail notification to the message author."
+msgstr "Active esta opción y el plugin introducirá, en cada respuesta y de forma automática, un código para enviar una notificación por correo electrónico al autor original (ejemplo: @administrador)"
+
+#: core/settings.php:215
+#@ wp-admin-microblog
+msgid "Auto notifications"
+msgstr "Envío de notificaciones"
+
+#: core/settings.php:217
+#@ wp-admin-microblog
+msgid "Insert your email address, if you want to receive notifications for every new message in the microblog. Insert one email address per line."
+msgstr "Introduzca direcciones de correo electrónico si desea que se notifique a las mismas la publicación de nuevos mensajes en Microblog. Introduzca una dirección de correo por línea"
+
+#: core/settings.php:220
+#@ wp-admin-microblog
+msgid "Sticky messages"
+msgstr "Mensajes anclados"
+
+#: core/settings.php:223
+#@ wp-admin-microblog
+msgid "\"Sticky messages\"-function for"
+msgstr "Función \"Mensajes anclados\""
+
+#: core/settings.php:235
+#@ wp-admin-microblog
+msgid "Select each user role which can add sticky messages."
+msgstr "Seleccione qué perfiles de usuario podrán anclar mensajes."
+
+#: core/settings.php:238
+#@ wp-admin-microblog
+msgid "Sticky messages for the dashboard widget"
+msgstr "Mostrar mensajes anclados en el widget de escritorio"
+
+#: core/settings.php:253
+#@ wp-admin-microblog
+msgid "Select `yes` to display sticky messages in the dashboard widget."
+msgstr "Seleccione \"sí\" para mostrar los mensajes anclados en el widget de escritorio"
+
+#: core/settings.php:257
+#@ wp-admin-microblog
+msgid "Save Changes"
+msgstr "Guardar cambios"
+
+#: wp-admin-microblog.php:114
+#@ wp-admin-microblog
+msgid "Blog"
+msgstr "Blog"
+
+#: wp-admin-microblog.php:117
+#@ wp-admin-microblog
+msgid "Settings"
+msgstr "Opciones"
+
+#: wp-admin-microblog.php:162
+#@ wp-admin-microblog
+msgid "first page"
+msgstr "primera página"
+
+#: wp-admin-microblog.php:162
+#@ wp-admin-microblog
+msgid "previous page"
+msgstr "página anterior"
+
+#: wp-admin-microblog.php:167
+#: wp-admin-microblog.php:187
+#: wp-admin-microblog.php:190
+#@ wp-admin-microblog
+msgid "of"
+msgstr "de"
+
+#: wp-admin-microblog.php:171
+#@ wp-admin-microblog
+msgid "next page"
+msgstr "página siguiente"
+
+#: wp-admin-microblog.php:171
+#@ wp-admin-microblog
+msgid "last page"
+msgstr "última página"
+
+#: wp-admin-microblog.php:187
+#: wp-admin-microblog.php:190
+#@ wp-admin-microblog
+msgid "Entries"
+msgstr "Entradas"
+
+#: wp-admin-microblog.php:228
+#@ wp-admin-microblog
+msgid "New Message"
+msgstr "Nuevo mensaje"
+
+#: core/screen.php:58
+#@ wp-admin-microblog
+msgid "Screen Options"
+msgstr ""
+
+#. translators: plugin header field 'Name'
+#: wp-admin-microblog.php:0
+#@ wp-admin-microblog
+msgid "WP Admin Microblog"
+msgstr ""
+
+#. translators: plugin header field 'PluginURI'
+#: wp-admin-microblog.php:0
+#@ wp-admin-microblog
+msgid "http://mtrv.wordpress.com/microblog/"
+msgstr ""
+
+#. translators: plugin header field 'Description'
+#: wp-admin-microblog.php:0
+#@ wp-admin-microblog
+msgid "Adds a microblog in your WordPress backend."
+msgstr ""
+
+#. translators: plugin header field 'Author'
+#: wp-admin-microblog.php:0
+#@ wp-admin-microblog
+msgid "Michael Winkler"
+msgstr ""
+
+#. translators: plugin header field 'AuthorURI'
+#: wp-admin-microblog.php:0
+#@ wp-admin-microblog
+msgid "http://mtrv.wordpress.com/"
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: wp-admin-microblog.php:0
+#@ wp-admin-microblog
+msgid "3.0.4"
+msgstr ""
+

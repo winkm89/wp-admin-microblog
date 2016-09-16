@@ -64,19 +64,19 @@ function wpam_widget_function() {
     
     // Add message options
     if ( current_user_can( 'use_wp_admin_microblog_bp' ) || current_user_can( 'use_wp_admin_microblog_sticky' ) ) {
-        echo '<td style="vertical-align:top; padding-top:5px;"><a onclick="javascript:wpam_showhide(' . "'" . 'wpam_message_options' . "'" . ')" style="cursor:pointer; font-weight:bold;">+ ' .  __('Options', 'wp_admin_blog') . '</a>';
+        echo '<td style="vertical-align:top; padding-top:5px;"><a onclick="javascript:wpam_showhide(' . "'" . 'wpam_message_options' . "'" . ')" style="cursor:pointer; font-weight:bold;">+ ' .  __('Options', 'wp-admin-microblog') . '</a>';
         echo '<table style="width:100%; display: none; float:left; padding:5px;" id="wpam_message_options">';
         if ( current_user_can( 'use_wp_admin_microblog_sticky' ) ) { 
-             echo '<tr><td style="border-bottom-width:0px;"><input name="wpam_is_sticky" id="wpam_is_sticky" type="checkbox"/> <label for="wpam_is_sticky">' . __('Sticky this message','wp_admin_blog') . '</label></td></tr>';
+             echo '<tr><td style="border-bottom-width:0px;"><input name="wpam_is_sticky" id="wpam_is_sticky" type="checkbox"/> <label for="wpam_is_sticky">' . __('Sticky this message','wp-admin-microblog') . '</label></td></tr>';
         }
         if ( current_user_can( 'use_wp_admin_microblog_bp' ) ) { 
-             echo '<tr><td style="border-bottom-width:0px;"><input name="wpam_as_wp_post" id="wpam_as_wp_post" type="checkbox" value="true" onclick="javascript:wpam_showhide(' . "'" . 'wpam_as_wp_post_title' . "'" .')" /> <label for="wpam_as_wp_post">' . __('as WordPress blog post', 'wp_admin_blog') . '</label> <span style="display:none;" id="wpam_as_wp_post_title">&rarr; <label for="wpam_nm_headline">' . __('Title', 'wp_admin_blog') . ' </label><input name="wpam_nm_headline" id="wpam_nm_headline" type="text" style="width:95%;" /></span></td></tr>';
+             echo '<tr><td style="border-bottom-width:0px;"><input name="wpam_as_wp_post" id="wpam_as_wp_post" type="checkbox" value="true" onclick="javascript:wpam_showhide(' . "'" . 'wpam_as_wp_post_title' . "'" .')" /> <label for="wpam_as_wp_post">' . __('as WordPress blog post', 'wp-admin-microblog') . '</label> <span style="display:none;" id="wpam_as_wp_post_title">&rarr; <label for="wpam_nm_headline">' . __('Title', 'wp-admin-microblog') . ' </label><input name="wpam_nm_headline" id="wpam_nm_headline" type="text" style="width:95%;" /></span></td></tr>';
         }
         echo '</table>';
     }
     // END
     
-    echo '<td style="text-align:right; vertical-align:top;"><input type="submit" name="wpam_nm_submit" id="wpam_nm_submit" class="button-primary" value="' . __('Send', 'wp_admin_blog') . '" /></td>';
+    echo '<td style="text-align:right; vertical-align:top;"><input type="submit" name="wpam_nm_submit" id="wpam_nm_submit" class="button-primary" value="' . __('Send', 'wp-admin-microblog') . '" /></td>';
     echo '</tr>';
     echo '</table>';
     echo '</div>';

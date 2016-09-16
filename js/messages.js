@@ -3,7 +3,7 @@ jQuery(document).ready(function($) {
     // Edit a message
     $(".wpam_message_edit").click( function(){
         var message_id = $(this).attr("message_id");
-        $.get(wpam_plugin_url + "?edit_id=" + message_id, 
+        $.get(wpam_ajax_url + "&edit_id=" + message_id, 
         function(text){
             $('<a class="button-secondary" style="cursor:pointer;" onclick="javascript:teachpress_del_node(' + "'#pub_info_" + message_id + "'" + ');">Close</a>').appendTo('#pub_details_' + message_id);
             var parent = "wp_admin_blog_message_" + message_id;
@@ -54,7 +54,7 @@ jQuery(document).ready(function($) {
     // Like a message or delete the like
     $(".wpam_message_like").click( function(){
         var message_id = $(this).attr("message_id");
-        $.get(wpam_plugin_url + "?add_like_id=" + message_id, 
+        $.get(wpam_ajax_url + "&add_like_id=" + message_id, 
         function(text){
             // Get current like count
             var value = parseInt($("#wpam_like_" + message_id).text());

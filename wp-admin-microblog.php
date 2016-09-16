@@ -3,12 +3,12 @@
 Plugin Name: WP Admin Microblog
 Plugin URI: http://mtrv.wordpress.com/microblog/
 Description: Adds a microblog in your WordPress backend.
-Version: 3.0.3
+Version: 3.0.4
 Author: Michael Winkler
 Author URI: http://mtrv.wordpress.com/
 Min WP Version: 3.8
 Max WP Version: 4.6.1
-Text Domain: wp_admin_blog
+Text Domain: wp-admin-microblog
 Domain Path: /languages
 GitHub Plugin URI: https://github.com/winkm89/wp-admin-microblog
 GitHub Branch: master
@@ -17,7 +17,7 @@ GitHub Branch: master
 /*
    LICENCE
  
-    Copyright 2010-2016  Michael Winkler
+    Copyright 2010-2016 Michael Winkler
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -111,10 +111,10 @@ require_once('core/widget.php');
 function wpam_menu() {
    global $wpam_blog_name;
    global $wpam_admin_page;
-   $wpam_admin_page = add_menu_page(__('Blog','wp_admin_blog'), $wpam_blog_name,'use_wp_admin_microblog', __FILE__, 'wpam_page', plugins_url() . '/wp-admin-microblog/images/logo.png');
+   $wpam_admin_page = add_menu_page(__('Blog','wp-admin-microblog'), $wpam_blog_name,'use_wp_admin_microblog', __FILE__, 'wpam_page', plugins_url() . '/wp-admin-microblog/images/logo.png');
    add_action("load-$wpam_admin_page", 'wpam_add_help_tab');
    add_action("load-$wpam_admin_page", 'wpam_screen_options');
-   add_submenu_page('wp-admin-microblog/wp-admin-microblog.php', __('Settings','wp_admin_blog'), __('Settings','wp_admin_blog'), 'administrator', 'wp-admin-microblog/settings.php', 'wpam_settings');
+   add_submenu_page('wp-admin-microblog/wp-admin-microblog.php', __('Settings','wp-admin-microblog'), __('Settings','wp-admin-microblog'), 'administrator', 'wp-admin-microblog/settings.php', 'wpam_settings');
 }
 
 /** 
@@ -159,16 +159,16 @@ function wpam_page_menu ($number_entries, $entries_per_page, $current_page, $ent
 
       // first page / previous page
       if ($entry_limit != 0) {
-         $back_links = '<a href="' . $page_link . '&amp;limit=1&amp;' . $link_attributes . '" title="' . __('first page','wp_admin_blog') . '" class="page-numbers">&laquo;</a> <a href="' . $page_link . '&amp;limit=' . ($current_page - 1) . '&amp;' . $link_attributes . '" title="' . __('previous page','wp_admin_blog') . '" class="page-numbers">&lsaquo;</a> ';
+         $back_links = '<a href="' . $page_link . '&amp;limit=1&amp;' . $link_attributes . '" title="' . __('first page','wp-admin-microblog') . '" class="page-numbers">&laquo;</a> <a href="' . $page_link . '&amp;limit=' . ($current_page - 1) . '&amp;' . $link_attributes . '" title="' . __('previous page','wp-admin-microblog') . '" class="page-numbers">&lsaquo;</a> ';
       }
       else {
          $back_links = '<a class="first-page disabled">&laquo;</a> <a class="prev-page disabled">&lsaquo;</a> ';
       }
-      $page_input = ' <input name="limit" type="text" size="2" value="' .  $current_page . '" style="text-align:center;" /> ' . __('of','wp_admin_blog') . ' ' . $num_pages . ' ';
+      $page_input = ' <input name="limit" type="text" size="2" value="' .  $current_page . '" style="text-align:center;" /> ' . __('of','wp-admin-microblog') . ' ' . $num_pages . ' ';
 
       // next page/ last page
       if ( ( $entry_limit + $entries_per_page ) <= ($number_entries)) { 
-         $next_links = '<a href="' . $page_link . '&amp;limit=' . ($current_page + 1) . '&amp;' . $link_attributes . '" title="' . __('next page','wp_admin_blog') . '" class="page-numbers">&rsaquo;</a> <a href="' . $page_link . '&amp;limit=' . $num_pages . '&amp;' . $link_attributes . '" title="' . __('last page','wp_admin_blog') . '" class="page-numbers">&raquo;</a> ';
+         $next_links = '<a href="' . $page_link . '&amp;limit=' . ($current_page + 1) . '&amp;' . $link_attributes . '" title="' . __('next page','wp-admin-microblog') . '" class="page-numbers">&rsaquo;</a> <a href="' . $page_link . '&amp;limit=' . $num_pages . '&amp;' . $link_attributes . '" title="' . __('last page','wp-admin-microblog') . '" class="page-numbers">&raquo;</a> ';
       }
       else {
          $next_links = '<a class="next-page disabled">&rsaquo;</a> <a class="last-page disabled">&raquo;</a> ';
@@ -184,10 +184,10 @@ function wpam_page_menu ($number_entries, $entries_per_page, $current_page, $ent
 
       // return
       if ($type == 'top') {
-         return '<div class="tablenav-pages"><span class="displaying-num">' . ($entry_limit + 1) . ' - ' . $anz2 . ' ' . __('of','wp_admin_blog') . ' ' . $number_entries . ' ' . __('Entries','wp_admin_blog') . '</span> ' . $back_links . '' . $page_input . '' . $next_links . '</div>';
+         return '<div class="tablenav-pages"><span class="displaying-num">' . ($entry_limit + 1) . ' - ' . $anz2 . ' ' . __('of','wp-admin-microblog') . ' ' . $number_entries . ' ' . __('Entries','wp-admin-microblog') . '</span> ' . $back_links . '' . $page_input . '' . $next_links . '</div>';
       }
       else {
-         return '<div class="tablenav"><div class="tablenav-pages"><span class="displaying-num">' . ($entry_limit + 1) . ' - ' . $anz2 . ' ' . __('of','wp_admin_blog') . ' ' . $number_entries . ' ' . __('Entries','wp_admin_blog') . '</span> ' . $back_links . ' ' . $current_page . ' ' . __('of','wp_admin_blog') . ' ' . $num_pages . ' ' . $next_links . '</div></div>';
+         return '<div class="tablenav"><div class="tablenav-pages"><span class="displaying-num">' . ($entry_limit + 1) . ' - ' . $anz2 . ' ' . __('of','wp-admin-microblog') . ' ' . $number_entries . ' ' . __('Entries','wp-admin-microblog') . '</span> ' . $back_links . ' ' . $current_page . ' ' . __('of','wp-admin-microblog') . ' ' . $num_pages . ' ' . $next_links . '</div></div>';
       }	
    }
 }
@@ -225,7 +225,7 @@ function wpam_add_widgets() {
             $name = 'Microblog';
         }
         $str = "'";
-        $title = '<a onclick="wpam_showhide(' . $str . 'wpam_new_message' . $str . ')" style="cursor:pointer; text-decoration:none; font-size:12px; font-weight:bold; color:#464646;" title="' . __('New Message','wp_admin_blog') . '">' . $name . ' <img src="' .  plugins_url() . '/wp-admin-microblog/images/document-new-6.png' . '" heigth="12" width="12" /></a>';
+        $title = '<a onclick="wpam_showhide(' . $str . 'wpam_new_message' . $str . ')" style="cursor:pointer; text-decoration:none; font-size:12px; font-weight:bold; color:#464646;" title="' . __('New Message','wp-admin-microblog') . '">' . $name . ' <img src="' .  plugins_url() . '/wp-admin-microblog/images/document-new-6.png' . '" heigth="12" width="12" /></a>';
         wp_add_dashboard_widget('wpam_dashboard_widget', '' . $title . '', 'wpam_widget_function');
     }
 }
@@ -289,6 +289,35 @@ function wpam_activation ( $network_wide ) {
 }
 
 /**
+ * AJAX callback function
+ * @since 3.0.4
+ */
+function wpam_ajax_callback () {
+    // New message check
+    if ( is_user_logged_in() && isset( $_GET['p_id'] ) ) {
+        wpam_ajax::new_message_check($_GET['p_id']);
+    }
+
+    // Edit message
+    if ( is_user_logged_in() && isset( $_GET['edit_id'] ) ) {
+        wpam_ajax::get_message_text_for_edit($_GET['edit_id']);
+    }
+
+    // Add like
+    if ( is_user_logged_in() && isset( $_GET['add_like_id'] ) ) {
+        wpam_ajax::add_like($_GET['add_like_id']);
+    }
+
+    // Show likes
+    if ( is_user_logged_in() && isset( $_GET['like_id'] ) ) {
+        wpam_ajax::show_likes($_GET['like_id']);
+    }
+    
+    // this is required to terminate immediately and return a proper response
+    wp_die();
+    
+}
+/**
  * Installer
  * @since 1.0
  */
@@ -305,12 +334,13 @@ function wpam_uninstall() {
 
 // load language support
 function wpam_language_support() {
-    load_plugin_textdomain('wp_admin_blog', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+    load_plugin_textdomain('wp-admin-microblog', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 }
 
 // Register WordPress hooks
 register_activation_hook( __FILE__, 'wpam_activation');
 add_action('init', 'wpam_language_support');
+add_action('wp_ajax_wp_admin_blog', 'wpam_ajax_callback');
 add_action('admin_init','wpam_header');
 add_action('admin_menu','wpam_menu');
 add_action('wp_dashboard_setup','wpam_add_widgets');

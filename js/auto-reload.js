@@ -2,7 +2,7 @@
  jQuery(document).ready(function($) {
     $.ajaxSetup({ cache: false });
     setInterval(function() {
-        $.get(wpam_plugin_url + "?p_id=" + wpam_latest_message_id, 
+        $.get(wpam_ajax_url + "&p_id=" + wpam_latest_message_id, 
         function(text){
             if ( text !== '' ) {
                 var ret;

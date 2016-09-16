@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Admin Microblog v3.0\n"
+"Project-Id-Version: WP Admin Microblog v3.0.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-08-16 15:28:21+0000\n"
+"PO-Revision-Date: 2016-09-16 19:18:15+0000\n"
 "Last-Translator: Michael Winkler <michi.mtrv@googlemail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,169 +20,168 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: wp-admin-microblog.php:110
-#@ wp_admin_blog
+#: wp-admin-microblog.php:114
+#@ wp-admin-microblog
 msgid "Blog"
 msgstr "Blog"
 
 #: core/settings.php:119
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "WP Admin Microblog Settings"
 msgstr "WP Admin Microblog Einstellungen"
 
 #: core/settings.php:165
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Access for"
 msgstr "Zugriff für"
 
 #: core/settings.php:257
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Save Changes"
 msgstr "Änderungen speichern"
 
 #: core/screen.php:109
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "If you will send your message as an E-Mail to any user, so write @username (example: @admin)"
 msgstr "Wenn eine Nachricht auch als E-Mail zu einem Nutzer gesendet werden soll, dann schreibe @username (Beispiel: @admin)"
 
-#: core/screen.php:575
-#: core/screen.php:576
-#@ wp_admin_blog
+#: core/screen.php:573
+#: core/screen.php:574
+#@ wp-admin-microblog
 msgid "Delete the search from filter"
 msgstr "Lösche die Suche aus dem Suchfilter"
 
-#: core/screen.php:576
-#: core/screen.php:580
-#@ wp_admin_blog
+#: core/screen.php:574
+#: core/screen.php:578
+#@ wp-admin-microblog
 msgid "Search"
 msgstr "Suche"
 
-#: core/screen.php:586
-#@ wp_admin_blog
+#: core/screen.php:584
+#@ wp-admin-microblog
 msgid "Search word"
 msgstr "Suchbegriff"
 
-#: core/screen.php:587
-#@ wp_admin_blog
+#: core/screen.php:585
+#@ wp-admin-microblog
 msgid "Go"
 msgstr "Suche"
 
-#: core/screen.php:167
-#@ wp_admin_blog
+#: core/screen.php:166
+#@ wp-admin-microblog
 msgid "Delete the tag from filter"
 msgstr "Lösche den Tag aus dem Suchfilter"
 
-#: core/screen.php:610
-#@ wp_admin_blog
+#: core/screen.php:608
+#@ wp-admin-microblog
 msgid "User"
 msgstr "Nutzer"
 
-#: core/screen.php:192
-#@ wp_admin_blog
+#: core/screen.php:191
+#@ wp-admin-microblog
 msgid "Delete user as filter"
 msgstr "Lösche den Nutzer aus dem Suchfilter"
 
-#: core/screen.php:234
-#@ wp_admin_blog
+#: core/screen.php:233
+#@ wp-admin-microblog
 msgid "Your Message"
 msgstr "Neue Nachricht"
 
-#: core/screen.php:242
-#: core/widget.php:80
-#@ wp_admin_blog
+#: core/screen.php:241
+#: core/widget.php:79
+#@ wp-admin-microblog
 msgid "Send"
 msgstr "Senden"
 
-#: core/screen.php:279
-#@ wp_admin_blog
+#: core/screen.php:278
+#@ wp-admin-microblog
 msgid "Search Results"
 msgstr "Suchergebnisse"
 
-#: core/screen.php:279
-#@ wp_admin_blog
+#: core/screen.php:278
+#@ wp-admin-microblog
 msgid "Show all"
 msgstr "Zeige alles"
 
-#: core/screen.php:282
-#@ wp_admin_blog
+#: core/screen.php:281
+#@ wp-admin-microblog
 msgid "Messages"
 msgstr "Nachrichten"
 
-#: core/screen.php:297
-#@ wp_admin_blog
+#: core/screen.php:296
+#@ wp-admin-microblog
 msgid "Sorry, no entries mached your criteria"
 msgstr "Leider gibt es keine Einträge, die den gewählten Kriterien entsprechen"
 
-#: wp-admin-microblog.php:158
-#@ wp_admin_blog
+#: wp-admin-microblog.php:162
+#@ wp-admin-microblog
 msgid "previous page"
 msgstr "Vorherige Seite"
 
-#: wp-admin-microblog.php:167
-#@ wp_admin_blog
+#: wp-admin-microblog.php:171
+#@ wp-admin-microblog
 msgid "next page"
 msgstr "Nächste Seite"
 
 #: core/class-templates.php:114
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Edit"
 msgstr "Bearbeiten"
 
 #: core/class-templates.php:120
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Click to delete this message"
 msgstr "Klicken um diese Nachricht zu löschen"
 
 #: core/class-templates.php:120
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Delete"
 msgstr "Löschen"
 
 #: core/class-templates.php:124
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Reply"
 msgstr "Antworten"
 
-#: core/messages.php:391
-#: core/screen.php:170
-#@ wp_admin_blog
+#: core/messages.php:401
+#: core/screen.php:169
+#@ wp-admin-microblog
 msgid "Show related messages"
 msgstr "Zeige verwandte Nachrichten"
 
 #: core/screen.php:111
-#: core/screen.php:596
-#@ default
-#@ wp_admin_blog
+#: core/screen.php:594
+#@ wp-admin-microblog
 msgid "Tags"
 msgstr "Tags"
 
 #: core/class-templates.php:27
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "by"
 msgstr "von"
 
-#: core/screen.php:143
-#@ wp_admin_blog
+#: core/screen.php:142
+#@ wp-admin-microblog
 msgid "No tags available"
 msgstr "Keine Tags verfügbar"
 
 #: core/screen.php:109
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "E-mail notification"
 msgstr "E-Mail Benachrichtigung"
 
 #: core/screen.php:110
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Text formatting"
 msgstr "Textformatierung"
 
 #: core/screen.php:61
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Number of tags"
 msgstr "Anzahl Tags"
 
 #: core/screen.php:62
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Number of messages per page"
 msgstr "Anzahl Nachrichten pro Seite"
 
@@ -192,7 +191,7 @@ msgstr "Anzahl Nachrichten pro Seite"
 #: core/settings.php:207
 #: core/settings.php:243
 #: core/settings.php:247
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "yes"
 msgstr "Ja"
 
@@ -202,363 +201,399 @@ msgstr "Ja"
 #: core/settings.php:208
 #: core/settings.php:244
 #: core/settings.php:248
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "no"
 msgstr "Nein"
 
 #: core/class-templates.php:114
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Edit this message"
 msgstr "Diese Nachricht bearbeiten"
 
 #: core/class-templates.php:124
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Write a reply"
 msgstr "Eine Antwort schreiben"
 
 #: core/messages.php:176
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Author:"
 msgstr "Autor:"
 
 #: core/messages.php:177
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Login under the following address to create a reply:"
 msgstr "Melde dich unter folgender Adresse an, um eine Antwort zu erstellen:"
 
-#: core/screen.php:255
-#: core/widget.php:74
-#@ wp_admin_blog
+#: core/screen.php:254
+#: core/widget.php:73
+#@ wp-admin-microblog
 msgid "as WordPress blog post"
 msgstr "als WordPress Blogartikel"
 
-#: core/screen.php:256
-#: core/widget.php:74
-#@ wp_admin_blog
+#: core/screen.php:255
+#: core/widget.php:73
+#@ wp-admin-microblog
 msgid "Title"
 msgstr "Titel"
 
 #: core/messages.php:283
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Short message"
 msgstr "Kurznachricht"
 
 #: core/class-templates.php:156
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Today"
 msgstr "Heute"
 
 #: core/class-templates.php:146
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "ago"
 msgstr "zuvor"
 
-#: wp-admin-microblog.php:224
-#@ wp_admin_blog
+#: wp-admin-microblog.php:228
+#@ wp-admin-microblog
 msgid "New Message"
 msgstr "Neue Nachricht"
 
 #: core/settings.php:135
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Media upload for the dashboard widget"
 msgstr "Medien-Upload für das Dashboard Widget"
 
 #: core/settings.php:148
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Activate this option to use the media upload for the WP Admin Microblog dashboard widget. If you use it, please notify, that the media upload will not work correctly for QuickPress."
 msgstr "Wenn du diese Funktion aktivierst, kannst du den Medien-Upload auch im Dashboard Widget des Plugins nutzen. Beachte dabei, dass dann der Median-Upload in QuickPress nicht mehr korrekt funktioniert."
 
 #: core/settings.php:181
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "\"Message as a blog post\"-function for"
 msgstr "\"Nachricht als Blogartikel\"-Funktion für"
 
-#: wp-admin-microblog.php:158
-#@ wp_admin_blog
+#: wp-admin-microblog.php:162
+#@ wp-admin-microblog
 msgid "first page"
 msgstr "Erste Seite"
 
-#: wp-admin-microblog.php:163
-#: wp-admin-microblog.php:183
-#: wp-admin-microblog.php:186
-#@ wp_admin_blog
+#: wp-admin-microblog.php:167
+#: wp-admin-microblog.php:187
+#: wp-admin-microblog.php:190
+#@ wp-admin-microblog
 msgid "of"
 msgstr "von"
 
-#: wp-admin-microblog.php:167
-#@ wp_admin_blog
+#: wp-admin-microblog.php:171
+#@ wp-admin-microblog
 msgid "last page"
 msgstr "Letzte Seite"
 
 #: core/settings.php:125
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Name of the Microblog"
 msgstr "Name des Microblogs"
 
 #: core/settings.php:127
 #: core/settings.php:132
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Default: Microblog"
 msgstr "Standard: Microblog"
 
 #: core/settings.php:130
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Name of the dashboard widget"
 msgstr "Name des Dashboard Widgets"
 
-#: core/screen.php:244
-#: core/widget.php:68
-#@ wp_admin_blog
+#: core/screen.php:243
+#: core/widget.php:67
+#@ wp-admin-microblog
 msgid "Options"
 msgstr "Optionen"
 
 #: core/class-templates.php:103
-#: core/screen.php:248
-#: core/widget.php:71
-#@ wp_admin_blog
+#: core/screen.php:247
+#: core/widget.php:70
+#@ wp-admin-microblog
 msgid "Sticky this message"
 msgstr "Nachricht anheften"
 
 #: core/settings.php:93
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Settings are changed. Please note that access changes are visible, until you have reloaded this page a secont time."
 msgstr "Änderungen gespeichert. Beachte, dass Änderungen an den Zugriffseinstellungen erst sichtbar sind, wenn du diese Seite ein zweites mal neu geladen hast."
 
 #: core/settings.php:178
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Select each user role which has access to WP Admin Microblog."
 msgstr "Wähle die Nutzerrollen welche Zugriff auf den Blog haben sollen."
 
 #: core/settings.php:178
 #: core/settings.php:193
 #: core/settings.php:235
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Use &lt;Ctrl&gt; key to select more than one."
 msgstr "Drücke die &lt;Strg&gt;-Taste um mehr als eine auszuwählen."
 
 #: core/settings.php:193
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Select each user role which can use the \"Message as a blog post\"-function."
 msgstr "Wähle die Nutzerrollen, welche die Funktion \"Nachricht als WordPress-Artikel\" nutzen können."
 
 #: core/settings.php:223
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "\"Sticky messages\"-function for"
 msgstr "\"Angeheftete Nachrichten erstellen\"- möglich für"
 
 #: core/settings.php:235
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Select each user role which can add sticky messages."
 msgstr "Wähle die Nutzerrollen, welche angeheftete Nachrichten erstellen dürfen."
 
 #: core/settings.php:238
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Sticky messages for the dashboard widget"
 msgstr "Angeheftete Nachrichten im Dashboard Widget anzeigen"
 
 #: core/settings.php:253
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Select `yes` to display sticky messages in the dashboard widget."
 msgstr "Wähle `ja` um angeheftete Nachrichten auch im Dashboard Widget anzuzeigen."
 
 #: core/class-templates.php:103
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Sticky"
 msgstr "Anheften"
 
 #: core/class-templates.php:106
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Unsticky this message"
 msgstr "Diese Nachricht abheften"
 
 #: core/class-templates.php:106
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Unsticky"
 msgstr "Abheften"
 
-#: wp-admin-microblog.php:113
-#@ wp_admin_blog
+#: wp-admin-microblog.php:117
+#@ wp-admin-microblog
 msgid "Settings"
 msgstr "Einstellungen"
 
 #: core/class-templates.php:65
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "One Reply"
 msgid_plural " Replies"
 msgstr[0] "Eine Antwort"
 msgstr[1] " Antworten"
 
 #: core/screen.php:108
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Microblog"
 msgstr "Microblog"
 
-#: core/screen.php:391
-#@ wp_admin_blog
+#: core/screen.php:390
+#@ wp-admin-microblog
 msgid "Show all replies"
 msgstr "Alle Antworten anzeigen"
 
 #: core/class-templates.php:65
-#: core/screen.php:391
-#@ wp_admin_blog
+#: core/screen.php:390
+#@ wp-admin-microblog
 msgid "Replies"
 msgstr "Antworten"
 
-#: wp-admin-microblog.php:183
-#: wp-admin-microblog.php:186
-#@ wp_admin_blog
+#: wp-admin-microblog.php:187
+#: wp-admin-microblog.php:190
+#@ wp-admin-microblog
 msgid "Entries"
 msgstr "Einträge"
 
 #: core/messages.php:180
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "New message in wp admin micoblog"
 msgstr "Neue Nachricht in WP Admin Microblog"
 
 #: core/screen.php:111
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "You can add tags directly to your message, if you use hashtags. Examples: #monday #2012"
 msgstr "Du kannst Schlagwörter automatisch zu deiner Nachricht hinzufügen indem du sogenannte Hashtags nutzt. Beispiele: #Montag #2012"
 
 #: core/settings.php:122
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "General"
 msgstr "Allgemein"
 
 #: core/settings.php:162
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Access"
 msgstr "Zugriff"
 
 #: core/settings.php:196
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Notifications"
 msgstr "Benachrichtigungen"
 
 #: core/settings.php:199
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Auto replies"
 msgstr "Automatische Antworten"
 
 #: core/settings.php:212
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Activate this option and the plugin insert in every reply the string for an e-mail notification to the message author."
 msgstr "Aktiviere diese Option und das Plugin fügt in jede Antwort einen String für die E-Mail Benachrichtigung des Autors der Nachricht ein."
 
 #: core/settings.php:215
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Auto notifications"
 msgstr "Automatische Benachrichtigungen"
 
 #: core/settings.php:217
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Insert your email address, if you want to receive notifications for every new message in the microblog. Insert one email address per line."
 msgstr "Füge deine E-Mail Adresse hinzu, wenn du bei jeder neuen Nachricht im Microblog eine Benachrichtigung erhalten will. (Eine E-Mail Adresse pro Zeile)"
 
 #: core/settings.php:220
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Sticky messages"
 msgstr "Angeheftete Nachrichten"
 
 #: core/class-ajax.php:17
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "New messages available"
 msgstr "Neue Nachrichten verfügbar"
 
 #: core/screen.php:56
-#@ default
+#@ wp-admin-microblog
 msgid "Apply"
-msgstr ""
-
-#: core/screen.php:58
-#@ default
-msgid "Show on screen"
-msgstr ""
+msgstr "Übernehmen"
 
 #: core/screen.php:63
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Sort order for messages"
 msgstr "Sortierung für Nachrichten"
 
 #: core/screen.php:65
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Show the latest messages first"
 msgstr "Zeige die aktuellsten Nachrichten zuerst"
 
 #: core/screen.php:66
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Show messages with latest comments first"
 msgstr "Zeige Nachrichten mit den aktuellsten Kommentare zuerst"
 
-#: core/screen.php:214
-#@ wp_admin_blog
+#: core/screen.php:213
+#@ wp-admin-microblog
 msgid "Click for refresh"
 msgstr "Lade die Seite neu"
 
 #: core/settings.php:153
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Use this option to modify the interval in which the plugin checks for new messages. A smaller value needs more server performance. The default value is 60000 ms."
 msgstr "Verwende diese Option, um das Intervall in dem das Plugin nach neuen Nachrichten sucht, zu ändern. Beachte, dass ein kleinerer Wert mehr Serverleistung in Anspruch nimmt. Der Standardwert beträgt 60000 ms."
 
 #: core/settings.php:151
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Auto check interval"
 msgstr "Intervall zur automatischen Nachrichtenüberprüfung"
 
 #: core/settings.php:158
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Enable auto check"
 msgstr "Automatische Nachrichtenüberprüfung aktivieren"
 
 #: core/screen.php:68
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Date format for messages"
 msgstr "Datumsformat für Nachrichten"
 
 #: core/screen.php:70
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Show time difference"
 msgstr "Zeige Zeitdifferenz"
 
 #: core/screen.php:71
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Show date of publishing"
 msgstr "Zeige den Veröffentlichungszeitpunkt"
 
 #: core/class-templates.php:128
-#: core/screen.php:216
-#@ wp_admin_blog
+#: core/screen.php:215
+#@ wp-admin-microblog
 msgid "Like"
 msgstr "Mögen"
 
 #: core/class-templates.php:52
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "Show Likes"
 msgstr "Zeige Nutzer, die diesen Beitrag mögen"
 
 #: core/class-templates.php:128
-#: core/screen.php:217
-#@ wp_admin_blog
+#: core/screen.php:216
+#@ wp-admin-microblog
 msgid "Unlike"
 msgstr "Nicht mehr mögen"
 
 #: core/screen.php:110
-#@ wp_admin_blog
+#@ wp-admin-microblog
 msgid "You can use simple bbcodes: [b]bold[/b], [i]italic[/i], [u]underline[/u], [s]strikethrough[/s], [red]red[/red], [blue]blue[/blue], [green]green[/green], [orange]orange[/orange], [code]code[/code]. Combinations like [red][s]text[/s][/red] are possible. The using of HTML tags is not possible."
 msgstr "Du kannst die folgenden BBCodes verwenden: [b]fett[/b], [i]kursiv[/i], [u]unterstrichen[/u], [s]durchgestrichen[/s], [red]rot[/red], [blue]blau[/blue], [green]grün[/green], [orange]orange[/orange], [code]code[/code]. Kombinationen wie [red][s]text[/s][/red] sind möglich. Die Nutzung von HTML-Tags ist leider nicht möglich."
 
-#: core/screen.php:215
-#@ wp_admin_blog
+#: core/screen.php:214
+#@ wp-admin-microblog
 msgid "The following users like this message"
 msgstr "Die folgenden Nutzer mögen diese Nachricht"
 
-#: core/screen.php:218
-#@ wp_admin_blog
+#: core/screen.php:217
+#@ wp-admin-microblog
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: core/screen.php:219
-#@ wp_admin_blog
+#: core/screen.php:218
+#@ wp-admin-microblog
 msgid "Submit"
 msgstr "Speichern"
+
+#: core/screen.php:58
+#@ wp-admin-microblog
+msgid "Screen Options"
+msgstr "Ansicht bearbeiten"
+
+#. translators: plugin header field 'Name'
+#: wp-admin-microblog.php:0
+#@ wp-admin-microblog
+msgid "WP Admin Microblog"
+msgstr "WP Admin Microblog"
+
+#. translators: plugin header field 'PluginURI'
+#: wp-admin-microblog.php:0
+#@ wp-admin-microblog
+msgid "http://mtrv.wordpress.com/microblog/"
+msgstr "http://mtrv.wordpress.com/microblog/"
+
+#. translators: plugin header field 'Description'
+#: wp-admin-microblog.php:0
+#@ wp-admin-microblog
+msgid "Adds a microblog in your WordPress backend."
+msgstr "Fügt einen Microblog in das WordPress Backend ein"
+
+#. translators: plugin header field 'Author'
+#: wp-admin-microblog.php:0
+#@ wp-admin-microblog
+msgid "Michael Winkler"
+msgstr "Michael Winkler"
+
+#. translators: plugin header field 'AuthorURI'
+#: wp-admin-microblog.php:0
+#@ wp-admin-microblog
+msgid "http://mtrv.wordpress.com/"
+msgstr "http://mtrv.wordpress.com/"
+
+#. translators: plugin header field 'Version'
+#: wp-admin-microblog.php:0
+#@ wp-admin-microblog
+msgid "3.0.4"
+msgstr "3.0.4"
 

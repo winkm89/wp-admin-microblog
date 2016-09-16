@@ -3,7 +3,7 @@ Contributors: Michael Winkler
 Tags: microblog, microblogging, admin, communication, collaboration, scratchpad
 Requires at least: 3.8
 Tested up to: 4.6.1
-Stable tag: 3.0.3
+Stable tag: 3.0.4
 
 Make the communication and collaboration in your team easier or use it as a scratchpad.
 
@@ -87,6 +87,10 @@ You can use the following BBCodes for text formatting:
 Combinations like [red][s]text[/s][/red] are possible.
 
 == Changelog ==
+
+= 3.0.4 - (16.09.2016) =
+* Changed: Text domain switched to wp-admin-microblog
+* Changed: Ajax requests now generated via WordPress API
 
 = 3.0.3 - (16.09.2016) =
 * Changed: Switch get_currentuserinfo() calls to wp_get_current_user()

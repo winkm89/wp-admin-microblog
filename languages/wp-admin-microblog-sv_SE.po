@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Admin Microblog v3.0\n"
+"Project-Id-Version: WP Admin Microblog v3.0.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2015-09-10 20:43+0200\n"
+"PO-Revision-Date: 2016-09-16 19:20:29+0000\n"
 "Last-Translator: P. E.\n"
 "Language-Team: P. E.\n"
 "MIME-Version: 1.0\n"
@@ -11,524 +11,589 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
-"X-Textdomain-Support: yes\n"
-"Language: sv_SE\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
 
-# @ wp_admin_blog
-#: wp-admin-microblog.php:110
+#: wp-admin-microblog.php:114
+#@ wp-admin-microblog
 msgid "Blog"
 msgstr "Blogg"
 
-# @ wp_admin_blog
 #: core/settings.php:119
+#@ wp-admin-microblog
 msgid "WP Admin Microblog Settings"
 msgstr "WP Admin Microblog Inställningar"
 
-# @ wp_admin_blog
 #: core/settings.php:165
+#@ wp-admin-microblog
 msgid "Access for"
 msgstr "Åtkomst för"
 
-# @ wp_admin_blog
 #: core/settings.php:257
+#@ wp-admin-microblog
 msgid "Save Changes"
 msgstr "Spara Ändringar"
 
-# @ wp_admin_blog
 #: core/screen.php:109
+#@ wp-admin-microblog
 msgid "If you will send your message as an E-Mail to any user, so write @username (example: @admin)"
 msgstr "Om du ämnar skicka ditt meddelande som e-post till någon användare skriv då @username (exempel: @admin)"
 
-# @ wp_admin_blog
-#: core/screen.php:575 core/screen.php:576
+#: core/screen.php:573
+#: core/screen.php:574
+#@ wp-admin-microblog
 msgid "Delete the search from filter"
 msgstr "Ta bort filtret sök-från"
 
-# @ wp_admin_blog
-#: core/screen.php:576 core/screen.php:580
+#: core/screen.php:574
+#: core/screen.php:578
+#@ wp-admin-microblog
 msgid "Search"
 msgstr "Sök"
 
-# @ wp_admin_blog
-#: core/screen.php:586
+#: core/screen.php:584
+#@ wp-admin-microblog
 msgid "Search word"
 msgstr "Sökterm"
 
-# @ wp_admin_blog
-#: core/screen.php:587
+#: core/screen.php:585
+#@ wp-admin-microblog
 msgid "Go"
 msgstr "Sök"
 
-# @ wp_admin_blog
-#: core/screen.php:167
+#: core/screen.php:166
+#@ wp-admin-microblog
 msgid "Delete the tag from filter"
 msgstr "Ta bort etiketten från filtret"
 
-# @ wp_admin_blog
-#: core/screen.php:610
+#: core/screen.php:608
+#@ wp-admin-microblog
 msgid "User"
 msgstr "Användare"
 
-# @ wp_admin_blog
-#: core/screen.php:192
+#: core/screen.php:191
+#@ wp-admin-microblog
 msgid "Delete user as filter"
 msgstr "Ta bort användare från sökfiltret"
 
-# @ wp_admin_blog
-#: core/screen.php:234
+#: core/screen.php:233
+#@ wp-admin-microblog
 msgid "Your Message"
 msgstr "Ditt Meddelande"
 
-# @ wp_admin_blog
-#: core/screen.php:242 core/widget.php:80
+#: core/screen.php:241
+#: core/widget.php:79
+#@ wp-admin-microblog
 msgid "Send"
 msgstr "Skicka"
 
-# @ wp_admin_blog
-#: core/screen.php:279
+#: core/screen.php:278
+#@ wp-admin-microblog
 msgid "Search Results"
 msgstr "Sökresultat"
 
-# @ wp_admin_blog
-#: core/screen.php:279
+#: core/screen.php:278
+#@ wp-admin-microblog
 msgid "Show all"
 msgstr "Visa alla"
 
-# @ wp_admin_blog
-#: core/screen.php:282
+#: core/screen.php:281
+#@ wp-admin-microblog
 msgid "Messages"
 msgstr "Meddelanden"
 
-# @ wp_admin_blog
-#: core/screen.php:297
+#: core/screen.php:296
+#@ wp-admin-microblog
 msgid "Sorry, no entries mached your criteria"
 msgstr "Ledsen, inga inlägg matchade dina sökkriterier"
 
-# @ wp_admin_blog
-#: wp-admin-microblog.php:158
+#: wp-admin-microblog.php:162
+#@ wp-admin-microblog
 msgid "previous page"
 msgstr "föregående sida"
 
-# @ wp_admin_blog
-#: wp-admin-microblog.php:167
+#: wp-admin-microblog.php:171
+#@ wp-admin-microblog
 msgid "next page"
 msgstr "nästa sida"
 
-# @ wp_admin_blog
 #: core/class-templates.php:114
+#@ wp-admin-microblog
 msgid "Edit"
 msgstr "Redigera"
 
-# @ wp_admin_blog
 #: core/class-templates.php:120
+#@ wp-admin-microblog
 msgid "Click to delete this message"
 msgstr "Klicka för att ta bort detta meddelande"
 
-# @ wp_admin_blog
 #: core/class-templates.php:120
+#@ wp-admin-microblog
 msgid "Delete"
 msgstr "Ta Bort"
 
-# @ wp_admin_blog
 #: core/class-templates.php:124
+#@ wp-admin-microblog
 msgid "Reply"
 msgstr "Svara"
 
-# @ wp_admin_blog
-#: core/messages.php:391 core/screen.php:170
+#: core/messages.php:401
+#: core/screen.php:169
+#@ wp-admin-microblog
 msgid "Show related messages"
 msgstr "Visa relaterade meddelanden"
 
-# @ default
-# @ wp_admin_blog
-#: core/screen.php:111 core/screen.php:596
+#: core/screen.php:111
+#: core/screen.php:594
+#@ wp-admin-microblog
 msgid "Tags"
 msgstr "Etiketter"
 
-# @ wp_admin_blog
 #: core/class-templates.php:27
+#@ wp-admin-microblog
 msgid "by"
 msgstr "av"
 
-# @ wp_admin_blog
-#: core/screen.php:143
+#: core/screen.php:142
+#@ wp-admin-microblog
 msgid "No tags available"
 msgstr "Inga etiketter tillgängliga"
 
-# @ wp_admin_blog
 #: core/screen.php:109
+#@ wp-admin-microblog
 msgid "E-mail notification"
 msgstr "E-postnotifiering"
 
-# @ wp_admin_blog
 #: core/screen.php:110
+#@ wp-admin-microblog
 msgid "Text formatting"
 msgstr "Textformattering"
 
-# @ wp_admin_blog
 #: core/screen.php:61
+#@ wp-admin-microblog
 msgid "Number of tags"
 msgstr "Antal etiketter"
 
-# @ wp_admin_blog
 #: core/screen.php:62
+#@ wp-admin-microblog
 msgid "Number of messages per page"
 msgstr "Antal meddelanden per sida"
 
-# @ wp_admin_blog
-#: core/settings.php:139 core/settings.php:143 core/settings.php:203
-#: core/settings.php:207 core/settings.php:243 core/settings.php:247
+#: core/settings.php:139
+#: core/settings.php:143
+#: core/settings.php:203
+#: core/settings.php:207
+#: core/settings.php:243
+#: core/settings.php:247
+#@ wp-admin-microblog
 msgid "yes"
 msgstr "ja"
 
-# @ wp_admin_blog
-#: core/settings.php:140 core/settings.php:144 core/settings.php:204
-#: core/settings.php:208 core/settings.php:244 core/settings.php:248
+#: core/settings.php:140
+#: core/settings.php:144
+#: core/settings.php:204
+#: core/settings.php:208
+#: core/settings.php:244
+#: core/settings.php:248
+#@ wp-admin-microblog
 msgid "no"
 msgstr "nej"
 
-# @ wp_admin_blog
 #: core/class-templates.php:114
+#@ wp-admin-microblog
 msgid "Edit this message"
 msgstr "Redigera detta meddelande"
 
-# @ wp_admin_blog
 #: core/class-templates.php:124
+#@ wp-admin-microblog
 msgid "Write a reply"
 msgstr "Skriv ett svar"
 
-# @ wp_admin_blog
 #: core/messages.php:176
+#@ wp-admin-microblog
 msgid "Author:"
 msgstr "Författare:"
 
-# @ wp_admin_blog
 #: core/messages.php:177
+#@ wp-admin-microblog
 msgid "Login under the following address to create a reply:"
 msgstr "Logga in under följande adress för att skapa ett svar:"
 
-# @ wp_admin_blog
-#: core/screen.php:255 core/widget.php:74
+#: core/screen.php:254
+#: core/widget.php:73
+#@ wp-admin-microblog
 msgid "as WordPress blog post"
 msgstr "som ett WordPress-blogginlägg"
 
-# @ wp_admin_blog
-#: core/screen.php:256 core/widget.php:74
+#: core/screen.php:255
+#: core/widget.php:73
+#@ wp-admin-microblog
 msgid "Title"
 msgstr "Titel"
 
-# @ wp_admin_blog
 #: core/messages.php:283
+#@ wp-admin-microblog
 msgid "Short message"
 msgstr "Kort meddelande"
 
-# @ wp_admin_blog
 #: core/class-templates.php:156
+#@ wp-admin-microblog
 msgid "Today"
 msgstr "Idag"
 
-# @ wp_admin_blog
 #: core/class-templates.php:146
+#@ wp-admin-microblog
 msgid "ago"
 msgstr "sedan"
 
-# @ wp_admin_blog
-#: wp-admin-microblog.php:224
+#: wp-admin-microblog.php:228
+#@ wp-admin-microblog
 msgid "New Message"
 msgstr "Nytt Meddelande"
 
-# @ wp_admin_blog
 #: core/settings.php:135
+#@ wp-admin-microblog
 msgid "Media upload for the dashboard widget"
 msgstr "Mediauppladdning i panelwidgeten"
 
-# @ wp_admin_blog
 #: core/settings.php:148
+#@ wp-admin-microblog
 msgid "Activate this option to use the media upload for the WP Admin Microblog dashboard widget. If you use it, please notify, that the media upload will not work correctly for QuickPress."
 msgstr "Aktivera detta alternativ för att använda mediauppladdning i WP Admin Microblogs panelwidget. Om du använder detta alternativ, vänligen notera att mediauppladdning ej kommer att fungera korrekt för QuickPress."
 
-# @ wp_admin_blog
 #: core/settings.php:181
+#@ wp-admin-microblog
 msgid "\"Message as a blog post\"-function for"
 msgstr "\"Meddelande som blogginlägg\"-funktion för"
 
-# @ wp_admin_blog
-#: wp-admin-microblog.php:158
+#: wp-admin-microblog.php:162
+#@ wp-admin-microblog
 msgid "first page"
 msgstr "första sidan"
 
-# @ wp_admin_blog
-#: wp-admin-microblog.php:163 wp-admin-microblog.php:183
-#: wp-admin-microblog.php:186
+#: wp-admin-microblog.php:167
+#: wp-admin-microblog.php:187
+#: wp-admin-microblog.php:190
+#@ wp-admin-microblog
 msgid "of"
 msgstr "av"
 
-# @ wp_admin_blog
-#: wp-admin-microblog.php:167
+#: wp-admin-microblog.php:171
+#@ wp-admin-microblog
 msgid "last page"
 msgstr "sista sidan"
 
-# @ wp_admin_blog
 #: core/settings.php:125
+#@ wp-admin-microblog
 msgid "Name of the Microblog"
 msgstr "Namn på mikrobloggen"
 
-# @ wp_admin_blog
-#: core/settings.php:127 core/settings.php:132
+#: core/settings.php:127
+#: core/settings.php:132
+#@ wp-admin-microblog
 msgid "Default: Microblog"
 msgstr "Standard: Microblog"
 
-# @ wp_admin_blog
 #: core/settings.php:130
+#@ wp-admin-microblog
 msgid "Name of the dashboard widget"
 msgstr "Namn på panelwidgeten"
 
-# @ wp_admin_blog
-#: core/screen.php:244 core/widget.php:68
+#: core/screen.php:243
+#: core/widget.php:67
+#@ wp-admin-microblog
 msgid "Options"
 msgstr "Alternativ"
 
-# @ wp_admin_blog
-#: core/class-templates.php:103 core/screen.php:248 core/widget.php:71
+#: core/class-templates.php:103
+#: core/screen.php:247
+#: core/widget.php:70
+#@ wp-admin-microblog
 msgid "Sticky this message"
 msgstr "Klistra detta meddelande"
 
-# @ wp_admin_blog
 #: core/settings.php:93
+#@ wp-admin-microblog
 msgid "Settings are changed. Please note that access changes are visible, until you have reloaded this page a secont time."
 msgstr "Inställningarna har uppdaterats. Vänligen notera att ändringarna inte är synliga förrän denna sida har laddats om en andra gång."
 
-# @ wp_admin_blog
 #: core/settings.php:178
+#@ wp-admin-microblog
 msgid "Select each user role which has access to WP Admin Microblog."
 msgstr "Välj användarroller som skall ha tillgång till WP Admin Microblog."
 
-# @ wp_admin_blog
-#: core/settings.php:178 core/settings.php:193 core/settings.php:235
+#: core/settings.php:178
+#: core/settings.php:193
+#: core/settings.php:235
+#@ wp-admin-microblog
 msgid "Use &lt;Ctrl&gt; key to select more than one."
 msgstr "Använd &lt;Ctrl&gt; för att välja mer än en."
 
-# @ wp_admin_blog
 #: core/settings.php:193
+#@ wp-admin-microblog
 msgid "Select each user role which can use the \"Message as a blog post\"-function."
 msgstr "Välj användarroller som skall kunna använda funktionen \"Meddelande som blogginlägg\"."
 
-# @ wp_admin_blog
 #: core/settings.php:223
+#@ wp-admin-microblog
 msgid "\"Sticky messages\"-function for"
 msgstr "Funktionen \"Klistra meddelanden\" för"
 
-# @ wp_admin_blog
 #: core/settings.php:235
+#@ wp-admin-microblog
 msgid "Select each user role which can add sticky messages."
 msgstr "Välj användarroller som skall kunna klistra meddelanden."
 
-# @ wp_admin_blog
 #: core/settings.php:238
+#@ wp-admin-microblog
 msgid "Sticky messages for the dashboard widget"
 msgstr "Klistrade meddelanden i panelwidgeten"
 
-# @ wp_admin_blog
 #: core/settings.php:253
+#@ wp-admin-microblog
 msgid "Select `yes` to display sticky messages in the dashboard widget."
 msgstr "Välj 'ja' för att visa klistrade meddelanden i panelwidgeten."
 
-# @ wp_admin_blog
 #: core/class-templates.php:103
+#@ wp-admin-microblog
 msgid "Sticky"
 msgstr "Klistrat"
 
-# @ wp_admin_blog
 #: core/class-templates.php:106
+#@ wp-admin-microblog
 msgid "Unsticky this message"
 msgstr "Ta bort klistring av detta meddelande"
 
-# @ wp_admin_blog
 #: core/class-templates.php:106
+#@ wp-admin-microblog
 msgid "Unsticky"
 msgstr "Ta bort klistring"
 
-# @ wp_admin_blog
-#: wp-admin-microblog.php:113
+#: wp-admin-microblog.php:117
+#@ wp-admin-microblog
 msgid "Settings"
 msgstr "Inställningar"
 
-# @ wp_admin_blog
 #: core/class-templates.php:65
+#@ wp-admin-microblog
 msgid "One Reply"
 msgid_plural " Replies"
 msgstr[0] "Ett Svar"
 msgstr[1] " Svar"
 
-# @ wp_admin_blog
 #: core/screen.php:108
+#@ wp-admin-microblog
 msgid "Microblog"
 msgstr "Mikroblogg"
 
-# @ wp_admin_blog
-#: core/screen.php:391
+#: core/screen.php:390
+#@ wp-admin-microblog
 msgid "Show all replies"
 msgstr "Visa alla svar"
 
-# @ wp_admin_blog
-#: core/class-templates.php:65 core/screen.php:391
+#: core/class-templates.php:65
+#: core/screen.php:390
+#@ wp-admin-microblog
 msgid "Replies"
 msgstr "Svar"
 
-# @ wp_admin_blog
-#: wp-admin-microblog.php:183 wp-admin-microblog.php:186
+#: wp-admin-microblog.php:187
+#: wp-admin-microblog.php:190
+#@ wp-admin-microblog
 msgid "Entries"
 msgstr "Inlägg"
 
-# @ wp_admin_blog
 #: core/messages.php:180
+#@ wp-admin-microblog
 msgid "New message in wp admin micoblog"
 msgstr "Nytt meddelande i WP Admin Microblog"
 
-# @ wp_admin_blog
 #: core/screen.php:111
+#@ wp-admin-microblog
 msgid "You can add tags directly to your message, if you use hashtags. Examples: #monday #2012"
 msgstr "Du kan infoga taggar direkt i ditt meddelande genom att använda hashtaggar. Exempelvis: #måndag #2012"
 
-# @ wp_admin_blog
 #: core/settings.php:122
+#@ wp-admin-microblog
 msgid "General"
 msgstr "Allmänt"
 
-# @ wp_admin_blog
 #: core/settings.php:162
+#@ wp-admin-microblog
 msgid "Access"
 msgstr "Åtkomst"
 
-# @ wp_admin_blog
 #: core/settings.php:196
+#@ wp-admin-microblog
 msgid "Notifications"
 msgstr "Notifieringar"
 
-# @ wp_admin_blog
 #: core/settings.php:199
+#@ wp-admin-microblog
 msgid "Auto replies"
 msgstr "Autosvar"
 
-# @ wp_admin_blog
 #: core/settings.php:212
+#@ wp-admin-microblog
 msgid "Activate this option and the plugin insert in every reply the string for an e-mail notification to the message author."
 msgstr "Aktivera detta alternativ för att tillägget skall infoga en sträng med e-postnotifiering till författaren av meddelandet i varje svar."
 
-# @ wp_admin_blog
 #: core/settings.php:215
+#@ wp-admin-microblog
 msgid "Auto notifications"
 msgstr "Autonotifieringar"
 
-# @ wp_admin_blog
 #: core/settings.php:217
+#@ wp-admin-microblog
 msgid "Insert your email address, if you want to receive notifications for every new message in the microblog. Insert one email address per line."
 msgstr "Ange din e-postadress om du vill få notifierningar för varje nytt meddelande i mikrobloggen. En e-postadress per rad."
 
-# @ wp_admin_blog
 #: core/settings.php:220
+#@ wp-admin-microblog
 msgid "Sticky messages"
 msgstr "Klistrade meddelanden"
 
-# @ wp_admin_blog
 #: core/class-ajax.php:17
+#@ wp-admin-microblog
 msgid "New messages available"
 msgstr "Nya meddelanden finns"
 
-# @ default
 #: core/screen.php:56
+#@ wp-admin-microblog
 msgid "Apply"
 msgstr "Tillämpa"
 
-# @ default
-#: core/screen.php:58
-msgid "Show on screen"
-msgstr "Visa på skärmen"
-
-# @ wp_admin_blog
 #: core/screen.php:63
+#@ wp-admin-microblog
 msgid "Sort order for messages"
 msgstr "Sorteringsordning för meddelanden"
 
-# @ wp_admin_blog
 #: core/screen.php:65
+#@ wp-admin-microblog
 msgid "Show the latest messages first"
 msgstr "Visa senaste meddelanden först"
 
-# @ wp_admin_blog
 #: core/screen.php:66
+#@ wp-admin-microblog
 msgid "Show messages with latest comments first"
 msgstr "Visa meddelanden med de senaste kommentarerna först"
 
-# @ wp_admin_blog
-#: core/screen.php:214
+#: core/screen.php:213
+#@ wp-admin-microblog
 msgid "Click for refresh"
 msgstr "Klicka för att uppdatera vyn"
 
-# @ wp_admin_blog
 #: core/settings.php:153
+#@ wp-admin-microblog
 msgid "Use this option to modify the interval in which the plugin checks for new messages. A smaller value needs more server performance. The default value is 60000 ms."
 msgstr "Använd detta alternativ för att ändra hur ofta tillägget skall söka efter nya meddelanden. Ett mindre värde kräver mer serverresurser. Standardvärdet är 60000 ms."
 
-# @ wp_admin_blog
 #: core/settings.php:151
+#@ wp-admin-microblog
 msgid "Auto check interval"
 msgstr "Intervall för autokontroll"
 
-# @ wp_admin_blog
 #: core/settings.php:158
+#@ wp-admin-microblog
 msgid "Enable auto check"
 msgstr "Aktivera autokontroll"
 
-# @ wp_admin_blog
 #: core/screen.php:68
+#@ wp-admin-microblog
 msgid "Date format for messages"
 msgstr "Datumformat för meddelanden"
 
-# @ wp_admin_blog
 #: core/screen.php:70
+#@ wp-admin-microblog
 msgid "Show time difference"
 msgstr "Visa tidsskillnad"
 
-# @ wp_admin_blog
 #: core/screen.php:71
+#@ wp-admin-microblog
 msgid "Show date of publishing"
 msgstr "Visa datum för publicering"
 
-# @ wp_admin_blog
-#: core/class-templates.php:128 core/screen.php:216
+#: core/class-templates.php:128
+#: core/screen.php:215
+#@ wp-admin-microblog
 msgid "Like"
 msgstr "Gilla"
 
-# @ wp_admin_blog
 #: core/class-templates.php:52
+#@ wp-admin-microblog
 msgid "Show Likes"
 msgstr "Vissa Gillanden"
 
-# @ wp_admin_blog
-#: core/class-templates.php:128 core/screen.php:217
+#: core/class-templates.php:128
+#: core/screen.php:216
+#@ wp-admin-microblog
 msgid "Unlike"
 msgstr "Gilla ej"
 
-# @ wp_admin_blog
 #: core/screen.php:110
+#@ wp-admin-microblog
 msgid "You can use simple bbcodes: [b]bold[/b], [i]italic[/i], [u]underline[/u], [s]strikethrough[/s], [red]red[/red], [blue]blue[/blue], [green]green[/green], [orange]orange[/orange], [code]code[/code]. Combinations like [red][s]text[/s][/red] are possible. The using of HTML tags is not possible."
 msgstr "Du kan använda enkla BB-koder: [b]fet[/b], [i]kursiv[/i], [u]understruken[/u], [s]genomstruken[/s], [red]röd[/red], [blue]blå[/blue], [green]grön[/green], [orange]orange[/orange], [code]kod[/code]. Kombinationer som [red][s]text[/s][/red] är möjliga. Att använda HTML-taggar är inte möjligt."
 
-# @ wp_admin_blog
-#: core/screen.php:215
+#: core/screen.php:214
+#@ wp-admin-microblog
 msgid "The following users like this message"
 msgstr "Följande användare gillar detta meddelande"
 
-# @ wp_admin_blog
-#: core/screen.php:218
+#: core/screen.php:217
+#@ wp-admin-microblog
 msgid "Cancel"
 msgstr "Avbryt"
 
-# @ wp_admin_blog
-#: core/screen.php:219
+#: core/screen.php:218
+#@ wp-admin-microblog
 msgid "Submit"
 msgstr "Skicka"
+
+#: core/screen.php:58
+#@ wp-admin-microblog
+msgid "Screen Options"
+msgstr ""
+
+#. translators: plugin header field 'Name'
+#: wp-admin-microblog.php:0
+#@ wp-admin-microblog
+msgid "WP Admin Microblog"
+msgstr ""
+
+#. translators: plugin header field 'PluginURI'
+#: wp-admin-microblog.php:0
+#@ wp-admin-microblog
+msgid "http://mtrv.wordpress.com/microblog/"
+msgstr ""
+
+#. translators: plugin header field 'Description'
+#: wp-admin-microblog.php:0
+#@ wp-admin-microblog
+msgid "Adds a microblog in your WordPress backend."
+msgstr ""
+
+#. translators: plugin header field 'Author'
+#: wp-admin-microblog.php:0
+#@ wp-admin-microblog
+msgid "Michael Winkler"
+msgstr ""
+
+#. translators: plugin header field 'AuthorURI'
+#: wp-admin-microblog.php:0
+#@ wp-admin-microblog
+msgid "http://mtrv.wordpress.com/"
+msgstr ""
+
+#. translators: plugin header field 'Version'
+#: wp-admin-microblog.php:0
+#@ wp-admin-microblog
+msgid "3.0.4"
+msgstr ""
+

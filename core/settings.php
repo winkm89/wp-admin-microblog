@@ -90,7 +90,7 @@ function wpam_settings () {
           $blog_post = $_POST['blog_post'];
           $sticky = $_POST['sticky'];
           wpam_update_options($option, $userrole, $blog_post, $sticky);
-          echo '<div class="updated"><p>' . __('Settings are changed. Please note that access changes are visible, until you have reloaded this page a secont time.','wp_admin_blog') . '</p></div>';
+          echo '<div class="updated"><p>' . __('Settings are changed. Please note that access changes are visible, until you have reloaded this page a secont time.','wp-admin-microblog') . '</p></div>';
      }
 
      // load system settings
@@ -116,53 +116,53 @@ function wpam_settings () {
      }
      ?>
      <div class="wrap">
-     <h2><?php _e('WP Admin Microblog Settings','wp_admin_blog'); ?></h2>
+     <h2><?php _e('WP Admin Microblog Settings','wp-admin-microblog'); ?></h2>
      <form name="form1" id="form1" method="post" action="admin.php?page=wp-admin-microblog/settings.php">
      <input name="page" type="hidden" value="wp-admin-blog" />
-     <h3><?php _e('General','wp_admin_blog'); ?></h3>
+     <h3><?php _e('General','wp-admin-microblog'); ?></h3>
      <table class="form-table">
         <tr>
-             <th scope="row"><?php _e('Name of the Microblog','wp_admin_blog'); ?></th>
+             <th scope="row"><?php _e('Name of the Microblog','wp-admin-microblog'); ?></th>
              <td style="width: 330px;"><input name="name_blog" type="text" value="<?php echo $name_blog; ?>" size="35" /></td>
-             <td><em><?php _e('Default: Microblog','wp_admin_blog'); ?></em></td>
+             <td><em><?php _e('Default: Microblog','wp-admin-microblog'); ?></em></td>
         </tr>
         <tr>
-             <th scope="row"><?php _e('Name of the dashboard widget','wp_admin_blog'); ?></th>
+             <th scope="row"><?php _e('Name of the dashboard widget','wp-admin-microblog'); ?></th>
              <td><input name="name_widget" type="text" value="<?php echo $name_widget; ?>" size="35" /></td>
-             <td><em><?php _e('Default: Microblog','wp_admin_blog'); ?></em></td>
+             <td><em><?php _e('Default: Microblog','wp-admin-microblog'); ?></em></td>
         </tr>
          <tr>
-             <th scope="row"><?php _e('Media upload for the dashboard widget','wp_admin_blog'); ?></th>
+             <th scope="row"><?php _e('Media upload for the dashboard widget','wp-admin-microblog'); ?></th>
              <td><select name="media_upload">
                 <?php
                 if ($media_upload != false) {
-                    echo '<option value="true" selected="selected">' . __('yes','wp_admin_blog') . '</option>';
-                    echo '<option value="false">' . __('no','wp_admin_blog') . '</option>';
+                    echo '<option value="true" selected="selected">' . __('yes','wp-admin-microblog') . '</option>';
+                    echo '<option value="false">' . __('no','wp-admin-microblog') . '</option>';
                 }
                 else {
-                    echo '<option value="true">' . __('yes','wp_admin_blog') . '</option>';
-                    echo '<option value="false" selected="selected">' . __('no','wp_admin_blog') . '</option>';
+                    echo '<option value="true">' . __('yes','wp-admin-microblog') . '</option>';
+                    echo '<option value="false" selected="selected">' . __('no','wp-admin-microblog') . '</option>';
                 } 
                 ?>
              </select></td>
-             <td><em><?php _e('Activate this option to use the media upload for the WP Admin Microblog dashboard widget. If you use it, please notify, that the media upload will not work correctly for QuickPress.','wp_admin_blog'); ?></em></td>
+             <td><em><?php _e('Activate this option to use the media upload for the WP Admin Microblog dashboard widget. If you use it, please notify, that the media upload will not work correctly for QuickPress.','wp-admin-microblog'); ?></em></td>
          </tr>
          <tr>
-             <th scope="row"><?php _e('Auto check interval','wp_admin_blog'); ?></th>
+             <th scope="row"><?php _e('Auto check interval','wp-admin-microblog'); ?></th>
              <td><input name="auto_reload_interval" type="text" value="<?php echo $auto_reload_interval; ?>" size="35" /></td>
-             <td><em><?php _e('Use this option to modify the interval in which the plugin checks for new messages. A smaller value needs more server performance. The default value is 60000 ms.','wp_admin_blog'); ?></em></td>
+             <td><em><?php _e('Use this option to modify the interval in which the plugin checks for new messages. A smaller value needs more server performance. The default value is 60000 ms.','wp-admin-microblog'); ?></em></td>
         </tr>
         <tr>
              <th scope="row"></th>
              <?php $checked = ( $auto_reload_enabled == 'true' ) ? 'checked="checked"' : '';?>
-             <td><input name="auto_reload_enabled" id="auto_reload_enabled" type="checkbox" value="true" <?php echo $checked;?> /><label for="auto_reload_enabled"><?php _e('Enable auto check','wp_admin_blog'); ?></label></td>
+             <td><input name="auto_reload_enabled" id="auto_reload_enabled" type="checkbox" value="true" <?php echo $checked;?> /><label for="auto_reload_enabled"><?php _e('Enable auto check','wp-admin-microblog'); ?></label></td>
              <td></td>
         </tr>
      </table>
-     <h3><?php _e('Access','wp_admin_blog'); ?></h3>
+     <h3><?php _e('Access','wp-admin-microblog'); ?></h3>
      <table class="form-table">
          <tr>
-              <th scope="row"><?php _e('Access for','wp_admin_blog'); ?></th>
+              <th scope="row"><?php _e('Access for','wp-admin-microblog'); ?></th>
               <td style="width: 330px;">
               <select name="userrole[]" id="userrole" multiple="multiple" style="height:80px;">
                   <?php
@@ -175,10 +175,10 @@ function wpam_settings () {
                    ?>
               </select>
               </td>
-              <td><em><?php _e('Select each user role which has access to WP Admin Microblog.','wp_admin_blog'); ?><br /><?php _e('Use &lt;Ctrl&gt; key to select more than one.','wp_admin_blog'); ?></em></td>
+              <td><em><?php _e('Select each user role which has access to WP Admin Microblog.','wp-admin-microblog'); ?><br /><?php _e('Use &lt;Ctrl&gt; key to select more than one.','wp-admin-microblog'); ?></em></td>
          </tr>
          <tr>
-              <th scope="row"><?php _e('"Message as a blog post"-function for','wp_admin_blog'); ?></th>
+              <th scope="row"><?php _e('"Message as a blog post"-function for','wp-admin-microblog'); ?></th>
               <td>
               <select name="blog_post[]" id="blog_post" multiple="multiple" style="height:80px;">
                   <?php
@@ -190,37 +190,37 @@ function wpam_settings () {
                    ?>
               </select>
               </td>
-              <td><em><?php _e('Select each user role which can use the "Message as a blog post"-function.','wp_admin_blog'); ?><br /><?php _e('Use &lt;Ctrl&gt; key to select more than one.','wp_admin_blog'); ?></em></td>
+              <td><em><?php _e('Select each user role which can use the "Message as a blog post"-function.','wp-admin-microblog'); ?><br /><?php _e('Use &lt;Ctrl&gt; key to select more than one.','wp-admin-microblog'); ?></em></td>
          </tr>
      </table>
-     <h3><?php _e('Notifications','wp_admin_blog'); ?></h3>
+     <h3><?php _e('Notifications','wp-admin-microblog'); ?></h3>
      <table class="form-table">
           <tr>
-             <th scope="row"><?php _e('Auto replies','wp_admin_blog'); ?></th>
+             <th scope="row"><?php _e('Auto replies','wp-admin-microblog'); ?></th>
              <td style="width: 330px;"><select name="auto_reply">
                 <?php
                 if ($auto_reply == 'true') {
-                echo '<option value="true" selected="selected">' . __('yes','wp_admin_blog') . '</option>';
-                     echo '<option value="false">' . __('no','wp_admin_blog') . '</option>';
+                echo '<option value="true" selected="selected">' . __('yes','wp-admin-microblog') . '</option>';
+                     echo '<option value="false">' . __('no','wp-admin-microblog') . '</option>';
                 }
                 else {
-                     echo '<option value="true">' . __('yes','wp_admin_blog') . '</option>';
-                     echo '<option value="false" selected="selected">' . __('no','wp_admin_blog') . '</option>';
+                     echo '<option value="true">' . __('yes','wp-admin-microblog') . '</option>';
+                     echo '<option value="false" selected="selected">' . __('no','wp-admin-microblog') . '</option>';
                 } 
                 ?>
              </select></td>
-             <td><em><?php _e('Activate this option and the plugin insert in every reply the string for an e-mail notification to the message author.','wp_admin_blog'); ?></em></td>
+             <td><em><?php _e('Activate this option and the plugin insert in every reply the string for an e-mail notification to the message author.','wp-admin-microblog'); ?></em></td>
          </tr>
          <tr>
-             <th><?php _e('Auto notifications','wp_admin_blog'); ?></th>
+             <th><?php _e('Auto notifications','wp-admin-microblog'); ?></th>
              <td><textarea id="auto_notifications" name="auto_notifications" style="width: 100%;" rows="5"><?php echo $auto_notifications; ?></textarea></td>
-             <td><em><?php _e('Insert your email address, if you want to receive notifications for every new message in the microblog. Insert one email address per line.','wp_admin_blog'); ?></em></td></td>
+             <td><em><?php _e('Insert your email address, if you want to receive notifications for every new message in the microblog. Insert one email address per line.','wp-admin-microblog'); ?></em></td></td>
          </tr>
      </table>
-     <h3><?php _e('Sticky messages','wp_admin_blog'); ?></h3>
+     <h3><?php _e('Sticky messages','wp-admin-microblog'); ?></h3>
      <table class="form-table">
          <tr>
-              <th scope="row"><?php _e('"Sticky messages"-function for','wp_admin_blog'); ?></th>
+              <th scope="row"><?php _e('"Sticky messages"-function for','wp-admin-microblog'); ?></th>
               <td style="width: 330px;">
                    <select name="sticky[]" id="sticky" multiple="multiple" style="height:80px;">
                         <?php
@@ -232,29 +232,29 @@ function wpam_settings () {
                         ?>
                    </select>
               </td>
-              <td><em><?php _e('Select each user role which can add sticky messages.', 'wp_admin_blog'); ?><br /><?php _e('Use &lt;Ctrl&gt; key to select more than one.','wp_admin_blog'); ?></em></td>
+              <td><em><?php _e('Select each user role which can add sticky messages.', 'wp-admin-microblog'); ?><br /><?php _e('Use &lt;Ctrl&gt; key to select more than one.','wp-admin-microblog'); ?></em></td>
          </tr> 
          <tr>
-              <th scope="row"><?php _e('Sticky messages for the dashboard widget','wp_admin_blog'); ?></th>
+              <th scope="row"><?php _e('Sticky messages for the dashboard widget','wp-admin-microblog'); ?></th>
               <td>
                    <select name="sticky_for_dash">
                      <?php
                      if ($sticky_for_dash == 'true') {
-                         echo '<option value="true" selected="selected">' . __('yes','wp_admin_blog') . '</option>';
-                         echo '<option value="false">' . __('no','wp_admin_blog') . '</option>';
+                         echo '<option value="true" selected="selected">' . __('yes','wp-admin-microblog') . '</option>';
+                         echo '<option value="false">' . __('no','wp-admin-microblog') . '</option>';
                      }
                      else {
-                         echo '<option value="true">' . __('yes','wp_admin_blog') . '</option>';
-                         echo '<option value="false" selected="selected">' . __('no','wp_admin_blog') . '</option>';
+                         echo '<option value="true">' . __('yes','wp-admin-microblog') . '</option>';
+                         echo '<option value="false" selected="selected">' . __('no','wp-admin-microblog') . '</option>';
                      } 
                      ?>
                    </select>
               </td>
-              <td><em><?php _e('Select `yes` to display sticky messages in the dashboard widget.','wp_admin_blog'); ?></em></td>
+              <td><em><?php _e('Select `yes` to display sticky messages in the dashboard widget.','wp-admin-microblog'); ?></em></td>
          </tr>
      </table>
      <p class="submit">
-     <input type="submit" name="save" id="save" class="button-primary" value="<?php _e('Save Changes', 'wp_admin_blog') ?>" />
+     <input type="submit" name="save" id="save" class="button-primary" value="<?php _e('Save Changes', 'wp-admin-microblog') ?>" />
      </p>
      </form>
      </div>

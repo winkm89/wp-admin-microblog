@@ -53,22 +53,22 @@ function wpam_show_screen_options( $status, $args ) {
     
     $return = $status;
     if ( $args->base == $wpam_admin_page ) {    
-        $button = get_submit_button( __( 'Apply' ), 'button', 'screen-options-apply', false );
+        $button = get_submit_button( __( 'Apply', 'wp-admin-microblog' ), 'primary', 'screen-options-apply', false );
         $return .= '
-        <h3>' . __('Screen Options') . '</h3>
+        <h3>' . __('Screen Options', 'wp-admin-microblog') . '</h3>
         <input type="hidden" name="wp_screen_options[option]" value="wpam_screen_settings" />
         <input type="hidden" name="wp_screen_options[value]" value="default" />
-        <p><input type="number" name="wpam_tags_per_page" id="wpam_tags_per_page" value="' . $tags_per_page . '" min="1" max="999" maxlength="3"/> <label for="wpam_tags_per_page">' . __('Number of tags', 'wp_admin_blog') . '</label></p>
-        <p><input type="number" name="messages_per_page" id="messages_per_page" value="' . $messages_per_page . '" min="1" max="999" maxlength="3"/> <label for="messages_per_page">' . __('Number of messages per page', 'wp_admin_blog') . '</label></p>
-        <h5>' . __('Sort order for messages','wp_admin_blog') . '</h5>    
+        <p><input type="number" name="wpam_tags_per_page" id="wpam_tags_per_page" value="' . $tags_per_page . '" min="1" max="999" maxlength="3"/> <label for="wpam_tags_per_page">' . __('Number of tags', 'wp-admin-microblog') . '</label></p>
+        <p><input type="number" name="messages_per_page" id="messages_per_page" value="' . $messages_per_page . '" min="1" max="999" maxlength="3"/> <label for="messages_per_page">' . __('Number of messages per page', 'wp-admin-microblog') . '</label></p>
+        <h5>' . __('Sort order for messages','wp-admin-microblog') . '</h5>    
           <p>
-            <input type="radio" name="wpam_sort_order" id="wpam_sort_order_1" value="date" ' . $sel_1 . '/><label for="wpam_sort_order_1">' . __('Show the latest messages first', 'wp_admin_blog') . '</label>
-            <input type="radio" name="wpam_sort_order" id="wpam_sort_order_2" value="date_last_comment" ' . $sel_2 . '/><label for="wpam_sort_order_2">' . __('Show messages with latest comments first', 'wp_admin_blog') . '</label> 
+            <input type="radio" name="wpam_sort_order" id="wpam_sort_order_1" value="date" ' . $sel_1 . '/><label for="wpam_sort_order_1">' . __('Show the latest messages first', 'wp-admin-microblog') . '</label>
+            <input type="radio" name="wpam_sort_order" id="wpam_sort_order_2" value="date_last_comment" ' . $sel_2 . '/><label for="wpam_sort_order_2">' . __('Show messages with latest comments first', 'wp-admin-microblog') . '</label> 
           </p>
-        <h5>' . __('Date format for messages', 'wp_admin_blog') . '</h5>
+        <h5>' . __('Date format for messages', 'wp-admin-microblog') . '</h5>
            <p>
-            <input type="radio" name="wpam_date_format" id="wpam_date_format_1" value="time_difference" ' . $sel_3 . '/><label for="wpam_date_format_1">' . __('Show time difference','wp_admin_blog') . '</label>
-            <input type="radio" name="wpam_date_format" id="wpam_date_format_2" value="date" ' . $sel_4 . '/><label for="wpam_date_format_2">' . __('Show date of publishing', 'wp_admin_blog') . '</label> 
+            <input type="radio" name="wpam_date_format" id="wpam_date_format_1" value="time_difference" ' . $sel_3 . '/><label for="wpam_date_format_1">' . __('Show time difference','wp-admin-microblog') . '</label>
+            <input type="radio" name="wpam_date_format" id="wpam_date_format_2" value="date" ' . $sel_4 . '/><label for="wpam_date_format_2">' . __('Show date of publishing', 'wp-admin-microblog') . '</label> 
           </p>
         ' . $button;
     }
@@ -105,10 +105,10 @@ function wpam_add_help_tab () {
     $screen = get_current_screen();  
     $screen->add_help_tab( array(
         'id'        => 'wpam_help_tab',
-        'title'     => __('Microblog','wp_admin_blog'),
-        'content'   => '<p><strong>' . __('E-mail notification','wp_admin_blog') . '</strong> - ' . __('If you will send your message as an E-Mail to any user, so write @username (example: @admin)','wp_admin_blog') . '
-                        <p><strong>' . __('Text formatting','wp_admin_blog') . '</strong> - ' . __('You can use simple bbcodes: [b]bold[/b], [i]italic[/i], [u]underline[/u], [s]strikethrough[/s], [red]red[/red], [blue]blue[/blue], [green]green[/green], [orange]orange[/orange], [code]code[/code]. Combinations like [red][s]text[/s][/red] are possible. The using of HTML tags is not possible.','wp_admin_blog') . '</p>
-                        <p><strong>' . __('Tags') . '</strong> - ' . __('You can add tags directly to your message, if you use hashtags. Examples: #monday #2012','wp_admin_blog') . '</p>',
+        'title'     => __('Microblog','wp-admin-microblog'),
+        'content'   => '<p><strong>' . __('E-mail notification','wp-admin-microblog') . '</strong> - ' . __('If you will send your message as an E-Mail to any user, so write @username (example: @admin)','wp-admin-microblog') . '
+                        <p><strong>' . __('Text formatting','wp-admin-microblog') . '</strong> - ' . __('You can use simple bbcodes: [b]bold[/b], [i]italic[/i], [u]underline[/u], [s]strikethrough[/s], [red]red[/red], [blue]blue[/blue], [green]green[/green], [orange]orange[/orange], [code]code[/code]. Combinations like [red][s]text[/s][/red] are possible. The using of HTML tags is not possible.','wp-admin-microblog') . '</p>
+                        <p><strong>' . __('Tags', 'wp-admin-microblog') . '</strong> - ' . __('You can add tags directly to your message, if you use hashtags. Examples: #monday #2012','wp-admin-microblog') . '</p>',
     ) );
 } 
 
@@ -139,7 +139,7 @@ class wpam_screen {
         $min = $tagcloud_temp['min'];
         // if there are no tags in database
         if ( $min == '' ) {
-            return __('No tags available','wp_admin_blog') ;
+            return __('No tags available','wp-admin-microblog') ;
         }
         // compose tags and their numbers
         $sql = "SELECT tagPeak, name, tag_ID FROM ( SELECT COUNT(b.tag_ID) as tagPeak, t.name AS name, t.tag_ID as tag_ID FROM " . WPAM_ADMIN_BLOG_RELATIONS . " b LEFT JOIN " . WPAM_ADMIN_BLOG_TAGS . " t ON b.tag_ID = t.tag_ID GROUP BY b.tag_ID ORDER BY tagPeak DESC LIMIT $tags_per_page ) AS temp WHERE tagPeak>=$min ORDER BY name";
@@ -163,10 +163,10 @@ class wpam_screen {
             }
             // active tag
             if ($tagcloud['tag_ID'] == $tag){
-                $end .= '<span style="font-size:' . $size . 'px;" class="wpam-tag"><a href="admin.php?page=wp-admin-microblog/wp-admin-microblog.php&amp;author=' . $author . '&amp;search=' . $search . '" title="' . __('Delete the tag from filter','wp_admin_blog') . '" style="color:#FF9900; text-decoration:underline;">' . $tagcloud['name'] . '</a></span> '; 
+                $end .= '<span style="font-size:' . $size . 'px;" class="wpam-tag"><a href="admin.php?page=wp-admin-microblog/wp-admin-microblog.php&amp;author=' . $author . '&amp;search=' . $search . '" title="' . __('Delete the tag from filter','wp-admin-microblog') . '" style="color:#FF9900; text-decoration:underline;">' . $tagcloud['name'] . '</a></span> '; 
             }
             else{
-                $end .= '<span style="font-size:' . $size . 'px;" class="wpam-tag"><a href="admin.php?page=wp-admin-microblog/wp-admin-microblog.php&amp;author=' . $author . '&amp;search=' . $search . '&amp;tag=' . $tagcloud['tag_ID'] . '" title="' . __('Show related messages','wp_admin_blog') . '">' . $tagcloud['name'] . '</a></span> '; 
+                $end .= '<span style="font-size:' . $size . 'px;" class="wpam-tag"><a href="admin.php?page=wp-admin-microblog/wp-admin-microblog.php&amp;author=' . $author . '&amp;search=' . $search . '&amp;tag=' . $tagcloud['tag_ID'] . '" title="' . __('Show related messages','wp-admin-microblog') . '">' . $tagcloud['name'] . '</a></span> '; 
             }
         }
         return $end;
@@ -188,7 +188,7 @@ class wpam_screen {
             $user_info = get_userdata($users->user);
             $name = '' . $user_info->display_name . ' (' . $user_info->user_login . ')';
             if ($author == $user_info->ID) {
-                $end .= '<li class="wpam-user-list-select"><a href="admin.php?page=wp-admin-microblog/wp-admin-microblog.php&amp;author=&amp;search=' . $search . '&amp;tag=' . $tag . '" title="' . __('Delete user as filter','wp_admin_blog') . '">';
+                $end .= '<li class="wpam-user-list-select"><a href="admin.php?page=wp-admin-microblog/wp-admin-microblog.php&amp;author=&amp;search=' . $search . '&amp;tag=' . $tag . '" title="' . __('Delete user as filter','wp-admin-microblog') . '">';
             }
             else {
                 $end .= '<li><a href="admin.php?page=wp-admin-microblog/wp-admin-microblog.php&amp;author=' . $user_info->ID . '&amp;search=' . $search . '&amp;tag=' . $tag . '" title="' . $name . '">';
@@ -207,15 +207,15 @@ class wpam_screen {
     public static function print_javascript_paramenters ($args) {
         ?>
         <script type="text/javascript">
-            var wpam_plugin_url = '<?php echo plugins_url() . '/wp-admin-microblog/ajax.php' ;?>';
+            var wpam_ajax_url = '<?php echo admin_url( 'admin-ajax.php' ) . '?action=wp_admin_blog' ;?>';
             var wpam_latest_message_id = <?php echo intval(wpam_message::get_latest_message_id()); ?>;
             var wpam_auto_reload_interval = <?php echo intval($args['auto_reload_interval']); ?>;
-            var wpam_i18n_refresh = '<?php _e('Click for refresh', 'wp_admin_blog');  ?>';
-            var wpam_i18n_like_title = '<?php _e('The following users like this message', 'wp_admin_blog');?>';
-            var wpam_i18n_like_button = '<?php _e('Like','wp_admin_blog'); ?>';
-            var wpam_i18n_unlike_button = '<?php _e('Unlike','wp_admin_blog'); ?>';
-            var wpam_i18n_cancel_button = '<?php _e('Cancel','wp_admin_blog'); ?>';
-            var wpam_i18n_save_button = '<?php _e('Submit','wp_admin_blog'); ?>';
+            var wpam_i18n_refresh = '<?php _e('Click for refresh', 'wp-admin-microblog');  ?>';
+            var wpam_i18n_like_title = '<?php _e('The following users like this message', 'wp-admin-microblog');?>';
+            var wpam_i18n_like_button = '<?php _e('Like','wp-admin-microblog'); ?>';
+            var wpam_i18n_unlike_button = '<?php _e('Unlike','wp-admin-microblog'); ?>';
+            var wpam_i18n_cancel_button = '<?php _e('Cancel','wp-admin-microblog'); ?>';
+            var wpam_i18n_save_button = '<?php _e('Submit','wp-admin-microblog'); ?>';
         </script>
         <?php
     }
@@ -230,7 +230,7 @@ class wpam_screen {
         <table class="widefat">
         <thead>
             <tr>
-                <th><?php _e('Your Message', 'wp_admin_blog');?></th>
+                <th><?php _e('Your Message', 'wp-admin-microblog');?></th>
             </tr>
             <tr>
                 <td>
@@ -238,21 +238,21 @@ class wpam_screen {
                 <div id="postdiv" class="postarea" style="display:block;">
                 <textarea name="wpam_nm_text" id="wpam_nm_text" style="width:100%;" rows="4"></textarea>
                 </div>
-                <p style="text-align:right; float:right;"><input name="send" type="submit" class="button-primary" value="<?php _e('Send', 'wp_admin_blog'); ?>" /><p>
+                <p style="text-align:right; float:right;"><input name="send" type="submit" class="button-primary" value="<?php _e('Send', 'wp-admin-microblog'); ?>" /><p>
                 <?php if ( current_user_can( 'use_wp_admin_microblog_bp' ) || current_user_can( 'use_wp_admin_microblog_sticky' ) ) { ?>
-                    <p style="float:left; padding: 5px;"><a onclick="wpam_showhide('wpam_message_options')" style="cursor:pointer; font-weight:bold;">+ <?php _e('Options', 'wp_admin_blog'); ?></a></p>
+                    <p style="float:left; padding: 5px;"><a onclick="wpam_showhide('wpam_message_options')" style="cursor:pointer; font-weight:bold;">+ <?php _e('Options', 'wp-admin-microblog'); ?></a></p>
                     <table style="width:100%; display: none; float:left;" id="wpam_message_options">
                         <?php if ( current_user_can( 'use_wp_admin_microblog_sticky' ) ) { ?> 
                             <tr>
-                                 <td style="border-bottom-width:0px;"><input name="is_sticky" id="is_sticky" type="checkbox"/> <label for="is_sticky"><?php _e('Sticky this message','wp_admin_blog'); ?></label></td>
+                                 <td style="border-bottom-width:0px;"><input name="is_sticky" id="is_sticky" type="checkbox"/> <label for="is_sticky"><?php _e('Sticky this message','wp-admin-microblog'); ?></label></td>
                             </tr>
                         <?php } ?>
                         <?php if ( current_user_can( 'use_wp_admin_microblog_bp' ) ) { ?>
                             <tr>
                                  <td style="border-bottom-width:0px;">
                                      <input name="as_wp_post" id="as_wp_post" type="checkbox" onclick="wpam_showhide('span_headline')" />
-                                     <label for="as_wp_post"><?php _e('as WordPress blog post', 'wp_admin_blog');?></label>
-                                     <span style="display:none;" id="span_headline">&rarr; <label for="headline"><?php _e('Title', 'wp_admin_blog');?> </label>
+                                     <label for="as_wp_post"><?php _e('as WordPress blog post', 'wp-admin-microblog');?></label>
+                                     <span style="display:none;" id="span_headline">&rarr; <label for="headline"><?php _e('Title', 'wp-admin-microblog');?> </label>
                                          <input name="headline" id="headline" type="text" style="width:350px;" />
                                      </span>
                                  </td>
@@ -275,10 +275,10 @@ class wpam_screen {
      */
     public static function get_headline ($args) {
         if ( $args['search'] != '' || $args['author'] != '' || $args['tag'] != '' || $args['rpl'] != '' ) {
-           echo __('Search Results', 'wp_admin_blog') . ' | <a href="admin.php?page=wp-admin-microblog/wp-admin-microblog.php">' . __('Show all','wp_admin_blog') . '</a>';
+           echo __('Search Results', 'wp-admin-microblog') . ' | <a href="admin.php?page=wp-admin-microblog/wp-admin-microblog.php">' . __('Show all','wp-admin-microblog') . '</a>';
         }
         else {
-           echo __('Messages', 'wp_admin_blog');
+           echo __('Messages', 'wp-admin-microblog');
         }
     }
     
@@ -293,7 +293,7 @@ class wpam_screen {
         
         // IF there are no messages
         if ( $args['num_all_messages'] == 0 ) {
-           echo '<tr><td>' . __('Sorry, no entries mached your criteria','wp_admin_blog') . '</td></tr>';
+           echo '<tr><td>' . __('Sorry, no entries mached your criteria','wp-admin-microblog') . '</td></tr>';
            return;
         }
         
@@ -387,7 +387,7 @@ class wpam_screen {
         // show the number of replies text
         if ( $count > 3 && $rpl == 0 ) {
              echo '<table class="wpam-replies" id="wpam-reply-sum-' . $post->post_ID . '">';
-             echo '<tr><td style="padding:7px;"><a onclick="wpam_showAllReplies(' . "'" . $post->post_ID . "'" . ', ' . "'" . $reply_number . "'" . ')" style="cursor:pointer;" title="' . __('Show all replies','wp_admin_blog') . '">' . $count . ' ' . __('Replies','wp_admin_blog') . '</a></td></tr>';
+             echo '<tr><td style="padding:7px;"><a onclick="wpam_showAllReplies(' . "'" . $post->post_ID . "'" . ', ' . "'" . $reply_number . "'" . ')" style="cursor:pointer;" title="' . __('Show all replies','wp-admin-microblog') . '">' . $count . ' ' . __('Replies','wp-admin-microblog') . '</a></td></tr>';
              echo '</table>';
         }
         // echo table of replies
@@ -570,19 +570,19 @@ function wpam_page() {
         <tr>
             <th><?php
               if ($search != "") { ?>
-            	<label for="suche_abbrechen" title="<?php _e('Delete the search from filter','wp_admin_blog'); ?>">
-                    <?php _e('Search', 'wp_admin_blog'); ?><a id="suche_abbrechen" href="admin.php?page=wp-admin-microblog/wp-admin-microblog.php&amp;author=<?php echo $author; ?>&amp;search=&amp;tag=<?php echo $tag;?>" style="text-decoration:none; color:#FF9900;" title="<?php _e('Delete the search from filter','wp_admin_blog'); ?>"> X</a>
+            	<label for="suche_abbrechen" title="<?php _e('Delete the search from filter','wp-admin-microblog'); ?>">
+                    <?php _e('Search', 'wp-admin-microblog'); ?><a id="suche_abbrechen" href="admin.php?page=wp-admin-microblog/wp-admin-microblog.php&amp;author=<?php echo $author; ?>&amp;search=&amp;tag=<?php echo $tag;?>" style="text-decoration:none; color:#FF9900;" title="<?php _e('Delete the search from filter','wp-admin-microblog'); ?>"> X</a>
                 </label><?php 
               }
               else {
-                 _e('Search', 'wp_admin_blog');
+                 _e('Search', 'wp-admin-microblog');
               }?>
             </th>
         </tr>
         <tr>
             <td>
-            <input class="wpam-search" name="search" type="search"  value="<?php if ($search != "") { echo $search; } else { _e('Search word', 'wp_admin_blog'); }?>" onblur="if(this.value==='') this.value='<?php _e('Search word', 'wp_admin_blog'); ?>';" onfocus="if(this.value==='<?php _e('Search word', 'wp_admin_blog'); ?>') this.value='';"/>
-            <input name="search_init" type="submit" class="button-secondary" value="<?php _e('Go', 'wp_admin_blog');?>"/>
+            <input class="wpam-search" name="search" type="search"  value="<?php if ($search != "") { echo $search; } else { _e('Search word', 'wp-admin-microblog'); }?>" onblur="if(this.value==='') this.value='<?php _e('Search word', 'wp-admin-microblog'); ?>';" onfocus="if(this.value==='<?php _e('Search word', 'wp-admin-microblog'); ?>') this.value='';"/>
+            <input name="search_init" type="submit" class="button-secondary" value="<?php _e('Go', 'wp-admin-microblog');?>"/>
             </td>
         </tr>    
     </thead>
@@ -591,7 +591,7 @@ function wpam_page() {
     <table class="widefat">
     <thead>
         <tr>
-            <th><?php _e('Tags', 'wp_admin_blog');?></th>
+            <th><?php _e('Tags', 'wp-admin-microblog');?></th>
         </tr>
         <tr>
             <td><div style="padding:5px; line-height: 2.0em;">
@@ -605,7 +605,7 @@ function wpam_page() {
     <table class="widefat">
     <thead>
         <tr>
-            <th><?php _e('User', 'wp_admin_blog');?></th>
+            <th><?php _e('User', 'wp-admin-microblog');?></th>
         </tr>
         <tr>
             <td>

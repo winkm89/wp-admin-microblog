@@ -173,11 +173,11 @@ class wpam_message {
         $text = wpam_message::replace_bbcode($text, 'delete');
         $text = str_replace("<br />","",$text);
         $text = str_replace('(file://)', 'http://', $text);
-        $text = __('Author:','wp_admin_blog') . ' ' . $user->display_name . chr(13) . chr(10) . chr(13) . chr(10) . $text;
-        $text = $text . chr(13) . chr(10) . '________________________' . chr(13) . chr(10) . __('Login under the following address to create a reply:','wp_admin_blog') . ' ' . wp_login_url();
+        $text = __('Author:','wp-admin-microblog') . ' ' . $user->display_name . chr(13) . chr(10) . chr(13) . chr(10) . $text;
+        $text = $text . chr(13) . chr(10) . '________________________' . chr(13) . chr(10) . __('Login under the following address to create a reply:','wp-admin-microblog') . ' ' . wp_login_url();
 
         $headers = 'From: ' . get_bloginfo() . ' <' . get_bloginfo('admin_email') . '>' . "\r\n\\";
-        $subject = get_bloginfo() . ': ' .__('New message in wp admin micoblog','wp_admin_blog');
+        $subject = get_bloginfo() . ': ' .__('New message in wp admin micoblog','wp-admin-microblog');
         
         $sql = "SELECT DISTINCT user FROM " . WPAM_ADMIN_BLOG_POSTS ."";
         $users = $wpdb->get_results($sql);
@@ -280,7 +280,7 @@ class wpam_message {
     */
     static function add_as_wp_post ($content, $title, $author_id) {
         if ($title == '') {
-            $title = __('Short message','wp_admin_blog');
+            $title = __('Short message','wp-admin-microblog');
         }
         $content = str_replace('(file://)', 'http://', $content);
         $message = array(
@@ -398,7 +398,7 @@ class wpam_message {
                 $name = trim($name);
                 foreach ($tags as $tag) {
                     if ($tag['name'] == $name) {
-                        $text = str_replace($match[0][$x], ' <a href="admin.php?page=wp-admin-microblog/wp-admin-microblog.php&amp;tag=' . $tag['tag_ID'] . '" title="' . __('Show related messages','wp_admin_blog') . '">#' . $tag['name'] . '</a> ', $text);
+                        $text = str_replace($match[0][$x], ' <a href="admin.php?page=wp-admin-microblog/wp-admin-microblog.php&amp;tag=' . $tag['tag_ID'] . '" title="' . __('Show related messages','wp-admin-microblog') . '">#' . $tag['name'] . '</a> ', $text);
                     }
                 }
             }

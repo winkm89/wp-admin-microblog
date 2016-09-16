@@ -14,7 +14,7 @@ class wpam_ajax {
         $p_id = intval($p_id);
         $test = intval( $wpdb->get_var("SELECT COUNT(*) FROM " . WPAM_ADMIN_BLOG_POSTS . " WHERE `post_ID` > '$p_id'") );
         if ( $test !== 0 ) {
-            echo __('New messages available','wp_admin_blog');
+            echo __('New messages available','wp-admin-microblog');
         }
     }
     
@@ -59,7 +59,7 @@ class wpam_ajax {
         echo '<html>';
         echo '<head>';
         echo '<meta charset="utf-8">';
-	echo '<title>teachPress - Assessment details</title>';
+	echo '<title>List of likes</title>';
         echo '</head>';
         echo '<body>';
         echo '<div id="content">';
