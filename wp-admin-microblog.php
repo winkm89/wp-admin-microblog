@@ -3,11 +3,11 @@
 Plugin Name: WP Admin Microblog
 Plugin URI: http://mtrv.wordpress.com/microblog/
 Description: Adds a microblog in your WordPress backend.
-Version: 3.0.2
+Version: 3.0.3
 Author: Michael Winkler
 Author URI: http://mtrv.wordpress.com/
 Min WP Version: 3.8
-Max WP Version: 4.4.2
+Max WP Version: 4.6.1
 Text Domain: wp_admin_blog
 Domain Path: /languages
 GitHub Plugin URI: https://github.com/winkm89/wp-admin-microblog
