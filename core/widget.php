@@ -10,6 +10,7 @@ function wpam_widget_function() {
     $text = isset( $_POST['wp_admin_blog_edit_text'] ) ? htmlspecialchars($_POST['wp_admin_blog_edit_text']) : '';
     $sticky_for_dash = wpam_get_options('sticky_for_dash');
     $media_upload = wpam_get_options('media_upload');
+    $wpam_user_name = wpam_get_options('wpam_user_name');
     // actions
     if ( isset($_POST['wpam_nm_submit']) ) {
         // form fields
@@ -100,7 +101,8 @@ function wpam_widget_function() {
         'wp_date_format' => get_option('date_format'),
         'wp_time_format' => get_option('time_format'),
         'sticky_for_dash' => ($sticky_for_dash == 'true') ? true : false,
-        'is_widget' => true
+        'is_widget' => true,
+        'wpam_user_name' => $wpam_user_name
     );
     
     foreach ($rows as $post) {
@@ -133,7 +135,7 @@ function wpam_widget_function() {
         }
         
         echo '<tr class="' . $class . '">';
-        echo '<td style="border-bottom:1px solid rgb(223,223,223); padding: 12px 0 0 5px;" valign="top" width="40"><div class="wpam_user_image" title="' . $user_info->display_name . ' (' . $user_info->user_login . ')">' . get_avatar($user_info->ID, 30) . '</div></td>';
+        echo '<td style="border-bottom:1px solid rgb(223,223,223); padding: 12px 0 0 5px;" valign="top" width="40"><div class="wpam_user_image" title="' . wpam_screen::get_username($user_info, $wpam_user_name) . '">' . get_avatar($user_info->ID, 30) . '</div></td>';
         echo '<td style="border-bottom:1px solid rgb(223,223,223); padding: 7px 5px 7px 0;">';
         
         echo wpam_templates::message($post, $args, $user_info, $options, $level, $count_rep);

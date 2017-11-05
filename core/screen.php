@@ -96,8 +96,6 @@ function wpam_set_screen_options($status, $option, $value) {
     return $value;
 }
 
-
-
 /**
  * Add help tab to wp admin microblog main screen
  */
@@ -177,16 +175,17 @@ class wpam_screen {
      * @param string $tag
      * @param string $author
      * @param string $search
+     * @param string $wpam_user_name
      * @return string
      * @since 2.3
      */
-    public static function get_users ($tag, $author, $search) {
+    public static function get_users ($tag, $author, $search, $wpam_user_name) {
         global $wpdb;
         $end = '<ul class="wpam-user-list">';
         $users = $wpdb->get_results("SELECT DISTINCT user FROM " . WPAM_ADMIN_BLOG_POSTS);
         foreach ($users as $users) {
             $user_info = get_userdata($users->user);
-            $name = '' . $user_info->display_name . ' (' . $user_info->user_login . ')';
+            $name = wpam_screen::get_username($user_info, $wpam_user_name);
             if ($author == $user_info->ID) {
                 $end .= '<li class="wpam-user-list-select"><a href="admin.php?page=wp-admin-microblog/wp-admin-microblog.php&amp;author=&amp;search=' . $search . '&amp;tag=' . $tag . '" title="' . __('Delete user as filter','wp-admin-microblog') . '">';
             }
@@ -197,6 +196,32 @@ class wpam_screen {
             $end .= '</a></li>';
         }
         return $end . '</ul>';      
+    }
+    
+    /**
+     * Defines the visisble user name
+     * @param object $user_info
+     * @param string $wpam_user_name
+     * @since 3.1
+     */
+    public static function get_username ($user_info, $wpam_user_name) {
+        // Nick name option
+        if ($wpam_user_name == 'nickname') {
+            return $user_info->nickname; 
+        }
+        
+        // User login option
+        if ($wpam_user_name == 'user_login') {
+            return $user_info->user_login;
+        }
+        
+        // Full name option (First name and last name)
+        if ($wpam_user_name == 'full_name') {
+            return $user_info->first_name . ' ' . $user_info->last_name;
+        }
+        
+        // Default
+        return $user_info->display_name;
     }
     
     /**
@@ -318,7 +343,8 @@ class wpam_screen {
             'wp_date_format' => get_option('date_format'),
             'wp_time_format' => get_option('time_format'),
             'sticky_for_dash' => true,
-            'is_widget' => false
+            'is_widget' => false,
+            'wpam_user_name' => $args['wpam_user_name']
         );
             
         foreach ($post as $post) {
@@ -336,7 +362,7 @@ class wpam_screen {
                
             // print messages
             echo '<tr class="' . $class . '">';
-            echo '<td style="padding:10px 0 10px 10px; width:40px;"><div class="wpam_user_image" title="' . $user_info->display_name . ' (' . $user_info->user_login . ')">' . get_avatar($user_info->ID, 40) . '</div></td>';
+            echo '<td style="padding:10px 0 10px 10px; width:40px;"><div class="wpam_user_image" title="' . self::get_username($user_info, $args['wpam_user_name']) . '">' . get_avatar($user_info->ID, 40) . '</div></td>';
             echo '<td style="padding:10px;">';
             echo wpam_templates::message($post, $tags, $user_info, $options, 1, 0);
             
@@ -379,7 +405,7 @@ class wpam_screen {
                  $user_info = get_userdata($reply->user);
                  $style = ( $reply_number >= 3 && $reply_number - $count >= 3 && $rpl == 0 ) ? 'style="display:none;"' : '';
                  $r .= '<tr id="wpam-reply-' . $post->post_ID . '-' . $count . '" ' . $style . '>';
-                 $r .= '<td style="padding:10px 0 10px 10px; width:40px;"><div class="wpam_user_image" title="' . $user_info->display_name . ' (' . $user_info->user_login . ')">' . get_avatar($user_info->ID, 40) . '</div></td>';
+                 $r .= '<td style="padding:10px 0 10px 10px; width:40px;"><div class="wpam_user_image" title="' . self::get_username($user_info, $args['wpam_user_name']) . '">' . get_avatar($user_info->ID, 40) . '</div></td>';
                  $r .= '<td>' . wpam_templates::message($reply, $tags_reply, $user_info, $options, 2, 0) . '</td>';
                  $r .= '</tr>';
             }
@@ -429,6 +455,7 @@ function wpam_page() {
     $auto_reply = false;
     $auto_reload_interval = 60000;
     $blog_name = 'Microblog';
+    $wpam_user_name = 'display_name';
     $tags_per_page = WPAM_DEFAULT_TAGS;
     $number_messages = WPAM_DEFAULT_NUMBER_MESSAGES;
     $sort_order = WPAM_DEFAULT_SORT_ORDER;
@@ -440,6 +467,7 @@ function wpam_page() {
         if ( $system['variable'] == 'blog_name' ) { $blog_name = $system['value']; }
         if ( $system['variable'] == 'auto_reload_interval' ) { $auto_reload_interval = $system['value']; }
         if ( $system['variable'] == 'auto_reload_enabled' ) { $auto_reload_enabled = $system['value']; }
+        if ( $system['variable'] == 'wpam_user_name' ) { $wpam_user_name = $system['value']; }
     }
    
     // Load user settings
@@ -539,7 +567,8 @@ function wpam_page() {
             'num_all_messages' => $num_all_messages,
             'auto_reply' => $auto_reply,
             'user' => $user,
-            'date_format' => $date_format
+            'date_format' => $date_format,
+            'wpam_user_name' => $wpam_user_name
         ); 
         $post = wpam_message::get_messages($args);
         
@@ -609,7 +638,7 @@ function wpam_page() {
         </tr>
         <tr>
             <td>
-                <?php echo wpam_screen::get_users($tag, $author, $search); ?>
+                <?php echo wpam_screen::get_users($tag, $author, $search, $wpam_user_name); ?>
             </td>
          </tr>   
     </thead>

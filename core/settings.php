@@ -66,6 +66,8 @@ function wpam_update_options ($option, $roles, $blog_post, $sticky) {
    $wpdb->query( $update );
    $update = "UPDATE " . WPAM_ADMIN_BLOG_META . " SET `value` = '" . $option['auto_notifications'] . "' WHERE `variable` = 'auto_notifications'";
    $wpdb->query( $update );
+   $update = "UPDATE " . WPAM_ADMIN_BLOG_META . " SET `value` = '" . $option['wpam_user_name'] . "' WHERE `variable` = 'wpam_user_name'";
+   $wpdb->query( $update );
 } 
 
 /**
@@ -84,7 +86,8 @@ function wpam_settings () {
             'name_blog' => htmlspecialchars($_POST['name_blog']),
             'name_widget' => htmlspecialchars($_POST['name_widget']),
             'sticky_for_dash' => htmlspecialchars($_POST['sticky_for_dash']),
-            'auto_notifications' => htmlspecialchars($_POST['auto_notifications'])  
+            'auto_notifications' => htmlspecialchars($_POST['auto_notifications']),
+            'wpam_user_name' => htmlspecialchars($_POST['wpam_user_name'])
           );
           $userrole = $_POST['userrole'];
           $blog_post = $_POST['blog_post'];
@@ -102,6 +105,7 @@ function wpam_settings () {
      $media_upload = false;
      $sticky_for_dash = false;
      $auto_notifications = '';
+     $wpam_user_name = '';
      
      $system = wpam_get_options('','system');
      foreach ($system as $system) {
@@ -113,6 +117,7 @@ function wpam_settings () {
         if ( $system['variable'] == 'media_upload' ) { $media_upload = $system['value']; }
         if ( $system['variable'] == 'sticky_for_dash' ) { $sticky_for_dash = $system['value']; }
         if ( $system['variable'] == 'auto_notifications' ) { $auto_notifications = $system['value']; }
+        if ( $system['variable'] == 'wpam_user_name' ) { $wpam_user_name = $system['value']; }
      }
      ?>
      <div class="wrap">
@@ -131,22 +136,46 @@ function wpam_settings () {
              <td><input name="name_widget" type="text" value="<?php echo $name_widget; ?>" size="35" /></td>
              <td><em><?php _e('Default: Microblog','wp-admin-microblog'); ?></em></td>
         </tr>
-         <tr>
-             <th scope="row"><?php _e('Media upload for the dashboard widget','wp-admin-microblog'); ?></th>
-             <td><select name="media_upload">
-                <?php
-                if ($media_upload != false) {
-                    echo '<option value="true" selected="selected">' . __('yes','wp-admin-microblog') . '</option>';
-                    echo '<option value="false">' . __('no','wp-admin-microblog') . '</option>';
-                }
-                else {
-                    echo '<option value="true">' . __('yes','wp-admin-microblog') . '</option>';
-                    echo '<option value="false" selected="selected">' . __('no','wp-admin-microblog') . '</option>';
-                } 
-                ?>
-             </select></td>
-             <td><em><?php _e('Activate this option to use the media upload for the WP Admin Microblog dashboard widget. If you use it, please notify, that the media upload will not work correctly for QuickPress.','wp-admin-microblog'); ?></em></td>
-         </tr>
+        <tr>
+            <th scope="row"><?php _e('Media upload for the dashboard widget','wp-admin-microblog'); ?></th>
+            <td><select name="media_upload">
+               <?php
+               if ($media_upload != false) {
+                   echo '<option value="true" selected="selected">' . __('yes','wp-admin-microblog') . '</option>';
+                   echo '<option value="false">' . __('no','wp-admin-microblog') . '</option>';
+               }
+               else {
+                   echo '<option value="true">' . __('yes','wp-admin-microblog') . '</option>';
+                   echo '<option value="false" selected="selected">' . __('no','wp-admin-microblog') . '</option>';
+               } 
+               ?>
+            </select></td>
+            <td><em><?php _e('Activate this option to use the media upload for the WP Admin Microblog dashboard widget. If you use it, please notify, that the media upload will not work correctly for QuickPress.','wp-admin-microblog'); ?></em></td>
+        </tr>
+        <tr>
+            <th scope="row"><?php _e('User names','wp-admin-microblog'); ?></th>
+            <td>
+                <select name="wpam_user_name">
+                    <?php
+                    // display name option
+                    $sel = ( $wpam_user_name == 'display_name' ) ? 'selected="selected"' : '';
+                    echo '<option value="display_name" ' . $sel . '>' . __('Display name','wp-admin-microblog') . '</option>';
+                    
+                    // nickname option
+                    $sel = ( $wpam_user_name == 'nickname' ) ? 'selected="selected"' : '';
+                    echo '<option value="nickname" ' . $sel . '>' . __('Nickname','wp-admin-microblog') . '</option>';
+                    // full name option
+                    $sel = ( $wpam_user_name == 'full_name' ) ? 'selected="selected"' : '';
+                    echo '<option value="full_name" ' . $sel . '>' . __('Full name','wp-admin-microblog') . '</option>';
+                    
+                    // user_login option
+                    $sel = ( $wpam_user_name == 'user_login' ) ? 'selected="selected"' : '';
+                    echo '<option value="user_login" ' . $sel . '>' . __('User login','wp-admin-microblog') . '</option>';
+                    ?>
+                </select>
+            </td>
+            <td><em><?php _e('Defines how user names will be displayed.','wp-admin-microblog'); ?></em></td>
+        </tr> 
          <tr>
              <th scope="row"><?php _e('Auto check interval','wp-admin-microblog'); ?></th>
              <td><input name="auto_reload_interval" type="text" value="<?php echo $auto_reload_interval; ?>" size="35" /></td>

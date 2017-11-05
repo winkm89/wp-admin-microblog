@@ -99,20 +99,25 @@ class wpam_update {
      */
     private static function update_to_23 () {
         global $wpdb;
+        
         // add column sort_date
         if ($wpdb->query("SHOW COLUMNS FROM " . WPAM_ADMIN_BLOG_POSTS . " LIKE 'sort_date'") == '0') { 
             $wpdb->query("ALTER TABLE " . WPAM_ADMIN_BLOG_POSTS . " ADD `sort_date` DATETIME NULL DEFAULT NULL AFTER `date`");
         }
+        
         // add column last_edit
         if ($wpdb->query("SHOW COLUMNS FROM " . WPAM_ADMIN_BLOG_POSTS . " LIKE 'last_edit'") == '0') { 
             $wpdb->query("ALTER TABLE " . WPAM_ADMIN_BLOG_POSTS . " ADD `last_edit` DATETIME NULL DEFAULT NULL AFTER `sort_date`");
         }
+        
+        // Add auto reload options
         if ( wpam_get_options('auto_reload_interval') === false ) {
             $wpdb->query("INSERT INTO " . WPAM_ADMIN_BLOG_META . " (`variable`, `value`, `category`) VALUES ('auto_reload_interval', '60000', 'system')");
         }
         if ( wpam_get_options('auto_reload_enabled') === false ) {
             $wpdb->query("INSERT INTO " . WPAM_ADMIN_BLOG_META . " (`variable`, `value`, `category`) VALUES ('auto_reload_enabled', 'true', 'system')");
         }
+        
         $wpdb->query("ALTER TABLE " . WPAM_ADMIN_BLOG_POSTS . " ENGINE = INNODB");
         $wpdb->query("ALTER TABLE " . WPAM_ADMIN_BLOG_META . " ENGINE = INNODB");
         $wpdb->query("ALTER TABLE " . WPAM_ADMIN_BLOG_RELATIONS . " ENGINE = INNODB");
@@ -125,6 +130,14 @@ class wpam_update {
      * @since 3.0
      */
     private static function update_to_30 ($charset_collate) {
+        global $wpdb;
+        
+        // Add user name option
+        if ( wpam_get_options('wpam_user_name') === false ) {
+            $wpdb->query("INSERT INTO " . WPAM_ADMIN_BLOG_META . " (`variable`, `value`, `category`) VALUES ('wpam_user_name', 'display_name', 'system')");
+        }
+        
+        // Add like table
         wpam_tables::add_like_table($charset_collate);
     }
     

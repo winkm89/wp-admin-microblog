@@ -24,7 +24,7 @@ class wpam_templates {
         $r =  '<div id="wp_admin_blog_message_' . $message->post_ID . '" class="wpam-blog-message">
                 <div class="wpam-message-info-row">
                      <div class="wpam-message-info-details">
-                        ' . self::date($message->date, $options) . ' | ' . __('by','wp-admin-microblog') . ' ' . $user_info->display_name . self::replies_menu ($message, $count_rep) . '
+                        ' . self::date($message->date, $options) . ' | ' . __('by','wp-admin-microblog') . ' ' . wpam_screen::get_username($user_info, $options['wpam_user_name']) . self::replies_menu ($message, $count_rep) . '
                      </div>
                      <div class="wpam-message-info-likes">
                         ' . self::like_menu($message) . '

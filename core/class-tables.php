@@ -172,6 +172,7 @@ class wpam_tables {
         $wpdb->query("INSERT INTO " . WPAM_ADMIN_BLOG_META . " (`variable`,`value`,`category`) VALUES ('media_upload','false','system')");
         $wpdb->query("INSERT INTO " . WPAM_ADMIN_BLOG_META . " (`variable`,`value`,`category`) VALUES ('sticky_for_dash','','system')");
         $wpdb->query("INSERT INTO " . WPAM_ADMIN_BLOG_META . " (`variable`,`value`,`category`) VALUES ('auto_notifications','','system')");
+        $wpdb->query("INSERT INTO " . WPAM_ADMIN_BLOG_META . " (`variable`,`value`,`category`) VALUES ('wpam_user_name','display_name','system')");
    
         // test engine
         self::change_engine(WPAM_ADMIN_BLOG_META);
