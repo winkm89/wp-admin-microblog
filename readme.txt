@@ -2,8 +2,8 @@
 Contributors: Michael Winkler
 Tags: microblog, microblogging, admin, communication, collaboration, scratchpad
 Requires at least: 3.8
-Tested up to: 4.6.1
-Stable tag: 3.0.4
+Tested up to: 4.8.3
+Stable tag: 3.1.0
 
 Make the communication and collaboration in your team easier or use it as a scratchpad.
 
@@ -27,7 +27,7 @@ Use at your own risk. No warranty expressed or implied is provided.
 
 == Credits ==
 
-Copyright 2010-2016 by Michael Winkler
+Copyright 2010-2017 by Michael Winkler
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -87,6 +87,9 @@ You can use the following BBCodes for text formatting:
 Combinations like [red][s]text[/s][/red] are possible.
 
 == Changelog ==
+
+= 3.1.0 - (05.11.2017) =
+* New: Option for changing the display names of users added
 
 = 3.0.4 - (16.09.2016) =
 * Changed: Text domain switched to wp-admin-microblog

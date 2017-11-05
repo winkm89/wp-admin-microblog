@@ -59,7 +59,7 @@ class wpam_ajax {
         echo '<html>';
         echo '<head>';
         echo '<meta charset="utf-8">';
-	echo '<title>List of likes</title>';
+        echo '<title>List of likes</title>';
         echo '</head>';
         echo '<body>';
         echo '<div id="content">';

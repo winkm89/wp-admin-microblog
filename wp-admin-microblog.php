@@ -3,11 +3,11 @@
 Plugin Name: WP Admin Microblog
 Plugin URI: http://mtrv.wordpress.com/microblog/
 Description: Adds a microblog in your WordPress backend.
-Version: 3.0.4
+Version: 3.1.0
 Author: Michael Winkler
 Author URI: http://mtrv.wordpress.com/
 Min WP Version: 3.8
-Max WP Version: 4.6.1
+Max WP Version: 4.8.3
 Text Domain: wp-admin-microblog
 Domain Path: /languages
 GitHub Plugin URI: https://github.com/winkm89/wp-admin-microblog
@@ -17,7 +17,7 @@ GitHub Branch: master
 /*
    LICENCE
  
-    Copyright 2010-2016 Michael Winkler
+    Copyright 2010-2017 Michael Winkler
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -123,7 +123,7 @@ function wpam_menu() {
  * @since 2.3
 */
 function wpam_get_version() {
-    return '3.0.2';
+    return '3.1.0';
 }
 
 /** 
@@ -131,10 +131,10 @@ function wpam_get_version() {
  * adapted from P2-Theme
 */
 function wpam_media_buttons() {
-   include_once ABSPATH . '/wp-admin/includes/media.php';
-   ob_start();
-   do_action( 'media_buttons' );
-   return ob_get_clean();
+    include_once ABSPATH . '/wp-admin/includes/media.php';
+    ob_start();
+    do_action( 'media_buttons' );
+    return ob_get_clean();
 }
 
 /** 
@@ -149,46 +149,46 @@ function wpam_media_buttons() {
  * @param $type - top or bottom, default: top
 */
 function wpam_page_menu ($number_entries, $entries_per_page, $current_page, $entry_limit, $page_link = '', $link_attributes = '', $type = 'top') {
-   // if number of entries > number of entries per page
-   if ($number_entries > $entries_per_page) {
-      $num_pages = floor (($number_entries / $entries_per_page));
-      $mod = $number_entries % $entries_per_page;
-      if ($mod != 0) {
-         $num_pages = $num_pages + 1;
-      }
+    // if number of entries > number of entries per page
+    if ($number_entries > $entries_per_page) {
+        $num_pages = floor (($number_entries / $entries_per_page));
+        $mod = $number_entries % $entries_per_page;
+        if ($mod != 0) {
+            $num_pages = $num_pages + 1;
+        }
 
-      // first page / previous page
-      if ($entry_limit != 0) {
-         $back_links = '<a href="' . $page_link . '&amp;limit=1&amp;' . $link_attributes . '" title="' . __('first page','wp-admin-microblog') . '" class="page-numbers">&laquo;</a> <a href="' . $page_link . '&amp;limit=' . ($current_page - 1) . '&amp;' . $link_attributes . '" title="' . __('previous page','wp-admin-microblog') . '" class="page-numbers">&lsaquo;</a> ';
-      }
-      else {
-         $back_links = '<a class="first-page disabled">&laquo;</a> <a class="prev-page disabled">&lsaquo;</a> ';
-      }
-      $page_input = ' <input name="limit" type="text" size="2" value="' .  $current_page . '" style="text-align:center;" /> ' . __('of','wp-admin-microblog') . ' ' . $num_pages . ' ';
+        // first page / previous page
+        if ($entry_limit != 0) {
+            $back_links = '<a href="' . $page_link . '&amp;limit=1&amp;' . $link_attributes . '" title="' . __('first page','wp-admin-microblog') . '" class="page-numbers">&laquo;</a> <a href="' . $page_link . '&amp;limit=' . ($current_page - 1) . '&amp;' . $link_attributes . '" title="' . __('previous page','wp-admin-microblog') . '" class="page-numbers">&lsaquo;</a> ';
+        }
+        else {
+            $back_links = '<a class="first-page disabled">&laquo;</a> <a class="prev-page disabled">&lsaquo;</a> ';
+        }
+        $page_input = ' <input name="limit" type="text" size="2" value="' .  $current_page . '" style="text-align:center;" /> ' . __('of','wp-admin-microblog') . ' ' . $num_pages . ' ';
 
-      // next page/ last page
-      if ( ( $entry_limit + $entries_per_page ) <= ($number_entries)) { 
-         $next_links = '<a href="' . $page_link . '&amp;limit=' . ($current_page + 1) . '&amp;' . $link_attributes . '" title="' . __('next page','wp-admin-microblog') . '" class="page-numbers">&rsaquo;</a> <a href="' . $page_link . '&amp;limit=' . $num_pages . '&amp;' . $link_attributes . '" title="' . __('last page','wp-admin-microblog') . '" class="page-numbers">&raquo;</a> ';
-      }
-      else {
-         $next_links = '<a class="next-page disabled">&rsaquo;</a> <a class="last-page disabled">&raquo;</a> ';
-      }
+        // next page/ last page
+        if ( ( $entry_limit + $entries_per_page ) <= ($number_entries)) { 
+            $next_links = '<a href="' . $page_link . '&amp;limit=' . ($current_page + 1) . '&amp;' . $link_attributes . '" title="' . __('next page','wp-admin-microblog') . '" class="page-numbers">&rsaquo;</a> <a href="' . $page_link . '&amp;limit=' . $num_pages . '&amp;' . $link_attributes . '" title="' . __('last page','wp-admin-microblog') . '" class="page-numbers">&raquo;</a> ';
+        }
+        else {
+            $next_links = '<a class="next-page disabled">&rsaquo;</a> <a class="last-page disabled">&raquo;</a> ';
+        }
 
-      // for displaying number of entries
-      if ($entry_limit + $entries_per_page > $number_entries) {
-         $anz2 = $number_entries;
-      }
-      else {
-         $anz2 = $entry_limit + $entries_per_page;
-      }
+        // for displaying number of entries
+        if ($entry_limit + $entries_per_page > $number_entries) {
+            $anz2 = $number_entries;
+        }
+        else {
+            $anz2 = $entry_limit + $entries_per_page;
+        }
 
-      // return
-      if ($type == 'top') {
-         return '<div class="tablenav-pages"><span class="displaying-num">' . ($entry_limit + 1) . ' - ' . $anz2 . ' ' . __('of','wp-admin-microblog') . ' ' . $number_entries . ' ' . __('Entries','wp-admin-microblog') . '</span> ' . $back_links . '' . $page_input . '' . $next_links . '</div>';
-      }
-      else {
-         return '<div class="tablenav"><div class="tablenav-pages"><span class="displaying-num">' . ($entry_limit + 1) . ' - ' . $anz2 . ' ' . __('of','wp-admin-microblog') . ' ' . $number_entries . ' ' . __('Entries','wp-admin-microblog') . '</span> ' . $back_links . ' ' . $current_page . ' ' . __('of','wp-admin-microblog') . ' ' . $num_pages . ' ' . $next_links . '</div></div>';
-      }	
+        // return
+        if ($type == 'top') {
+             return '<div class="tablenav-pages"><span class="displaying-num">' . ($entry_limit + 1) . ' - ' . $anz2 . ' ' . __('of','wp-admin-microblog') . ' ' . $number_entries . ' ' . __('Entries','wp-admin-microblog') . '</span> ' . $back_links . '' . $page_input . '' . $next_links . '</div>';
+        }
+        else {
+            return '<div class="tablenav"><div class="tablenav-pages"><span class="displaying-num">' . ($entry_limit + 1) . ' - ' . $anz2 . ' ' . __('of','wp-admin-microblog') . ' ' . $number_entries . ' ' . __('Entries','wp-admin-microblog') . '</span> ' . $back_links . ' ' . $current_page . ' ' . __('of','wp-admin-microblog') . ' ' . $num_pages . ' ' . $next_links . '</div></div>';
+        }	
    }
 }
 
