@@ -1,17 +1,56 @@
-# Copyright (C) 2016 WP Admin Microblog
-# This file is distributed under the same license as the WP Admin Microblog package.
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: WP Admin Microblog 3.0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-admin-"
 "microblog\n"
-"POT-Creation-Date: 2016-03-16 21:05:25+00:00\n"
+"POT-Creation-Date: 2017-11-05 13:25+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: wp-admin-microblog.php:114
+msgid "Blog"
+msgstr ""
+
+#: wp-admin-microblog.php:117 wp-admin-microblog.php:117
+msgid "Settings"
+msgstr ""
+
+#: wp-admin-microblog.php:162
+msgid "first page"
+msgstr ""
+
+#: wp-admin-microblog.php:162
+msgid "previous page"
+msgstr ""
+
+#: wp-admin-microblog.php:167 wp-admin-microblog.php:187
+#: wp-admin-microblog.php:190 wp-admin-microblog.php:190
+msgid "of"
+msgstr ""
+
+#: wp-admin-microblog.php:171
+msgid "next page"
+msgstr ""
+
+#: wp-admin-microblog.php:171
+msgid "last page"
+msgstr ""
+
+#: wp-admin-microblog.php:187 wp-admin-microblog.php:190
+msgid "Entries"
+msgstr ""
+
+#: wp-admin-microblog.php:228
+msgid "New Message"
+msgstr ""
 
 #: core/class-ajax.php:17
 msgid "New messages available"
@@ -25,11 +64,15 @@ msgstr ""
 msgid "Show Likes"
 msgstr ""
 
-#: core/class-templates.php:65 core/screen.php:390
+#: core/class-templates.php:65
+msgid "One Reply"
+msgstr ""
+
+#: core/class-templates.php:65 core/screen.php:416
 msgid "Replies"
 msgstr ""
 
-#: core/class-templates.php:103 core/screen.php:247 core/widget.php:71
+#: core/class-templates.php:103 core/screen.php:272 core/widget.php:71
 msgid "Sticky this message"
 msgstr ""
 
@@ -69,11 +112,11 @@ msgstr ""
 msgid "Reply"
 msgstr ""
 
-#: core/class-templates.php:128 core/screen.php:215
+#: core/class-templates.php:128 core/screen.php:240
 msgid "Like"
 msgstr ""
 
-#: core/class-templates.php:128 core/screen.php:216
+#: core/class-templates.php:128 core/screen.php:241
 msgid "Unlike"
 msgstr ""
 
@@ -101,7 +144,7 @@ msgstr ""
 msgid "Short message"
 msgstr ""
 
-#: core/messages.php:401 core/screen.php:169
+#: core/messages.php:401 core/screen.php:167
 msgid "Show related messages"
 msgstr ""
 
@@ -145,312 +188,299 @@ msgstr ""
 msgid "Show date of publishing"
 msgstr ""
 
-#: core/screen.php:108
+#: core/screen.php:106
 msgid "Microblog"
 msgstr ""
 
-#: core/screen.php:109
+#: core/screen.php:107
 msgid "E-mail notification"
 msgstr ""
 
-#: core/screen.php:109
+#: core/screen.php:107
 msgid ""
 "If you will send your message as an E-Mail to any user, so write @username "
 "(example: @admin)"
 msgstr ""
 
-#: core/screen.php:110
+#: core/screen.php:108
 msgid "Text formatting"
 msgstr ""
 
-#: core/screen.php:110
+#: core/screen.php:108
 msgid ""
 "You can use simple bbcodes: [b]bold[/b], [i]italic[/i], [u]underline[/u], [s]"
 "strikethrough[/s], [red]red[/red], [blue]blue[/blue], [green]green[/green], "
-"[orange]orange[/orange], [code]code[/code]. Combinations like [red][s]text[/"
-"s][/red] are possible. The using of HTML tags is not possible."
+"[orange]orange[/orange], [code]code[/code]. Combinations like [red][s]"
+"text[/s][/red] are possible. The using of HTML tags is not possible."
 msgstr ""
 
-#: core/screen.php:111 core/screen.php:595
+#: core/screen.php:109 core/screen.php:623
 msgid "Tags"
 msgstr ""
 
-#: core/screen.php:111
+#: core/screen.php:109
 msgid ""
 "You can add tags directly to your message, if you use hashtags. Examples: "
 "#monday #2012"
 msgstr ""
 
-#: core/screen.php:142
+#: core/screen.php:140
 msgid "No tags available"
 msgstr ""
 
-#: core/screen.php:166
+#: core/screen.php:164
 msgid "Delete the tag from filter"
 msgstr ""
 
-#: core/screen.php:191
+#: core/screen.php:190
 msgid "Delete user as filter"
 msgstr ""
 
-#: core/screen.php:213
+#: core/screen.php:238
 msgid "Click for refresh"
 msgstr ""
 
-#: core/screen.php:214
+#: core/screen.php:239
 msgid "The following users like this message"
 msgstr ""
 
-#: core/screen.php:217
+#: core/screen.php:242
 msgid "Cancel"
 msgstr ""
 
-#: core/screen.php:218
+#: core/screen.php:243
 msgid "Submit"
 msgstr ""
 
-#: core/screen.php:233
+#: core/screen.php:258
 msgid "Your Message"
 msgstr ""
 
-#: core/screen.php:241 core/widget.php:80
+#: core/screen.php:266 core/widget.php:80
 msgid "Send"
 msgstr ""
 
-#: core/screen.php:243 core/widget.php:68
+#: core/screen.php:268 core/widget.php:68
 msgid "Options"
 msgstr ""
 
-#: core/screen.php:254 core/widget.php:74
+#: core/screen.php:279 core/widget.php:74
 msgid "as WordPress blog post"
 msgstr ""
 
-#: core/screen.php:255 core/widget.php:74
+#: core/screen.php:280 core/widget.php:74
 msgid "Title"
 msgstr ""
 
-#: core/screen.php:278
+#: core/screen.php:303
 msgid "Search Results"
 msgstr ""
 
-#: core/screen.php:278
+#: core/screen.php:303
 msgid "Show all"
 msgstr ""
 
-#: core/screen.php:281
+#: core/screen.php:306
 msgid "Messages"
 msgstr ""
 
-#: core/screen.php:296
+#: core/screen.php:321
 msgid "Sorry, no entries mached your criteria"
 msgstr ""
 
-#: core/screen.php:390
+#: core/screen.php:416
 msgid "Show all replies"
 msgstr ""
 
-#: core/screen.php:574 core/screen.php:575
+#: core/screen.php:602 core/screen.php:603
 msgid "Delete the search from filter"
 msgstr ""
 
-#: core/screen.php:575 core/screen.php:579
+#: core/screen.php:603 core/screen.php:607
 msgid "Search"
 msgstr ""
 
-#: core/screen.php:585
+#: core/screen.php:613 core/screen.php:613 core/screen.php:613
 msgid "Search word"
 msgstr ""
 
-#: core/screen.php:586
+#: core/screen.php:614
 msgid "Go"
 msgstr ""
 
-#: core/screen.php:609
+#: core/screen.php:637
 msgid "User"
 msgstr ""
 
-#: core/settings.php:93
+#: core/settings.php:96
 msgid ""
 "Settings are changed. Please note that access changes are visible, until you "
 "have reloaded this page a secont time."
 msgstr ""
 
-#: core/settings.php:119
+#: core/settings.php:124
 msgid "WP Admin Microblog Settings"
 msgstr ""
 
-#: core/settings.php:122
+#: core/settings.php:127
 msgid "General"
 msgstr ""
 
-#: core/settings.php:125
+#: core/settings.php:130
 msgid "Name of the Microblog"
 msgstr ""
 
-#: core/settings.php:127 core/settings.php:132
+#: core/settings.php:132 core/settings.php:137
 msgid "Default: Microblog"
 msgstr ""
 
-#: core/settings.php:130
+#: core/settings.php:135
 msgid "Name of the dashboard widget"
 msgstr ""
 
-#: core/settings.php:135
+#: core/settings.php:140
 msgid "Media upload for the dashboard widget"
 msgstr ""
 
-#: core/settings.php:139 core/settings.php:143 core/settings.php:203
-#: core/settings.php:207 core/settings.php:243 core/settings.php:247
+#: core/settings.php:144 core/settings.php:148 core/settings.php:232
+#: core/settings.php:236 core/settings.php:272 core/settings.php:276
 msgid "yes"
 msgstr ""
 
-#: core/settings.php:140 core/settings.php:144 core/settings.php:204
-#: core/settings.php:208 core/settings.php:244 core/settings.php:248
+#: core/settings.php:145 core/settings.php:149 core/settings.php:233
+#: core/settings.php:237 core/settings.php:273 core/settings.php:277
 msgid "no"
 msgstr ""
 
-#: core/settings.php:148
+#: core/settings.php:153
 msgid ""
 "Activate this option to use the media upload for the WP Admin Microblog "
 "dashboard widget. If you use it, please notify, that the media upload will "
 "not work correctly for QuickPress."
 msgstr ""
 
-#: core/settings.php:151
+#: core/settings.php:156
+msgid "User names"
+msgstr ""
+
+#: core/settings.php:162
+msgid "Display name"
+msgstr ""
+
+#: core/settings.php:166
+msgid "Nickname"
+msgstr ""
+
+#: core/settings.php:169
+msgid "Full name"
+msgstr ""
+
+#: core/settings.php:173
+msgid "User login"
+msgstr ""
+
+#: core/settings.php:177
+msgid "Defines how user names will be displayed."
+msgstr ""
+
+#: core/settings.php:180
 msgid "Auto check interval"
 msgstr ""
 
-#: core/settings.php:153
+#: core/settings.php:182
 msgid ""
 "Use this option to modify the interval in which the plugin checks for new "
 "messages. A smaller value needs more server performance. The default value "
 "is 60000 ms."
 msgstr ""
 
-#: core/settings.php:158
+#: core/settings.php:187
 msgid "Enable auto check"
 msgstr ""
 
-#: core/settings.php:162
+#: core/settings.php:191
 msgid "Access"
 msgstr ""
 
-#: core/settings.php:165
+#: core/settings.php:194
 msgid "Access for"
 msgstr ""
 
-#: core/settings.php:178
+#: core/settings.php:207
 msgid "Select each user role which has access to WP Admin Microblog."
 msgstr ""
 
-#: core/settings.php:178 core/settings.php:193 core/settings.php:235
+#: core/settings.php:207 core/settings.php:222 core/settings.php:264
 msgid "Use &lt;Ctrl&gt; key to select more than one."
 msgstr ""
 
-#: core/settings.php:181
+#: core/settings.php:210
 msgid "\"Message as a blog post\"-function for"
 msgstr ""
 
-#: core/settings.php:193
+#: core/settings.php:222
 msgid ""
 "Select each user role which can use the \"Message as a blog post\"-function."
 msgstr ""
 
-#: core/settings.php:196
+#: core/settings.php:225
 msgid "Notifications"
 msgstr ""
 
-#: core/settings.php:199
+#: core/settings.php:228
 msgid "Auto replies"
 msgstr ""
 
-#: core/settings.php:212
+#: core/settings.php:241
 msgid ""
 "Activate this option and the plugin insert in every reply the string for an "
 "e-mail notification to the message author."
 msgstr ""
 
-#: core/settings.php:215
+#: core/settings.php:244
 msgid "Auto notifications"
 msgstr ""
 
-#: core/settings.php:217
+#: core/settings.php:246
 msgid ""
 "Insert your email address, if you want to receive notifications for every "
 "new message in the microblog. Insert one email address per line."
 msgstr ""
 
-#: core/settings.php:220
+#: core/settings.php:249
 msgid "Sticky messages"
 msgstr ""
 
-#: core/settings.php:223
+#: core/settings.php:252
 msgid "\"Sticky messages\"-function for"
 msgstr ""
 
-#: core/settings.php:235
+#: core/settings.php:264
 msgid "Select each user role which can add sticky messages."
 msgstr ""
 
-#: core/settings.php:238
+#: core/settings.php:267
 msgid "Sticky messages for the dashboard widget"
 msgstr ""
 
-#: core/settings.php:253
+#: core/settings.php:282
 msgid "Select `yes` to display sticky messages in the dashboard widget."
 msgstr ""
 
-#: core/settings.php:257
+#: core/settings.php:286
 msgid "Save Changes"
-msgstr ""
-
-#: wp-admin-microblog.php:111
-msgid "Blog"
-msgstr ""
-
-#: wp-admin-microblog.php:114
-msgid "Settings"
-msgstr ""
-
-#: wp-admin-microblog.php:159
-msgid "first page"
-msgstr ""
-
-#: wp-admin-microblog.php:159
-msgid "previous page"
-msgstr ""
-
-#: wp-admin-microblog.php:164 wp-admin-microblog.php:184
-#: wp-admin-microblog.php:187
-msgid "of"
-msgstr ""
-
-#: wp-admin-microblog.php:168
-msgid "next page"
-msgstr ""
-
-#: wp-admin-microblog.php:168
-msgid "last page"
-msgstr ""
-
-#: wp-admin-microblog.php:184 wp-admin-microblog.php:187
-msgid "Entries"
-msgstr ""
-
-#: wp-admin-microblog.php:225
-msgid "New Message"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "WP Admin Microblog"
 msgstr ""
 
-#. Plugin URI of the plugin/theme
-msgid "http://mtrv.wordpress.com/microblog/"
-msgstr ""
-
 #. Description of the plugin/theme
 msgid "Adds a microblog in your WordPress backend."
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://mtrv.wordpress.com/microblog/"
 msgstr ""
 
 #. Author of the plugin/theme
