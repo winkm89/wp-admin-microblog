@@ -3,11 +3,11 @@
 Plugin Name: WP Admin Microblog
 Plugin URI: http://mtrv.wordpress.com/microblog/
 Description: Adds a microblog in your WordPress backend.
-Version: 3.1.0
+Version: 3.1.1
 Author: Michael Winkler
 Author URI: http://mtrv.wordpress.com/
 Min WP Version: 3.8
-Max WP Version: 4.8.3
+Max WP Version: 5.3
 Text Domain: wp-admin-microblog
 Domain Path: /languages
 GitHub Plugin URI: https://github.com/winkm89/wp-admin-microblog
@@ -17,7 +17,7 @@ GitHub Branch: master
 /*
    LICENCE
  
-    Copyright 2010-2017 Michael Winkler
+    Copyright 2010-2019 Michael Winkler
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -53,7 +53,7 @@ if ( !defined('WPAM_ADMIN_BLOG_TAGS') ) {
 if ( !defined('WPAM_ADMIN_BLOG_RELATIONS') ) {
     define('WPAM_ADMIN_BLOG_RELATIONS', $wpdb->prefix . 'admin_blog_relations'); }
     
-    if ( !defined('WPAM_ADMIN_BLOG_LIKES') ) {
+if ( !defined('WPAM_ADMIN_BLOG_LIKES') ) {
     define('WPAM_ADMIN_BLOG_LIKES', $wpdb->prefix . 'admin_blog_likes'); }
     
 if ( !defined('WPAM_ADMIN_BLOG_META') ) {
@@ -87,7 +87,21 @@ if ( !defined('WPAM_DEFAULT_SORT_ORDER') ) {
  * - date
  */
 if ( !defined('WPAM_DEFAULT_DATE_FORMAT') ) {
-    define('WPAM_DEFAULT_DATE_FORMAT', 'time_difference'); }    
+    define('WPAM_DEFAULT_DATE_FORMAT', 'time_difference'); }  
+
+/**
+ * This value defines the position in the admin menu. 
+ * 
+ * Options:
+ * null         --> position at the end of the default menu
+ * int [0..99]  --> individual position
+ * For more see:
+ * https://developer.wordpress.org/reference/functions/add_menu_page/#default-bottom-of-menu-structure
+ * 
+ * @since 3.1.1
+*/
+if ( !defined('WPAM_MENU_POSITION') ) {
+    define('WPAM_MENU_POSITION', null);}
 
 // load microblog name
 $wpam_blog_name = get_option('wp_admin_blog_name');
@@ -111,7 +125,8 @@ require_once('core/widget.php');
 function wpam_menu() {
    global $wpam_blog_name;
    global $wpam_admin_page;
-   $wpam_admin_page = add_menu_page(__('Blog','wp-admin-microblog'), $wpam_blog_name,'use_wp_admin_microblog', __FILE__, 'wpam_page', plugins_url() . '/wp-admin-microblog/images/logo.png');
+   $pos = WPAM_MENU_POSITION;
+   $wpam_admin_page = add_menu_page(__('Blog','wp-admin-microblog'), $wpam_blog_name,'use_wp_admin_microblog', __FILE__, 'wpam_page', plugins_url() . '/wp-admin-microblog/images/logo.png', $pos);
    add_action("load-$wpam_admin_page", 'wpam_add_help_tab');
    add_action("load-$wpam_admin_page", 'wpam_screen_options');
    add_submenu_page('wp-admin-microblog/wp-admin-microblog.php', __('Settings','wp-admin-microblog'), __('Settings','wp-admin-microblog'), 'administrator', 'wp-admin-microblog/settings.php', 'wpam_settings');
@@ -123,7 +138,7 @@ function wpam_menu() {
  * @since 2.3
 */
 function wpam_get_version() {
-    return '3.1.0';
+    return '3.1.1';
 }
 
 /** 

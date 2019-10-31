@@ -17,6 +17,7 @@ class wpam_message {
         if ($content != '') {
             $content = nl2br($content);
             $post_time = current_time('mysql',0);
+            
             // check message duplications
             $duplicate = $wpdb->get_var("SELECT `text` FROM " . WPAM_ADMIN_BLOG_POSTS ." WHERE `text` = '$content' AND `post_parent` = '$parent' AND `user` = '$user'");
             if ( $duplicate != '' ) {
@@ -24,6 +25,7 @@ class wpam_message {
                     return false;
                 }
             }
+            
             // insert message
             $wpdb->insert( WPAM_ADMIN_BLOG_POSTS, array( 
                 'post_parent' => $parent,
@@ -35,12 +37,15 @@ class wpam_message {
                 'is_sticky' => $is_sticky ), 
                 array( '%d', '%s', '%s', '%s', '%s', '%d', '%d' ) );
             $new_message_id = $wpdb->insert_id;
+            
             // update sort_date for parent
             if ( $parent != 0 ) {
                 $wpdb->update(WPAM_ADMIN_BLOG_POSTS, array('sort_date' => $post_time ), array('post_ID' => $parent), array('%s'), array('%d') );
             }
+            
             // add tags
             wpam_tags::add_tags($new_message_id, $content);
+            
             // send notifications
             wpam_message::send_notifications($content, $user);
         }
